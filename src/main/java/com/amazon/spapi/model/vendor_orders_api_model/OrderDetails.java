@@ -34,7 +34,7 @@ import org.threeten.bp.OffsetDateTime;
  * Details of an order.
  */
 @ApiModel(description = "Details of an order.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:42.994-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:41.239+08:00")
 public class OrderDetails {
   @SerializedName("purchaseOrderDate")
   private OffsetDateTime purchaseOrderDate = null;
@@ -348,10 +348,10 @@ public class OrderDetails {
   }
 
    /**
-   * Name/Address and tax details of the ship to party.
+   * Name/Address and tax details of the ship to party. Find a list of fulfillment center addresses for a region on the [Resources page of Amazon Vendor Central](https://vendorcentral.amazon.com/hz/vendor/members/support/help/node/GPZ88XH8HQM97ZV6).
    * @return shipToParty
   **/
-  @ApiModelProperty(value = "Name/Address and tax details of the ship to party.")
+  @ApiModelProperty(value = "Name/Address and tax details of the ship to party. Find a list of fulfillment center addresses for a region on the [Resources page of Amazon Vendor Central](https://vendorcentral.amazon.com/hz/vendor/members/support/help/node/GPZ88XH8HQM97ZV6).")
   public PartyIdentification getShipToParty() {
     return shipToParty;
   }

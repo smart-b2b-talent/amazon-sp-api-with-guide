@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **issues** | [**ItemIssues**](ItemIssues.md) |  |  [optional]
 **offers** | [**ItemOffers**](ItemOffers.md) |  |  [optional]
 **fulfillmentAvailability** | [**List&lt;FulfillmentAvailability&gt;**](FulfillmentAvailability.md) | Fulfillment availability for the listings item. |  [optional]
-**procurement** | [**ItemProcurement**](ItemProcurement.md) |  |  [optional]
+**procurement** | [**List&lt;ItemProcurement&gt;**](ItemProcurement.md) | Vendor procurement information for the listings item. |  [optional]
 
 
 

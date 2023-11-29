@@ -58,15 +58,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCredentials;
-import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCredentialsProvider;
-import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCustomCredentialsProvider;
-import com.amazon.SellingPartnerAPIAA.AWSSigV4Signer;
 import com.amazon.SellingPartnerAPIAA.LWAAccessTokenCache;
 import com.amazon.SellingPartnerAPIAA.LWAAccessTokenCacheImpl;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationCredentials;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationSigner;
 import com.amazon.SellingPartnerAPIAA.RateLimitConfiguration;
+import com.amazon.SellingPartnerAPIAA.LWAException;
 
 public class MessagingApi {
     private ApiClient apiClient;
@@ -96,8 +93,9 @@ public class MessagingApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call confirmCustomizationDetailsCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmCustomizationDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call confirmCustomizationDetailsCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmCustomizationDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -142,7 +140,7 @@ public class MessagingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call confirmCustomizationDetailsValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmCustomizationDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call confirmCustomizationDetailsValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmCustomizationDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'amazonOrderId' is set
         if (amazonOrderId == null) {
@@ -173,8 +171,9 @@ public class MessagingApi {
      * @param body  (required)
      * @return CreateConfirmCustomizationDetailsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public CreateConfirmCustomizationDetailsResponse confirmCustomizationDetails(String amazonOrderId, List<String> marketplaceIds, CreateConfirmCustomizationDetailsRequest body) throws ApiException {
+    public CreateConfirmCustomizationDetailsResponse confirmCustomizationDetails(String amazonOrderId, List<String> marketplaceIds, CreateConfirmCustomizationDetailsRequest body) throws ApiException,LWAException {
         ApiResponse<CreateConfirmCustomizationDetailsResponse> resp = confirmCustomizationDetailsWithHttpInfo(amazonOrderId, marketplaceIds, body);
         return resp.getData();
     }
@@ -187,8 +186,9 @@ public class MessagingApi {
      * @param body  (required)
      * @return ApiResponse&lt;CreateConfirmCustomizationDetailsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<CreateConfirmCustomizationDetailsResponse> confirmCustomizationDetailsWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, CreateConfirmCustomizationDetailsRequest body) throws ApiException {
+    public ApiResponse<CreateConfirmCustomizationDetailsResponse> confirmCustomizationDetailsWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, CreateConfirmCustomizationDetailsRequest body) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = confirmCustomizationDetailsValidateBeforeCall(amazonOrderId, marketplaceIds, body, null, null);
         Type localVarReturnType = new TypeToken<CreateConfirmCustomizationDetailsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -203,8 +203,9 @@ public class MessagingApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call confirmCustomizationDetailsAsync(String amazonOrderId, List<String> marketplaceIds, CreateConfirmCustomizationDetailsRequest body, final ApiCallback<CreateConfirmCustomizationDetailsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call confirmCustomizationDetailsAsync(String amazonOrderId, List<String> marketplaceIds, CreateConfirmCustomizationDetailsRequest body, final ApiCallback<CreateConfirmCustomizationDetailsResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -239,8 +240,9 @@ public class MessagingApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createAmazonMotorsCall(String amazonOrderId, List<String> marketplaceIds, CreateAmazonMotorsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createAmazonMotorsCall(String amazonOrderId, List<String> marketplaceIds, CreateAmazonMotorsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -285,7 +287,7 @@ public class MessagingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createAmazonMotorsValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateAmazonMotorsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createAmazonMotorsValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateAmazonMotorsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'amazonOrderId' is set
         if (amazonOrderId == null) {
@@ -316,8 +318,9 @@ public class MessagingApi {
      * @param body  (required)
      * @return CreateAmazonMotorsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public CreateAmazonMotorsResponse createAmazonMotors(String amazonOrderId, List<String> marketplaceIds, CreateAmazonMotorsRequest body) throws ApiException {
+    public CreateAmazonMotorsResponse createAmazonMotors(String amazonOrderId, List<String> marketplaceIds, CreateAmazonMotorsRequest body) throws ApiException,LWAException {
         ApiResponse<CreateAmazonMotorsResponse> resp = createAmazonMotorsWithHttpInfo(amazonOrderId, marketplaceIds, body);
         return resp.getData();
     }
@@ -330,8 +333,9 @@ public class MessagingApi {
      * @param body  (required)
      * @return ApiResponse&lt;CreateAmazonMotorsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<CreateAmazonMotorsResponse> createAmazonMotorsWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, CreateAmazonMotorsRequest body) throws ApiException {
+    public ApiResponse<CreateAmazonMotorsResponse> createAmazonMotorsWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, CreateAmazonMotorsRequest body) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = createAmazonMotorsValidateBeforeCall(amazonOrderId, marketplaceIds, body, null, null);
         Type localVarReturnType = new TypeToken<CreateAmazonMotorsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -346,8 +350,9 @@ public class MessagingApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createAmazonMotorsAsync(String amazonOrderId, List<String> marketplaceIds, CreateAmazonMotorsRequest body, final ApiCallback<CreateAmazonMotorsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createAmazonMotorsAsync(String amazonOrderId, List<String> marketplaceIds, CreateAmazonMotorsRequest body, final ApiCallback<CreateAmazonMotorsResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -382,8 +387,9 @@ public class MessagingApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createConfirmDeliveryDetailsCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmDeliveryDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createConfirmDeliveryDetailsCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmDeliveryDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -428,7 +434,7 @@ public class MessagingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createConfirmDeliveryDetailsValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmDeliveryDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createConfirmDeliveryDetailsValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmDeliveryDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'amazonOrderId' is set
         if (amazonOrderId == null) {
@@ -459,8 +465,9 @@ public class MessagingApi {
      * @param body  (required)
      * @return CreateConfirmDeliveryDetailsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public CreateConfirmDeliveryDetailsResponse createConfirmDeliveryDetails(String amazonOrderId, List<String> marketplaceIds, CreateConfirmDeliveryDetailsRequest body) throws ApiException {
+    public CreateConfirmDeliveryDetailsResponse createConfirmDeliveryDetails(String amazonOrderId, List<String> marketplaceIds, CreateConfirmDeliveryDetailsRequest body) throws ApiException,LWAException {
         ApiResponse<CreateConfirmDeliveryDetailsResponse> resp = createConfirmDeliveryDetailsWithHttpInfo(amazonOrderId, marketplaceIds, body);
         return resp.getData();
     }
@@ -473,8 +480,9 @@ public class MessagingApi {
      * @param body  (required)
      * @return ApiResponse&lt;CreateConfirmDeliveryDetailsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<CreateConfirmDeliveryDetailsResponse> createConfirmDeliveryDetailsWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, CreateConfirmDeliveryDetailsRequest body) throws ApiException {
+    public ApiResponse<CreateConfirmDeliveryDetailsResponse> createConfirmDeliveryDetailsWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, CreateConfirmDeliveryDetailsRequest body) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = createConfirmDeliveryDetailsValidateBeforeCall(amazonOrderId, marketplaceIds, body, null, null);
         Type localVarReturnType = new TypeToken<CreateConfirmDeliveryDetailsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -489,8 +497,9 @@ public class MessagingApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createConfirmDeliveryDetailsAsync(String amazonOrderId, List<String> marketplaceIds, CreateConfirmDeliveryDetailsRequest body, final ApiCallback<CreateConfirmDeliveryDetailsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createConfirmDeliveryDetailsAsync(String amazonOrderId, List<String> marketplaceIds, CreateConfirmDeliveryDetailsRequest body, final ApiCallback<CreateConfirmDeliveryDetailsResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -525,8 +534,9 @@ public class MessagingApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createConfirmOrderDetailsCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmOrderDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createConfirmOrderDetailsCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmOrderDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -571,7 +581,7 @@ public class MessagingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createConfirmOrderDetailsValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmOrderDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createConfirmOrderDetailsValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmOrderDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'amazonOrderId' is set
         if (amazonOrderId == null) {
@@ -602,8 +612,9 @@ public class MessagingApi {
      * @param body  (required)
      * @return CreateConfirmOrderDetailsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public CreateConfirmOrderDetailsResponse createConfirmOrderDetails(String amazonOrderId, List<String> marketplaceIds, CreateConfirmOrderDetailsRequest body) throws ApiException {
+    public CreateConfirmOrderDetailsResponse createConfirmOrderDetails(String amazonOrderId, List<String> marketplaceIds, CreateConfirmOrderDetailsRequest body) throws ApiException,LWAException {
         ApiResponse<CreateConfirmOrderDetailsResponse> resp = createConfirmOrderDetailsWithHttpInfo(amazonOrderId, marketplaceIds, body);
         return resp.getData();
     }
@@ -616,8 +627,9 @@ public class MessagingApi {
      * @param body  (required)
      * @return ApiResponse&lt;CreateConfirmOrderDetailsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<CreateConfirmOrderDetailsResponse> createConfirmOrderDetailsWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, CreateConfirmOrderDetailsRequest body) throws ApiException {
+    public ApiResponse<CreateConfirmOrderDetailsResponse> createConfirmOrderDetailsWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, CreateConfirmOrderDetailsRequest body) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = createConfirmOrderDetailsValidateBeforeCall(amazonOrderId, marketplaceIds, body, null, null);
         Type localVarReturnType = new TypeToken<CreateConfirmOrderDetailsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -632,8 +644,9 @@ public class MessagingApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createConfirmOrderDetailsAsync(String amazonOrderId, List<String> marketplaceIds, CreateConfirmOrderDetailsRequest body, final ApiCallback<CreateConfirmOrderDetailsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createConfirmOrderDetailsAsync(String amazonOrderId, List<String> marketplaceIds, CreateConfirmOrderDetailsRequest body, final ApiCallback<CreateConfirmOrderDetailsResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -668,8 +681,9 @@ public class MessagingApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createConfirmServiceDetailsCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmServiceDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createConfirmServiceDetailsCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmServiceDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -714,7 +728,7 @@ public class MessagingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createConfirmServiceDetailsValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmServiceDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createConfirmServiceDetailsValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmServiceDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'amazonOrderId' is set
         if (amazonOrderId == null) {
@@ -745,8 +759,9 @@ public class MessagingApi {
      * @param body  (required)
      * @return CreateConfirmServiceDetailsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public CreateConfirmServiceDetailsResponse createConfirmServiceDetails(String amazonOrderId, List<String> marketplaceIds, CreateConfirmServiceDetailsRequest body) throws ApiException {
+    public CreateConfirmServiceDetailsResponse createConfirmServiceDetails(String amazonOrderId, List<String> marketplaceIds, CreateConfirmServiceDetailsRequest body) throws ApiException,LWAException {
         ApiResponse<CreateConfirmServiceDetailsResponse> resp = createConfirmServiceDetailsWithHttpInfo(amazonOrderId, marketplaceIds, body);
         return resp.getData();
     }
@@ -759,8 +774,9 @@ public class MessagingApi {
      * @param body  (required)
      * @return ApiResponse&lt;CreateConfirmServiceDetailsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<CreateConfirmServiceDetailsResponse> createConfirmServiceDetailsWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, CreateConfirmServiceDetailsRequest body) throws ApiException {
+    public ApiResponse<CreateConfirmServiceDetailsResponse> createConfirmServiceDetailsWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, CreateConfirmServiceDetailsRequest body) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = createConfirmServiceDetailsValidateBeforeCall(amazonOrderId, marketplaceIds, body, null, null);
         Type localVarReturnType = new TypeToken<CreateConfirmServiceDetailsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -775,8 +791,9 @@ public class MessagingApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createConfirmServiceDetailsAsync(String amazonOrderId, List<String> marketplaceIds, CreateConfirmServiceDetailsRequest body, final ApiCallback<CreateConfirmServiceDetailsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createConfirmServiceDetailsAsync(String amazonOrderId, List<String> marketplaceIds, CreateConfirmServiceDetailsRequest body, final ApiCallback<CreateConfirmServiceDetailsResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -811,8 +828,9 @@ public class MessagingApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createDigitalAccessKeyCall(String amazonOrderId, List<String> marketplaceIds, CreateDigitalAccessKeyRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createDigitalAccessKeyCall(String amazonOrderId, List<String> marketplaceIds, CreateDigitalAccessKeyRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -857,7 +875,7 @@ public class MessagingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createDigitalAccessKeyValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateDigitalAccessKeyRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createDigitalAccessKeyValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateDigitalAccessKeyRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'amazonOrderId' is set
         if (amazonOrderId == null) {
@@ -888,8 +906,9 @@ public class MessagingApi {
      * @param body  (required)
      * @return CreateDigitalAccessKeyResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public CreateDigitalAccessKeyResponse createDigitalAccessKey(String amazonOrderId, List<String> marketplaceIds, CreateDigitalAccessKeyRequest body) throws ApiException {
+    public CreateDigitalAccessKeyResponse createDigitalAccessKey(String amazonOrderId, List<String> marketplaceIds, CreateDigitalAccessKeyRequest body) throws ApiException,LWAException {
         ApiResponse<CreateDigitalAccessKeyResponse> resp = createDigitalAccessKeyWithHttpInfo(amazonOrderId, marketplaceIds, body);
         return resp.getData();
     }
@@ -902,8 +921,9 @@ public class MessagingApi {
      * @param body  (required)
      * @return ApiResponse&lt;CreateDigitalAccessKeyResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<CreateDigitalAccessKeyResponse> createDigitalAccessKeyWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, CreateDigitalAccessKeyRequest body) throws ApiException {
+    public ApiResponse<CreateDigitalAccessKeyResponse> createDigitalAccessKeyWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, CreateDigitalAccessKeyRequest body) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = createDigitalAccessKeyValidateBeforeCall(amazonOrderId, marketplaceIds, body, null, null);
         Type localVarReturnType = new TypeToken<CreateDigitalAccessKeyResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -918,8 +938,9 @@ public class MessagingApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createDigitalAccessKeyAsync(String amazonOrderId, List<String> marketplaceIds, CreateDigitalAccessKeyRequest body, final ApiCallback<CreateDigitalAccessKeyResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createDigitalAccessKeyAsync(String amazonOrderId, List<String> marketplaceIds, CreateDigitalAccessKeyRequest body, final ApiCallback<CreateDigitalAccessKeyResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -954,8 +975,9 @@ public class MessagingApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createLegalDisclosureCall(String amazonOrderId, List<String> marketplaceIds, CreateLegalDisclosureRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createLegalDisclosureCall(String amazonOrderId, List<String> marketplaceIds, CreateLegalDisclosureRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -1000,7 +1022,7 @@ public class MessagingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createLegalDisclosureValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateLegalDisclosureRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createLegalDisclosureValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateLegalDisclosureRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'amazonOrderId' is set
         if (amazonOrderId == null) {
@@ -1031,8 +1053,9 @@ public class MessagingApi {
      * @param body  (required)
      * @return CreateLegalDisclosureResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public CreateLegalDisclosureResponse createLegalDisclosure(String amazonOrderId, List<String> marketplaceIds, CreateLegalDisclosureRequest body) throws ApiException {
+    public CreateLegalDisclosureResponse createLegalDisclosure(String amazonOrderId, List<String> marketplaceIds, CreateLegalDisclosureRequest body) throws ApiException,LWAException {
         ApiResponse<CreateLegalDisclosureResponse> resp = createLegalDisclosureWithHttpInfo(amazonOrderId, marketplaceIds, body);
         return resp.getData();
     }
@@ -1045,8 +1068,9 @@ public class MessagingApi {
      * @param body  (required)
      * @return ApiResponse&lt;CreateLegalDisclosureResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<CreateLegalDisclosureResponse> createLegalDisclosureWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, CreateLegalDisclosureRequest body) throws ApiException {
+    public ApiResponse<CreateLegalDisclosureResponse> createLegalDisclosureWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, CreateLegalDisclosureRequest body) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = createLegalDisclosureValidateBeforeCall(amazonOrderId, marketplaceIds, body, null, null);
         Type localVarReturnType = new TypeToken<CreateLegalDisclosureResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1061,8 +1085,9 @@ public class MessagingApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createLegalDisclosureAsync(String amazonOrderId, List<String> marketplaceIds, CreateLegalDisclosureRequest body, final ApiCallback<CreateLegalDisclosureResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createLegalDisclosureAsync(String amazonOrderId, List<String> marketplaceIds, CreateLegalDisclosureRequest body, final ApiCallback<CreateLegalDisclosureResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1096,8 +1121,9 @@ public class MessagingApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createNegativeFeedbackRemovalCall(String amazonOrderId, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createNegativeFeedbackRemovalCall(String amazonOrderId, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1142,7 +1168,7 @@ public class MessagingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createNegativeFeedbackRemovalValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createNegativeFeedbackRemovalValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'amazonOrderId' is set
         if (amazonOrderId == null) {
@@ -1167,8 +1193,9 @@ public class MessagingApi {
      * @param marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @return CreateNegativeFeedbackRemovalResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public CreateNegativeFeedbackRemovalResponse createNegativeFeedbackRemoval(String amazonOrderId, List<String> marketplaceIds) throws ApiException {
+    public CreateNegativeFeedbackRemovalResponse createNegativeFeedbackRemoval(String amazonOrderId, List<String> marketplaceIds) throws ApiException,LWAException {
         ApiResponse<CreateNegativeFeedbackRemovalResponse> resp = createNegativeFeedbackRemovalWithHttpInfo(amazonOrderId, marketplaceIds);
         return resp.getData();
     }
@@ -1180,8 +1207,9 @@ public class MessagingApi {
      * @param marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @return ApiResponse&lt;CreateNegativeFeedbackRemovalResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<CreateNegativeFeedbackRemovalResponse> createNegativeFeedbackRemovalWithHttpInfo(String amazonOrderId, List<String> marketplaceIds) throws ApiException {
+    public ApiResponse<CreateNegativeFeedbackRemovalResponse> createNegativeFeedbackRemovalWithHttpInfo(String amazonOrderId, List<String> marketplaceIds) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = createNegativeFeedbackRemovalValidateBeforeCall(amazonOrderId, marketplaceIds, null, null);
         Type localVarReturnType = new TypeToken<CreateNegativeFeedbackRemovalResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1195,8 +1223,9 @@ public class MessagingApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createNegativeFeedbackRemovalAsync(String amazonOrderId, List<String> marketplaceIds, final ApiCallback<CreateNegativeFeedbackRemovalResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createNegativeFeedbackRemovalAsync(String amazonOrderId, List<String> marketplaceIds, final ApiCallback<CreateNegativeFeedbackRemovalResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1231,8 +1260,9 @@ public class MessagingApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createUnexpectedProblemCall(String amazonOrderId, List<String> marketplaceIds, CreateUnexpectedProblemRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createUnexpectedProblemCall(String amazonOrderId, List<String> marketplaceIds, CreateUnexpectedProblemRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -1277,7 +1307,7 @@ public class MessagingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createUnexpectedProblemValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateUnexpectedProblemRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createUnexpectedProblemValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateUnexpectedProblemRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'amazonOrderId' is set
         if (amazonOrderId == null) {
@@ -1308,8 +1338,9 @@ public class MessagingApi {
      * @param body  (required)
      * @return CreateUnexpectedProblemResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public CreateUnexpectedProblemResponse createUnexpectedProblem(String amazonOrderId, List<String> marketplaceIds, CreateUnexpectedProblemRequest body) throws ApiException {
+    public CreateUnexpectedProblemResponse createUnexpectedProblem(String amazonOrderId, List<String> marketplaceIds, CreateUnexpectedProblemRequest body) throws ApiException,LWAException {
         ApiResponse<CreateUnexpectedProblemResponse> resp = createUnexpectedProblemWithHttpInfo(amazonOrderId, marketplaceIds, body);
         return resp.getData();
     }
@@ -1322,8 +1353,9 @@ public class MessagingApi {
      * @param body  (required)
      * @return ApiResponse&lt;CreateUnexpectedProblemResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<CreateUnexpectedProblemResponse> createUnexpectedProblemWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, CreateUnexpectedProblemRequest body) throws ApiException {
+    public ApiResponse<CreateUnexpectedProblemResponse> createUnexpectedProblemWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, CreateUnexpectedProblemRequest body) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = createUnexpectedProblemValidateBeforeCall(amazonOrderId, marketplaceIds, body, null, null);
         Type localVarReturnType = new TypeToken<CreateUnexpectedProblemResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1338,8 +1370,9 @@ public class MessagingApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createUnexpectedProblemAsync(String amazonOrderId, List<String> marketplaceIds, CreateUnexpectedProblemRequest body, final ApiCallback<CreateUnexpectedProblemResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createUnexpectedProblemAsync(String amazonOrderId, List<String> marketplaceIds, CreateUnexpectedProblemRequest body, final ApiCallback<CreateUnexpectedProblemResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1374,8 +1407,9 @@ public class MessagingApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createWarrantyCall(String amazonOrderId, List<String> marketplaceIds, CreateWarrantyRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createWarrantyCall(String amazonOrderId, List<String> marketplaceIds, CreateWarrantyRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -1420,7 +1454,7 @@ public class MessagingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createWarrantyValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateWarrantyRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createWarrantyValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateWarrantyRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'amazonOrderId' is set
         if (amazonOrderId == null) {
@@ -1451,8 +1485,9 @@ public class MessagingApi {
      * @param body  (required)
      * @return CreateWarrantyResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public CreateWarrantyResponse createWarranty(String amazonOrderId, List<String> marketplaceIds, CreateWarrantyRequest body) throws ApiException {
+    public CreateWarrantyResponse createWarranty(String amazonOrderId, List<String> marketplaceIds, CreateWarrantyRequest body) throws ApiException,LWAException {
         ApiResponse<CreateWarrantyResponse> resp = createWarrantyWithHttpInfo(amazonOrderId, marketplaceIds, body);
         return resp.getData();
     }
@@ -1465,8 +1500,9 @@ public class MessagingApi {
      * @param body  (required)
      * @return ApiResponse&lt;CreateWarrantyResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<CreateWarrantyResponse> createWarrantyWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, CreateWarrantyRequest body) throws ApiException {
+    public ApiResponse<CreateWarrantyResponse> createWarrantyWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, CreateWarrantyRequest body) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = createWarrantyValidateBeforeCall(amazonOrderId, marketplaceIds, body, null, null);
         Type localVarReturnType = new TypeToken<CreateWarrantyResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1481,8 +1517,9 @@ public class MessagingApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createWarrantyAsync(String amazonOrderId, List<String> marketplaceIds, CreateWarrantyRequest body, final ApiCallback<CreateWarrantyResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createWarrantyAsync(String amazonOrderId, List<String> marketplaceIds, CreateWarrantyRequest body, final ApiCallback<CreateWarrantyResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1516,8 +1553,9 @@ public class MessagingApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getAttributesCall(String amazonOrderId, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getAttributesCall(String amazonOrderId, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1562,7 +1600,7 @@ public class MessagingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getAttributesValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getAttributesValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'amazonOrderId' is set
         if (amazonOrderId == null) {
@@ -1587,8 +1625,9 @@ public class MessagingApi {
      * @param marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @return GetAttributesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public GetAttributesResponse getAttributes(String amazonOrderId, List<String> marketplaceIds) throws ApiException {
+    public GetAttributesResponse getAttributes(String amazonOrderId, List<String> marketplaceIds) throws ApiException,LWAException {
         ApiResponse<GetAttributesResponse> resp = getAttributesWithHttpInfo(amazonOrderId, marketplaceIds);
         return resp.getData();
     }
@@ -1600,8 +1639,9 @@ public class MessagingApi {
      * @param marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @return ApiResponse&lt;GetAttributesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<GetAttributesResponse> getAttributesWithHttpInfo(String amazonOrderId, List<String> marketplaceIds) throws ApiException {
+    public ApiResponse<GetAttributesResponse> getAttributesWithHttpInfo(String amazonOrderId, List<String> marketplaceIds) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = getAttributesValidateBeforeCall(amazonOrderId, marketplaceIds, null, null);
         Type localVarReturnType = new TypeToken<GetAttributesResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1615,8 +1655,9 @@ public class MessagingApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getAttributesAsync(String amazonOrderId, List<String> marketplaceIds, final ApiCallback<GetAttributesResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAttributesAsync(String amazonOrderId, List<String> marketplaceIds, final ApiCallback<GetAttributesResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1650,8 +1691,9 @@ public class MessagingApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getMessagingActionsForOrderCall(String amazonOrderId, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getMessagingActionsForOrderCall(String amazonOrderId, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1696,7 +1738,7 @@ public class MessagingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getMessagingActionsForOrderValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getMessagingActionsForOrderValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'amazonOrderId' is set
         if (amazonOrderId == null) {
@@ -1721,8 +1763,9 @@ public class MessagingApi {
      * @param marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @return GetMessagingActionsForOrderResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public GetMessagingActionsForOrderResponse getMessagingActionsForOrder(String amazonOrderId, List<String> marketplaceIds) throws ApiException {
+    public GetMessagingActionsForOrderResponse getMessagingActionsForOrder(String amazonOrderId, List<String> marketplaceIds) throws ApiException,LWAException {
         ApiResponse<GetMessagingActionsForOrderResponse> resp = getMessagingActionsForOrderWithHttpInfo(amazonOrderId, marketplaceIds);
         return resp.getData();
     }
@@ -1734,8 +1777,9 @@ public class MessagingApi {
      * @param marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @return ApiResponse&lt;GetMessagingActionsForOrderResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<GetMessagingActionsForOrderResponse> getMessagingActionsForOrderWithHttpInfo(String amazonOrderId, List<String> marketplaceIds) throws ApiException {
+    public ApiResponse<GetMessagingActionsForOrderResponse> getMessagingActionsForOrderWithHttpInfo(String amazonOrderId, List<String> marketplaceIds) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = getMessagingActionsForOrderValidateBeforeCall(amazonOrderId, marketplaceIds, null, null);
         Type localVarReturnType = new TypeToken<GetMessagingActionsForOrderResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1749,8 +1793,9 @@ public class MessagingApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getMessagingActionsForOrderAsync(String amazonOrderId, List<String> marketplaceIds, final ApiCallback<GetMessagingActionsForOrderResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getMessagingActionsForOrderAsync(String amazonOrderId, List<String> marketplaceIds, final ApiCallback<GetMessagingActionsForOrderResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1785,8 +1830,9 @@ public class MessagingApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call sendInvoiceCall(String amazonOrderId, List<String> marketplaceIds, InvoiceRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call sendInvoiceCall(String amazonOrderId, List<String> marketplaceIds, InvoiceRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -1831,7 +1877,7 @@ public class MessagingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call sendInvoiceValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, InvoiceRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call sendInvoiceValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, InvoiceRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'amazonOrderId' is set
         if (amazonOrderId == null) {
@@ -1862,8 +1908,9 @@ public class MessagingApi {
      * @param body  (required)
      * @return InvoiceResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public InvoiceResponse sendInvoice(String amazonOrderId, List<String> marketplaceIds, InvoiceRequest body) throws ApiException {
+    public InvoiceResponse sendInvoice(String amazonOrderId, List<String> marketplaceIds, InvoiceRequest body) throws ApiException,LWAException {
         ApiResponse<InvoiceResponse> resp = sendInvoiceWithHttpInfo(amazonOrderId, marketplaceIds, body);
         return resp.getData();
     }
@@ -1876,8 +1923,9 @@ public class MessagingApi {
      * @param body  (required)
      * @return ApiResponse&lt;InvoiceResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<InvoiceResponse> sendInvoiceWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, InvoiceRequest body) throws ApiException {
+    public ApiResponse<InvoiceResponse> sendInvoiceWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, InvoiceRequest body) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = sendInvoiceValidateBeforeCall(amazonOrderId, marketplaceIds, body, null, null);
         Type localVarReturnType = new TypeToken<InvoiceResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1892,8 +1940,9 @@ public class MessagingApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call sendInvoiceAsync(String amazonOrderId, List<String> marketplaceIds, InvoiceRequest body, final ApiCallback<InvoiceResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call sendInvoiceAsync(String amazonOrderId, List<String> marketplaceIds, InvoiceRequest body, final ApiCallback<InvoiceResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1921,19 +1970,12 @@ public class MessagingApi {
     }
 
     public static class Builder {
-        private AWSAuthenticationCredentials awsAuthenticationCredentials;
         private LWAAuthorizationCredentials lwaAuthorizationCredentials;
         private String endpoint;
         private LWAAccessTokenCache lwaAccessTokenCache;
         private Boolean disableAccessTokenCache = false;
-        private AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider;
         private RateLimitConfiguration rateLimitConfiguration;
-        private AWSAuthenticationCustomCredentialsProvider awsAuthenticationCustomCredentialsProvider;
 
-        public Builder awsAuthenticationCredentials(AWSAuthenticationCredentials awsAuthenticationCredentials) {
-            this.awsAuthenticationCredentials = awsAuthenticationCredentials;
-            return this;
-        }
 
         public Builder lwaAuthorizationCredentials(LWAAuthorizationCredentials lwaAuthorizationCredentials) {
             this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
@@ -1954,12 +1996,7 @@ public class MessagingApi {
             this.disableAccessTokenCache = true;
             return this;
         }
-        
-        public Builder awsAuthenticationCredentialsProvider(AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider) {
-            this.awsAuthenticationCredentialsProvider = awsAuthenticationCredentialsProvider;
-            return this;
-        }
-        
+
         public Builder rateLimitConfigurationOnRequests(RateLimitConfiguration rateLimitConfiguration){
             this.rateLimitConfiguration = rateLimitConfiguration;
             return this;
@@ -1970,34 +2007,13 @@ public class MessagingApi {
             return this;
         }
 
-        public Builder awsAuthenticationCustomCredentialsProvider(AWSAuthenticationCustomCredentialsProvider awsAuthenticationCustomCredentialsProvider) {
-            this.awsAuthenticationCustomCredentialsProvider = awsAuthenticationCustomCredentialsProvider;
-            return this;
-        }
-        
-
         public MessagingApi build() {
-            if (awsAuthenticationCredentials == null && awsAuthenticationCustomCredentialsProvider == null) {
-                throw new RuntimeException("Neither AWSAuthenticationCredentials or AWSAuthenticationCustomCredentialsProvider are set");
-            }
-
             if (lwaAuthorizationCredentials == null) {
                 throw new RuntimeException("LWAAuthorizationCredentials not set");
             }
 
             if (StringUtil.isEmpty(endpoint)) {
                 throw new RuntimeException("Endpoint not set");
-            }
-
-            AWSSigV4Signer awsSigV4Signer;
-            if (awsAuthenticationCustomCredentialsProvider != null ) {
-                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCustomCredentialsProvider);
-            }
-            else if (awsAuthenticationCredentialsProvider == null) {
-                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCredentials);
-            }
-            else {
-                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCredentials,awsAuthenticationCredentialsProvider);
             }
             
             LWAAuthorizationSigner lwaAuthorizationSigner = null;            
@@ -2012,7 +2028,6 @@ public class MessagingApi {
             }
 
             return new MessagingApi(new ApiClient()
-                .setAWSSigV4Signer(awsSigV4Signer)
                 .setLWAAuthorizationSigner(lwaAuthorizationSigner)
                 .setBasePath(endpoint)
                 .setRateLimiter(rateLimitConfiguration));

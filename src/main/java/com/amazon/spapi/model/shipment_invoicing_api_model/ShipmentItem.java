@@ -31,7 +31,7 @@ import java.math.BigDecimal;
  * The shipment item information required by a seller to issue a shipment invoice.
  */
 @ApiModel(description = "The shipment item information required by a seller to issue a shipment invoice.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:55.432-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:19.307+08:00")
 public class ShipmentItem {
   @SerializedName("ASIN")
   private String ASIN = null;

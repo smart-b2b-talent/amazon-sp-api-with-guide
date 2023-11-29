@@ -1,6 +1,6 @@
 /*
  * Selling Partner API for Orders
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
  *
  * OpenAPI spec version: v0
  * 
@@ -37,15 +37,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCredentials;
-import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCredentialsProvider;
-import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCustomCredentialsProvider;
-import com.amazon.SellingPartnerAPIAA.AWSSigV4Signer;
 import com.amazon.SellingPartnerAPIAA.LWAAccessTokenCache;
 import com.amazon.SellingPartnerAPIAA.LWAAccessTokenCacheImpl;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationCredentials;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationSigner;
 import com.amazon.SellingPartnerAPIAA.RateLimitConfiguration;
+import com.amazon.SellingPartnerAPIAA.LWAException;
 
 public class ShipmentApi {
     private ApiClient apiClient;
@@ -74,8 +71,9 @@ public class ShipmentApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call updateShipmentStatusCall(String orderId, UpdateShipmentStatusRequest payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateShipmentStatusCall(String orderId, UpdateShipmentStatusRequest payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = payload;
 
         // create path and map variables
@@ -118,7 +116,7 @@ public class ShipmentApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateShipmentStatusValidateBeforeCall(String orderId, UpdateShipmentStatusRequest payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateShipmentStatusValidateBeforeCall(String orderId, UpdateShipmentStatusRequest payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'orderId' is set
         if (orderId == null) {
@@ -142,8 +140,9 @@ public class ShipmentApi {
      * @param orderId An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param payload The request body for the updateShipmentStatus operation. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public void updateShipmentStatus(String orderId, UpdateShipmentStatusRequest payload) throws ApiException {
+    public void updateShipmentStatus(String orderId, UpdateShipmentStatusRequest payload) throws ApiException,LWAException {
         updateShipmentStatusWithHttpInfo(orderId, payload);
     }
 
@@ -154,8 +153,9 @@ public class ShipmentApi {
      * @param payload The request body for the updateShipmentStatus operation. (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<Void> updateShipmentStatusWithHttpInfo(String orderId, UpdateShipmentStatusRequest payload) throws ApiException {
+    public ApiResponse<Void> updateShipmentStatusWithHttpInfo(String orderId, UpdateShipmentStatusRequest payload) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = updateShipmentStatusValidateBeforeCall(orderId, payload, null, null);
         return apiClient.execute(call);
     }
@@ -168,8 +168,9 @@ public class ShipmentApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call updateShipmentStatusAsync(String orderId, UpdateShipmentStatusRequest payload, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateShipmentStatusAsync(String orderId, UpdateShipmentStatusRequest payload, final ApiCallback<Void> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -196,19 +197,12 @@ public class ShipmentApi {
     }
 
     public static class Builder {
-        private AWSAuthenticationCredentials awsAuthenticationCredentials;
         private LWAAuthorizationCredentials lwaAuthorizationCredentials;
         private String endpoint;
         private LWAAccessTokenCache lwaAccessTokenCache;
         private Boolean disableAccessTokenCache = false;
-        private AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider;
         private RateLimitConfiguration rateLimitConfiguration;
-        private AWSAuthenticationCustomCredentialsProvider awsAuthenticationCustomCredentialsProvider;
 
-        public Builder awsAuthenticationCredentials(AWSAuthenticationCredentials awsAuthenticationCredentials) {
-            this.awsAuthenticationCredentials = awsAuthenticationCredentials;
-            return this;
-        }
 
         public Builder lwaAuthorizationCredentials(LWAAuthorizationCredentials lwaAuthorizationCredentials) {
             this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
@@ -229,12 +223,7 @@ public class ShipmentApi {
             this.disableAccessTokenCache = true;
             return this;
         }
-        
-        public Builder awsAuthenticationCredentialsProvider(AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider) {
-            this.awsAuthenticationCredentialsProvider = awsAuthenticationCredentialsProvider;
-            return this;
-        }
-        
+
         public Builder rateLimitConfigurationOnRequests(RateLimitConfiguration rateLimitConfiguration){
             this.rateLimitConfiguration = rateLimitConfiguration;
             return this;
@@ -245,34 +234,13 @@ public class ShipmentApi {
             return this;
         }
 
-        public Builder awsAuthenticationCustomCredentialsProvider(AWSAuthenticationCustomCredentialsProvider awsAuthenticationCustomCredentialsProvider) {
-            this.awsAuthenticationCustomCredentialsProvider = awsAuthenticationCustomCredentialsProvider;
-            return this;
-        }
-        
-
         public ShipmentApi build() {
-            if (awsAuthenticationCredentials == null && awsAuthenticationCustomCredentialsProvider == null) {
-                throw new RuntimeException("Neither AWSAuthenticationCredentials or AWSAuthenticationCustomCredentialsProvider are set");
-            }
-
             if (lwaAuthorizationCredentials == null) {
                 throw new RuntimeException("LWAAuthorizationCredentials not set");
             }
 
             if (StringUtil.isEmpty(endpoint)) {
                 throw new RuntimeException("Endpoint not set");
-            }
-
-            AWSSigV4Signer awsSigV4Signer;
-            if (awsAuthenticationCustomCredentialsProvider != null ) {
-                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCustomCredentialsProvider);
-            }
-            else if (awsAuthenticationCredentialsProvider == null) {
-                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCredentials);
-            }
-            else {
-                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCredentials,awsAuthenticationCredentialsProvider);
             }
             
             LWAAuthorizationSigner lwaAuthorizationSigner = null;            
@@ -287,7 +255,6 @@ public class ShipmentApi {
             }
 
             return new ShipmentApi(new ApiClient()
-                .setAWSSigV4Signer(awsSigV4Signer)
                 .setLWAAuthorizationSigner(lwaAuthorizationSigner)
                 .setBasePath(endpoint)
                 .setRateLimiter(rateLimitConfiguration));

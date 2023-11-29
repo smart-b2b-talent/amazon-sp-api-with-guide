@@ -38,15 +38,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCredentials;
-import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCredentialsProvider;
-import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCustomCredentialsProvider;
-import com.amazon.SellingPartnerAPIAA.AWSSigV4Signer;
 import com.amazon.SellingPartnerAPIAA.LWAAccessTokenCache;
 import com.amazon.SellingPartnerAPIAA.LWAAccessTokenCacheImpl;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationCredentials;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationSigner;
 import com.amazon.SellingPartnerAPIAA.RateLimitConfiguration;
+import com.amazon.SellingPartnerAPIAA.LWAException;
 
 public class TokensApi {
     private ApiClient apiClient;
@@ -74,8 +71,9 @@ public class TokensApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createRestrictedDataTokenCall(CreateRestrictedDataTokenRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createRestrictedDataTokenCall(CreateRestrictedDataTokenRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -117,7 +115,7 @@ public class TokensApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createRestrictedDataTokenValidateBeforeCall(CreateRestrictedDataTokenRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createRestrictedDataTokenValidateBeforeCall(CreateRestrictedDataTokenRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'body' is set
         if (body == null) {
@@ -136,8 +134,9 @@ public class TokensApi {
      * @param body The restricted data token request details. (required)
      * @return CreateRestrictedDataTokenResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public CreateRestrictedDataTokenResponse createRestrictedDataToken(CreateRestrictedDataTokenRequest body) throws ApiException {
+    public CreateRestrictedDataTokenResponse createRestrictedDataToken(CreateRestrictedDataTokenRequest body) throws ApiException,LWAException {
         ApiResponse<CreateRestrictedDataTokenResponse> resp = createRestrictedDataTokenWithHttpInfo(body);
         return resp.getData();
     }
@@ -148,8 +147,9 @@ public class TokensApi {
      * @param body The restricted data token request details. (required)
      * @return ApiResponse&lt;CreateRestrictedDataTokenResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<CreateRestrictedDataTokenResponse> createRestrictedDataTokenWithHttpInfo(CreateRestrictedDataTokenRequest body) throws ApiException {
+    public ApiResponse<CreateRestrictedDataTokenResponse> createRestrictedDataTokenWithHttpInfo(CreateRestrictedDataTokenRequest body) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = createRestrictedDataTokenValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<CreateRestrictedDataTokenResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -162,8 +162,9 @@ public class TokensApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createRestrictedDataTokenAsync(CreateRestrictedDataTokenRequest body, final ApiCallback<CreateRestrictedDataTokenResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createRestrictedDataTokenAsync(CreateRestrictedDataTokenRequest body, final ApiCallback<CreateRestrictedDataTokenResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -191,19 +192,12 @@ public class TokensApi {
     }
 
     public static class Builder {
-        private AWSAuthenticationCredentials awsAuthenticationCredentials;
         private LWAAuthorizationCredentials lwaAuthorizationCredentials;
         private String endpoint;
         private LWAAccessTokenCache lwaAccessTokenCache;
         private Boolean disableAccessTokenCache = false;
-        private AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider;
         private RateLimitConfiguration rateLimitConfiguration;
-        private AWSAuthenticationCustomCredentialsProvider awsAuthenticationCustomCredentialsProvider;
 
-        public Builder awsAuthenticationCredentials(AWSAuthenticationCredentials awsAuthenticationCredentials) {
-            this.awsAuthenticationCredentials = awsAuthenticationCredentials;
-            return this;
-        }
 
         public Builder lwaAuthorizationCredentials(LWAAuthorizationCredentials lwaAuthorizationCredentials) {
             this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
@@ -224,12 +218,7 @@ public class TokensApi {
             this.disableAccessTokenCache = true;
             return this;
         }
-        
-        public Builder awsAuthenticationCredentialsProvider(AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider) {
-            this.awsAuthenticationCredentialsProvider = awsAuthenticationCredentialsProvider;
-            return this;
-        }
-        
+
         public Builder rateLimitConfigurationOnRequests(RateLimitConfiguration rateLimitConfiguration){
             this.rateLimitConfiguration = rateLimitConfiguration;
             return this;
@@ -240,34 +229,13 @@ public class TokensApi {
             return this;
         }
 
-        public Builder awsAuthenticationCustomCredentialsProvider(AWSAuthenticationCustomCredentialsProvider awsAuthenticationCustomCredentialsProvider) {
-            this.awsAuthenticationCustomCredentialsProvider = awsAuthenticationCustomCredentialsProvider;
-            return this;
-        }
-        
-
         public TokensApi build() {
-            if (awsAuthenticationCredentials == null && awsAuthenticationCustomCredentialsProvider == null) {
-                throw new RuntimeException("Neither AWSAuthenticationCredentials or AWSAuthenticationCustomCredentialsProvider are set");
-            }
-
             if (lwaAuthorizationCredentials == null) {
                 throw new RuntimeException("LWAAuthorizationCredentials not set");
             }
 
             if (StringUtil.isEmpty(endpoint)) {
                 throw new RuntimeException("Endpoint not set");
-            }
-
-            AWSSigV4Signer awsSigV4Signer;
-            if (awsAuthenticationCustomCredentialsProvider != null ) {
-                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCustomCredentialsProvider);
-            }
-            else if (awsAuthenticationCredentialsProvider == null) {
-                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCredentials);
-            }
-            else {
-                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCredentials,awsAuthenticationCredentialsProvider);
             }
             
             LWAAuthorizationSigner lwaAuthorizationSigner = null;            
@@ -282,7 +250,6 @@ public class TokensApi {
             }
 
             return new TokensApi(new ApiClient()
-                .setAWSSigV4Signer(awsSigV4Signer)
                 .setLWAAuthorizationSigner(lwaAuthorizationSigner)
                 .setBasePath(endpoint)
                 .setRateLimiter(rateLimitConfiguration));

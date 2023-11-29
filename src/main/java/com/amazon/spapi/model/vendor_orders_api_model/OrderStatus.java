@@ -31,7 +31,7 @@ import org.threeten.bp.OffsetDateTime;
  * Current status of a purchase order.
  */
 @ApiModel(description = "Current status of a purchase order.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:42.994-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:41.239+08:00")
 public class OrderStatus {
   @SerializedName("purchaseOrderNumber")
   private String purchaseOrderNumber = null;
@@ -197,10 +197,10 @@ public class OrderStatus {
   }
 
    /**
-   * Name/Address and tax details of the ship to party.
+   * Name/Address and tax details of the ship to party. Find a list of fulfillment center addresses for a region on the [Resources page of Amazon Vendor Central](https://vendorcentral.amazon.com/hz/vendor/members/support/help/node/GPZ88XH8HQM97ZV6).
    * @return shipToParty
   **/
-  @ApiModelProperty(required = true, value = "Name/Address and tax details of the ship to party.")
+  @ApiModelProperty(required = true, value = "Name/Address and tax details of the ship to party. Find a list of fulfillment center addresses for a region on the [Resources page of Amazon Vendor Central](https://vendorcentral.amazon.com/hz/vendor/members/support/help/node/GPZ88XH8HQM97ZV6).")
   public PartyIdentification getShipToParty() {
     return shipToParty;
   }

@@ -15,29 +15,32 @@ package com.amazon.spapi.model.catalog_items_api_model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.amazon.spapi.model.catalog_items_api_model.ERRORUNKNOWN;
 import io.swagger.annotations.ApiModel;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A JSON object that contains structured item attribute data keyed by attribute name. Catalog item attributes conform to the related product type definitions available in the Selling Partner API for Product Type Definitions.
  */
 @ApiModel(description = "A JSON object that contains structured item attribute data keyed by attribute name. Catalog item attributes conform to the related product type definitions available in the Selling Partner API for Product Type Definitions.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:28:03.156-04:00")
-public class ItemAttributes {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:39.638+08:00")
+public class ItemAttributes extends HashMap<String, ERRORUNKNOWN> {
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return true;
+    return super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash();
+    return Objects.hash(super.hashCode());
   }
 
 
@@ -45,7 +48,7 @@ public class ItemAttributes {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ItemAttributes {\n");
-    
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -54,7 +57,7 @@ public class ItemAttributes {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
+  private String toIndentedString(java.lang.Object o) {
     if (o == null) {
       return "null";
     }
@@ -62,3 +65,4 @@ public class ItemAttributes {
   }
 
 }
+

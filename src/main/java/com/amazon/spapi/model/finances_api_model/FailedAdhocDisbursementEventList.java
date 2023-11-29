@@ -15,169 +15,17 @@ package com.amazon.spapi.model.finances_api_model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.amazon.spapi.model.finances_api_model.Currency;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.amazon.spapi.model.finances_api_model.FailedAdhocDisbursementEvent;
 import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Failed ad hoc disbursement event list.
+ * A list of &#x60;FailedAdhocDisbursementEvent&#x60;s.
  */
-@ApiModel(description = "Failed ad hoc disbursement event list.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:56.981-04:00")
-public class FailedAdhocDisbursementEventList {
-  @SerializedName("FundsTransfersType")
-  private String fundsTransfersType = null;
-
-  @SerializedName("TransferId")
-  private String transferId = null;
-
-  @SerializedName("DisbursementId")
-  private String disbursementId = null;
-
-  @SerializedName("PaymentDisbursementType")
-  private String paymentDisbursementType = null;
-
-  @SerializedName("Status")
-  private String status = null;
-
-  @SerializedName("TransferAmount")
-  private Currency transferAmount = null;
-
-  @SerializedName("PostedDate")
-  private String postedDate = null;
-
-  public FailedAdhocDisbursementEventList fundsTransfersType(String fundsTransfersType) {
-    this.fundsTransfersType = fundsTransfersType;
-    return this;
-  }
-
-   /**
-   * The type of fund transfer.   Example \&quot;Refund\&quot;
-   * @return fundsTransfersType
-  **/
-  @ApiModelProperty(value = "The type of fund transfer.   Example \"Refund\"")
-  public String getFundsTransfersType() {
-    return fundsTransfersType;
-  }
-
-  public void setFundsTransfersType(String fundsTransfersType) {
-    this.fundsTransfersType = fundsTransfersType;
-  }
-
-  public FailedAdhocDisbursementEventList transferId(String transferId) {
-    this.transferId = transferId;
-    return this;
-  }
-
-   /**
-   * The transfer identifier.
-   * @return transferId
-  **/
-  @ApiModelProperty(value = "The transfer identifier.")
-  public String getTransferId() {
-    return transferId;
-  }
-
-  public void setTransferId(String transferId) {
-    this.transferId = transferId;
-  }
-
-  public FailedAdhocDisbursementEventList disbursementId(String disbursementId) {
-    this.disbursementId = disbursementId;
-    return this;
-  }
-
-   /**
-   * The disbursement identifier.
-   * @return disbursementId
-  **/
-  @ApiModelProperty(value = "The disbursement identifier.")
-  public String getDisbursementId() {
-    return disbursementId;
-  }
-
-  public void setDisbursementId(String disbursementId) {
-    this.disbursementId = disbursementId;
-  }
-
-  public FailedAdhocDisbursementEventList paymentDisbursementType(String paymentDisbursementType) {
-    this.paymentDisbursementType = paymentDisbursementType;
-    return this;
-  }
-
-   /**
-   * The type of payment for disbursement.   Example &#x60;CREDIT_CARD&#x60;
-   * @return paymentDisbursementType
-  **/
-  @ApiModelProperty(value = "The type of payment for disbursement.   Example `CREDIT_CARD`")
-  public String getPaymentDisbursementType() {
-    return paymentDisbursementType;
-  }
-
-  public void setPaymentDisbursementType(String paymentDisbursementType) {
-    this.paymentDisbursementType = paymentDisbursementType;
-  }
-
-  public FailedAdhocDisbursementEventList status(String status) {
-    this.status = status;
-    return this;
-  }
-
-   /**
-   * The status of the failed &#x60;AdhocDisbursement&#x60;.   Example &#x60;HARD_DECLINED&#x60;
-   * @return status
-  **/
-  @ApiModelProperty(value = "The status of the failed `AdhocDisbursement`.   Example `HARD_DECLINED`")
-  public String getStatus() {
-    return status;
-  }
-
-  public void setStatus(String status) {
-    this.status = status;
-  }
-
-  public FailedAdhocDisbursementEventList transferAmount(Currency transferAmount) {
-    this.transferAmount = transferAmount;
-    return this;
-  }
-
-   /**
-   * The amount of the Adhoc Disbursement.
-   * @return transferAmount
-  **/
-  @ApiModelProperty(value = "The amount of the Adhoc Disbursement.")
-  public Currency getTransferAmount() {
-    return transferAmount;
-  }
-
-  public void setTransferAmount(Currency transferAmount) {
-    this.transferAmount = transferAmount;
-  }
-
-  public FailedAdhocDisbursementEventList postedDate(String postedDate) {
-    this.postedDate = postedDate;
-    return this;
-  }
-
-   /**
-   * The date and time when the financial event was posted.
-   * @return postedDate
-  **/
-  @ApiModelProperty(value = "The date and time when the financial event was posted.")
-  public String getPostedDate() {
-    return postedDate;
-  }
-
-  public void setPostedDate(String postedDate) {
-    this.postedDate = postedDate;
-  }
-
+@ApiModel(description = "A list of `FailedAdhocDisbursementEvent`s.")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:49.128+08:00")
+public class FailedAdhocDisbursementEventList extends ArrayList<FailedAdhocDisbursementEvent> {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -187,19 +35,12 @@ public class FailedAdhocDisbursementEventList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    FailedAdhocDisbursementEventList failedAdhocDisbursementEventList = (FailedAdhocDisbursementEventList) o;
-    return Objects.equals(this.fundsTransfersType, failedAdhocDisbursementEventList.fundsTransfersType) &&
-        Objects.equals(this.transferId, failedAdhocDisbursementEventList.transferId) &&
-        Objects.equals(this.disbursementId, failedAdhocDisbursementEventList.disbursementId) &&
-        Objects.equals(this.paymentDisbursementType, failedAdhocDisbursementEventList.paymentDisbursementType) &&
-        Objects.equals(this.status, failedAdhocDisbursementEventList.status) &&
-        Objects.equals(this.transferAmount, failedAdhocDisbursementEventList.transferAmount) &&
-        Objects.equals(this.postedDate, failedAdhocDisbursementEventList.postedDate);
+    return super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fundsTransfersType, transferId, disbursementId, paymentDisbursementType, status, transferAmount, postedDate);
+    return Objects.hash(super.hashCode());
   }
 
 
@@ -207,14 +48,7 @@ public class FailedAdhocDisbursementEventList {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class FailedAdhocDisbursementEventList {\n");
-    
-    sb.append("    fundsTransfersType: ").append(toIndentedString(fundsTransfersType)).append("\n");
-    sb.append("    transferId: ").append(toIndentedString(transferId)).append("\n");
-    sb.append("    disbursementId: ").append(toIndentedString(disbursementId)).append("\n");
-    sb.append("    paymentDisbursementType: ").append(toIndentedString(paymentDisbursementType)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    transferAmount: ").append(toIndentedString(transferAmount)).append("\n");
-    sb.append("    postedDate: ").append(toIndentedString(postedDate)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("}");
     return sb.toString();
   }

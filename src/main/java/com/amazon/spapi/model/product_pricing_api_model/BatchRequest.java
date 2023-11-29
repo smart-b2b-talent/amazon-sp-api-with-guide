@@ -1,6 +1,6 @@
 /*
  * Selling Partner API for Pricing
- * The Selling Partner API for Pricing helps you programmatically retrieve product pricing and offer pricing information for Amazon Marketplace products.  For more information, see the [Product Pricing v2022-05-01 Use Case Guide](doc:product-pricing-api-v2022-05-01-use-case-guide).
+ * The Selling Partner API for Pricing helps you programmatically retrieve product pricing and offer pricing information for Amazon Marketplace products.  For more information, refer to the [Product Pricing v2022-05-01 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/product-pricing-api-v2022-05-01-use-case-guide).
  *
  * OpenAPI spec version: 2022-05-01
  * 
@@ -31,7 +31,7 @@ import java.io.IOException;
  * The common properties for individual requests within a batch.
  */
 @ApiModel(description = "The common properties for individual requests within a batch.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:47.660-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:06.258+08:00")
 public class BatchRequest {
   @SerializedName("uri")
   private String uri = null;
@@ -51,10 +51,10 @@ public class BatchRequest {
   }
 
    /**
-   * The URI associated with an individual request within a batch. For FeaturedOfferExpectedPrice, this should be &#39;/products/pricing/2022-05-01/offer/featuredOfferExpectedPrice&#39;.
+   * The URI associated with an individual request within a batch. For &#x60;FeaturedOfferExpectedPrice&#x60;, this should be &#x60;/products/pricing/2022-05-01/offer/featuredOfferExpectedPrice&#x60;.
    * @return uri
   **/
-  @ApiModelProperty(required = true, value = "The URI associated with an individual request within a batch. For FeaturedOfferExpectedPrice, this should be '/products/pricing/2022-05-01/offer/featuredOfferExpectedPrice'.")
+  @ApiModelProperty(required = true, value = "The URI associated with an individual request within a batch. For `FeaturedOfferExpectedPrice`, this should be `/products/pricing/2022-05-01/offer/featuredOfferExpectedPrice`.")
   public String getUri() {
     return uri;
   }

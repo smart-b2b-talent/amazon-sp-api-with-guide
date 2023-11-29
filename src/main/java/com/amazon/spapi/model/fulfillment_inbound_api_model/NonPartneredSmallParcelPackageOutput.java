@@ -29,7 +29,7 @@ import java.io.IOException;
  * Carrier, tracking number, and status information for the package.
  */
 @ApiModel(description = "Carrier, tracking number, and status information for the package.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:43.557-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:51.210+08:00")
 public class NonPartneredSmallParcelPackageOutput {
   @SerializedName("CarrierName")
   private String carrierName = null;

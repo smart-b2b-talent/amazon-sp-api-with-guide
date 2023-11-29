@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **paymentMethod** | [**PaymentMethodEnum**](#PaymentMethodEnum) | Payment method used. |  [optional]
 **buyingParty** | [**PartyIdentification**](PartyIdentification.md) | Name/Address and tax details of the buying party. |  [optional]
 **sellingParty** | [**PartyIdentification**](PartyIdentification.md) | Name/Address and tax details of the selling party. |  [optional]
-**shipToParty** | [**PartyIdentification**](PartyIdentification.md) | Name/Address and tax details of the ship to party. |  [optional]
+**shipToParty** | [**PartyIdentification**](PartyIdentification.md) | Name/Address and tax details of the ship to party. Find a list of fulfillment center addresses for a region on the [Resources page of Amazon Vendor Central](https://vendorcentral.amazon.com/hz/vendor/members/support/help/node/GPZ88XH8HQM97ZV6). |  [optional]
 **billToParty** | [**PartyIdentification**](PartyIdentification.md) | Name/Address and tax details of the bill to party. |  [optional]
 **shipWindow** | **String** | This indicates the ship window. Format is start and end date separated by double hyphen (--). For example, 2007-03-01T13:00:00Z--2007-03-11T15:30:00Z. |  [optional]
 **deliveryWindow** | **String** | This indicates the delivery window. Format is start and end date separated by double hyphen (--). For example, 2007-03-01T13:00:00Z--2007-03-11T15:30:00Z. |  [optional]

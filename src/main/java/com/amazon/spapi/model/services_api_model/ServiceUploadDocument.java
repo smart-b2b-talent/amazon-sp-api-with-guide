@@ -29,7 +29,7 @@ import java.math.BigDecimal;
  * Input for to be uploaded document.
  */
 @ApiModel(description = "Input for to be uploaded document.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:53.305-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:17.007+08:00")
 public class ServiceUploadDocument {
   /**
    * The content type of the to-be-uploaded file

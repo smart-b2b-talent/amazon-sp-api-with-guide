@@ -1,6 +1,6 @@
 /*
  * Selling Partner API for Orders
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
  *
  * OpenAPI spec version: v0
  * 
@@ -29,7 +29,7 @@ import java.io.IOException;
  * Information about a sub-payment method used to pay for a COD order.
  */
 @ApiModel(description = "Information about a sub-payment method used to pay for a COD order.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:51.478-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:02.473+08:00")
 public class PaymentExecutionDetailItem {
   @SerializedName("Payment")
   private Money payment = null;
@@ -61,10 +61,10 @@ public class PaymentExecutionDetailItem {
   }
 
    /**
-   * A sub-payment method for a COD order.  Possible values:  * COD - Cash On Delivery.  * GC - Gift Card.  * PointsAccount - Amazon Points.
+   * A sub-payment method for a COD order.  Possible values: * &#x60;COD&#x60;: Cash On Delivery. * &#x60;GC&#x60;: Gift Card. * &#x60;PointsAccount&#x60;: Amazon Points. * &#x60;Invoice&#x60;: Invoice.
    * @return paymentMethod
   **/
-  @ApiModelProperty(required = true, value = "A sub-payment method for a COD order.  Possible values:  * COD - Cash On Delivery.  * GC - Gift Card.  * PointsAccount - Amazon Points.")
+  @ApiModelProperty(required = true, value = "A sub-payment method for a COD order.  Possible values: * `COD`: Cash On Delivery. * `GC`: Gift Card. * `PointsAccount`: Amazon Points. * `Invoice`: Invoice.")
   public String getPaymentMethod() {
     return paymentMethod;
   }

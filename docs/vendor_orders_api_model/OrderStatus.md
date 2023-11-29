@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **purchaseOrderDate** | [**OffsetDateTime**](OffsetDateTime.md) | The date the purchase order was placed. Must be in ISO-8601 date/time format. | 
 **lastUpdatedDate** | [**OffsetDateTime**](OffsetDateTime.md) | The date when the purchase order was last updated. Must be in ISO-8601 date/time format. |  [optional]
 **sellingParty** | [**PartyIdentification**](PartyIdentification.md) | Name/Address and tax details of the selling party. | 
-**shipToParty** | [**PartyIdentification**](PartyIdentification.md) | Name/Address and tax details of the ship to party. | 
+**shipToParty** | [**PartyIdentification**](PartyIdentification.md) | Name/Address and tax details of the ship to party. Find a list of fulfillment center addresses for a region on the [Resources page of Amazon Vendor Central](https://vendorcentral.amazon.com/hz/vendor/members/support/help/node/GPZ88XH8HQM97ZV6). | 
 **itemStatus** | [**ItemStatus**](ItemStatus.md) | Detailed order status. | 
 
 

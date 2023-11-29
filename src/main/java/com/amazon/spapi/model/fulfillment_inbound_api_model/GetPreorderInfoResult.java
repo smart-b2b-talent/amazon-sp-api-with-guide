@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * GetPreorderInfoResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:43.557-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:51.210+08:00")
 public class GetPreorderInfoResult {
   @SerializedName("ShipmentContainsPreorderableItems")
   private Boolean shipmentContainsPreorderableItems = null;

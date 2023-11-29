@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * Order
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:41.148-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:30.605+08:00")
 public class Order {
   @SerializedName("purchaseOrderNumber")
   private String purchaseOrderNumber = null;

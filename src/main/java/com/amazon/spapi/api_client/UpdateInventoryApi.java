@@ -37,15 +37,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCredentials;
-import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCredentialsProvider;
-import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCustomCredentialsProvider;
-import com.amazon.SellingPartnerAPIAA.AWSSigV4Signer;
 import com.amazon.SellingPartnerAPIAA.LWAAccessTokenCache;
 import com.amazon.SellingPartnerAPIAA.LWAAccessTokenCacheImpl;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationCredentials;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationSigner;
 import com.amazon.SellingPartnerAPIAA.RateLimitConfiguration;
+import com.amazon.SellingPartnerAPIAA.LWAException;
 
 public class UpdateInventoryApi {
     private ApiClient apiClient;
@@ -74,8 +71,9 @@ public class UpdateInventoryApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call submitInventoryUpdateCall(SubmitInventoryUpdateRequest body, String warehouseId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call submitInventoryUpdateCall(SubmitInventoryUpdateRequest body, String warehouseId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -118,7 +116,7 @@ public class UpdateInventoryApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call submitInventoryUpdateValidateBeforeCall(SubmitInventoryUpdateRequest body, String warehouseId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call submitInventoryUpdateValidateBeforeCall(SubmitInventoryUpdateRequest body, String warehouseId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'body' is set
         if (body == null) {
@@ -143,8 +141,9 @@ public class UpdateInventoryApi {
      * @param warehouseId Identifier for the warehouse for which to update inventory. (required)
      * @return SubmitInventoryUpdateResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public SubmitInventoryUpdateResponse submitInventoryUpdate(SubmitInventoryUpdateRequest body, String warehouseId) throws ApiException {
+    public SubmitInventoryUpdateResponse submitInventoryUpdate(SubmitInventoryUpdateRequest body, String warehouseId) throws ApiException,LWAException {
         ApiResponse<SubmitInventoryUpdateResponse> resp = submitInventoryUpdateWithHttpInfo(body, warehouseId);
         return resp.getData();
     }
@@ -156,8 +155,9 @@ public class UpdateInventoryApi {
      * @param warehouseId Identifier for the warehouse for which to update inventory. (required)
      * @return ApiResponse&lt;SubmitInventoryUpdateResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<SubmitInventoryUpdateResponse> submitInventoryUpdateWithHttpInfo(SubmitInventoryUpdateRequest body, String warehouseId) throws ApiException {
+    public ApiResponse<SubmitInventoryUpdateResponse> submitInventoryUpdateWithHttpInfo(SubmitInventoryUpdateRequest body, String warehouseId) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = submitInventoryUpdateValidateBeforeCall(body, warehouseId, null, null);
         Type localVarReturnType = new TypeToken<SubmitInventoryUpdateResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -171,8 +171,9 @@ public class UpdateInventoryApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call submitInventoryUpdateAsync(SubmitInventoryUpdateRequest body, String warehouseId, final ApiCallback<SubmitInventoryUpdateResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call submitInventoryUpdateAsync(SubmitInventoryUpdateRequest body, String warehouseId, final ApiCallback<SubmitInventoryUpdateResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -200,19 +201,12 @@ public class UpdateInventoryApi {
     }
 
     public static class Builder {
-        private AWSAuthenticationCredentials awsAuthenticationCredentials;
         private LWAAuthorizationCredentials lwaAuthorizationCredentials;
         private String endpoint;
         private LWAAccessTokenCache lwaAccessTokenCache;
         private Boolean disableAccessTokenCache = false;
-        private AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider;
         private RateLimitConfiguration rateLimitConfiguration;
-        private AWSAuthenticationCustomCredentialsProvider awsAuthenticationCustomCredentialsProvider;
 
-        public Builder awsAuthenticationCredentials(AWSAuthenticationCredentials awsAuthenticationCredentials) {
-            this.awsAuthenticationCredentials = awsAuthenticationCredentials;
-            return this;
-        }
 
         public Builder lwaAuthorizationCredentials(LWAAuthorizationCredentials lwaAuthorizationCredentials) {
             this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
@@ -233,12 +227,7 @@ public class UpdateInventoryApi {
             this.disableAccessTokenCache = true;
             return this;
         }
-        
-        public Builder awsAuthenticationCredentialsProvider(AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider) {
-            this.awsAuthenticationCredentialsProvider = awsAuthenticationCredentialsProvider;
-            return this;
-        }
-        
+
         public Builder rateLimitConfigurationOnRequests(RateLimitConfiguration rateLimitConfiguration){
             this.rateLimitConfiguration = rateLimitConfiguration;
             return this;
@@ -249,34 +238,13 @@ public class UpdateInventoryApi {
             return this;
         }
 
-        public Builder awsAuthenticationCustomCredentialsProvider(AWSAuthenticationCustomCredentialsProvider awsAuthenticationCustomCredentialsProvider) {
-            this.awsAuthenticationCustomCredentialsProvider = awsAuthenticationCustomCredentialsProvider;
-            return this;
-        }
-        
-
         public UpdateInventoryApi build() {
-            if (awsAuthenticationCredentials == null && awsAuthenticationCustomCredentialsProvider == null) {
-                throw new RuntimeException("Neither AWSAuthenticationCredentials or AWSAuthenticationCustomCredentialsProvider are set");
-            }
-
             if (lwaAuthorizationCredentials == null) {
                 throw new RuntimeException("LWAAuthorizationCredentials not set");
             }
 
             if (StringUtil.isEmpty(endpoint)) {
                 throw new RuntimeException("Endpoint not set");
-            }
-
-            AWSSigV4Signer awsSigV4Signer;
-            if (awsAuthenticationCustomCredentialsProvider != null ) {
-                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCustomCredentialsProvider);
-            }
-            else if (awsAuthenticationCredentialsProvider == null) {
-                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCredentials);
-            }
-            else {
-                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCredentials,awsAuthenticationCredentialsProvider);
             }
             
             LWAAuthorizationSigner lwaAuthorizationSigner = null;            
@@ -291,7 +259,6 @@ public class UpdateInventoryApi {
             }
 
             return new UpdateInventoryApi(new ApiClient()
-                .setAWSSigV4Signer(awsSigV4Signer)
                 .setLWAAuthorizationSigner(lwaAuthorizationSigner)
                 .setBasePath(endpoint)
                 .setRateLimiter(rateLimitConfiguration));

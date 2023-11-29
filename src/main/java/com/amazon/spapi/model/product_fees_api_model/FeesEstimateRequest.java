@@ -27,9 +27,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * FeesEstimateRequest
+ * A product, marketplace, and proposed price used to request estimated fees.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:44.463-04:00")
+@ApiModel(description = "A product, marketplace, and proposed price used to request estimated fees.")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:04.348+08:00")
 public class FeesEstimateRequest {
   @SerializedName("MarketplaceId")
   private String marketplaceId = null;

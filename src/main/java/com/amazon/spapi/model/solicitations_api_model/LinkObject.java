@@ -28,7 +28,7 @@ import java.io.IOException;
  * A Link object.
  */
 @ApiModel(description = "A Link object.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:45.992-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:23.541+08:00")
 public class LinkObject {
   @SerializedName("href")
   private String href = null;

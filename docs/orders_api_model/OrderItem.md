@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **ASIN** | **String** | The Amazon Standard Identification Number (ASIN) of the item. | 
 **sellerSKU** | **String** | The seller stock keeping unit (SKU) of the item. |  [optional]
 **orderItemId** | **String** | An Amazon-defined order item identifier. | 
+**associatedItems** | [**List&lt;AssociatedItem&gt;**](AssociatedItem.md) | A list of associated items that a customer has purchased with a product. For example, a tire installation service purchased with tires. |  [optional]
 **title** | **String** | The name of the item. |  [optional]
 **quantityOrdered** | **Integer** | The number of items in the order.  | 
 **quantityShipped** | **Integer** | The number of items shipped. |  [optional]
@@ -32,14 +33,15 @@ Name | Type | Description | Notes
 **priceDesignation** | **String** | Indicates that the selling price is a special price that is available only for Amazon Business orders. For more information about the Amazon Business Seller Program, see the [Amazon Business website](https://www.amazon.com/b2b/info/amazon-business).   Possible values: BusinessPrice - A special price that is available only for Amazon Business orders. |  [optional]
 **taxCollection** | [**TaxCollection**](TaxCollection.md) | Information about withheld taxes. |  [optional]
 **serialNumberRequired** | **Boolean** | When true, the product type for this item has a serial number.  Returned only for Amazon Easy Ship orders. |  [optional]
-**isTransparency** | **Boolean** | When true, transparency codes are required. |  [optional]
+**isTransparency** | **Boolean** | When true, the ASIN is enrolled in Transparency and the Transparency serial number that needs to be submitted can be determined by the following:  **1D or 2D Barcode:** This has a **T** logo. Submit either the 29-character alpha-numeric identifier beginning with **AZ** or **ZA**, or the 38-character Serialized Global Trade Item Number (SGTIN). **2D Barcode SN:** Submit the 7- to 20-character serial number barcode, which likely has the prefix **SN**. The serial number will be applied to the same side of the packaging as the GTIN (UPC/EAN/ISBN) barcode. **QR code SN:** Submit the URL that the QR code generates. |  [optional]
 **iossNumber** | **String** | The IOSS number for the marketplace. Sellers shipping to the European Union (EU) from outside of the EU must provide this IOSS number to their carrier when Amazon has collected the VAT on the sale. |  [optional]
 **storeChainStoreId** | **String** | The store chain store identifier. Linked to a specific store in a store chain. |  [optional]
 **deemedResellerCategory** | [**DeemedResellerCategoryEnum**](#DeemedResellerCategoryEnum) | The category of deemed reseller. This applies to selling partners that are not based in the EU and is used to help them meet the VAT Deemed Reseller tax laws in the EU and UK. |  [optional]
 **buyerInfo** | [**ItemBuyerInfo**](ItemBuyerInfo.md) |  |  [optional]
 **buyerRequestedCancel** | [**BuyerRequestedCancel**](BuyerRequestedCancel.md) | Information about whether or not a buyer requested cancellation. |  [optional]
-**itemApprovalContext** | [**ItemApprovalContext**](ItemApprovalContext.md) | Item approval context containing the information regarding the status and progress of the item approval. |  [optional]
 **serialNumbers** | **List&lt;String&gt;** | A list of serial numbers for electronic products that are shipped to customers. Returned for FBA orders only. |  [optional]
+**substitutionPreferences** | [**SubstitutionPreferences**](SubstitutionPreferences.md) | Substitution preferences for the order item. This is an optional field and will only be present if seller supports substitutions like in case of some grocery sellers. |  [optional]
+**measurement** | [**Measurement**](Measurement.md) | Measurement information for the order item. |  [optional]
 
 
 <a name="DeemedResellerCategoryEnum"></a>

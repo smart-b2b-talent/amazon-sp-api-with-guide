@@ -15,6 +15,7 @@ package com.amazon.spapi.model.listings_items_api_model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.amazon.spapi.model.listings_items_api_model.ERRORUNKNOWN;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,12 +24,15 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * The request body schema for the putListingsItem operation.
  */
 @ApiModel(description = "The request body schema for the putListingsItem operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:28:03.156-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:55.494+08:00")
 public class ListingsItemPutRequest {
   @SerializedName("productType")
   private String productType = null;
@@ -86,7 +90,7 @@ public class ListingsItemPutRequest {
   private RequirementsEnum requirements = null;
 
   @SerializedName("attributes")
-  private Object attributes = null;
+  private Map<String, ERRORUNKNOWN> attributes = new HashMap<String, ERRORUNKNOWN>();
 
   public ListingsItemPutRequest productType(String productType) {
     this.productType = productType;
@@ -124,8 +128,13 @@ public class ListingsItemPutRequest {
     this.requirements = requirements;
   }
 
-  public ListingsItemPutRequest attributes(Object attributes) {
+  public ListingsItemPutRequest attributes(Map<String, ERRORUNKNOWN> attributes) {
     this.attributes = attributes;
+    return this;
+  }
+
+  public ListingsItemPutRequest putAttributesItem(String key, ERRORUNKNOWN attributesItem) {
+    this.attributes.put(key, attributesItem);
     return this;
   }
 
@@ -134,17 +143,17 @@ public class ListingsItemPutRequest {
    * @return attributes
   **/
   @ApiModelProperty(required = true, value = "JSON object containing structured listings item attribute data keyed by attribute name.")
-  public Object getAttributes() {
+  public Map<String, ERRORUNKNOWN> getAttributes() {
     return attributes;
   }
 
-  public void setAttributes(Object attributes) {
+  public void setAttributes(Map<String, ERRORUNKNOWN> attributes) {
     this.attributes = attributes;
   }
 
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
@@ -179,7 +188,7 @@ public class ListingsItemPutRequest {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
+  private String toIndentedString(java.lang.Object o) {
     if (o == null) {
       return "null";
     }
@@ -187,3 +196,4 @@ public class ListingsItemPutRequest {
   }
 
 }
+

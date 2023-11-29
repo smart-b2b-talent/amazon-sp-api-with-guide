@@ -29,7 +29,7 @@ import java.io.IOException;
  * Tax registration details of the entity.
  */
 @ApiModel(description = "Tax registration details of the entity.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:42.481-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:32.431+08:00")
 public class TaxRegistrationDetail {
   /**
    * Tax registration type for the entity.
@@ -114,10 +114,10 @@ public class TaxRegistrationDetail {
   }
 
    /**
-   * Tax registration number for the party. For example, VAT ID.
+   * Tax registration number for the entity. For example, VAT ID, Consumption Tax ID.
    * @return taxRegistrationNumber
   **/
-  @ApiModelProperty(required = true, value = "Tax registration number for the party. For example, VAT ID.")
+  @ApiModelProperty(required = true, value = "Tax registration number for the entity. For example, VAT ID, Consumption Tax ID.")
   public String getTaxRegistrationNumber() {
     return taxRegistrationNumber;
   }

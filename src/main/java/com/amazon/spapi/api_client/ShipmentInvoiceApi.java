@@ -39,15 +39,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCredentials;
-import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCredentialsProvider;
-import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCustomCredentialsProvider;
-import com.amazon.SellingPartnerAPIAA.AWSSigV4Signer;
 import com.amazon.SellingPartnerAPIAA.LWAAccessTokenCache;
 import com.amazon.SellingPartnerAPIAA.LWAAccessTokenCacheImpl;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationCredentials;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationSigner;
 import com.amazon.SellingPartnerAPIAA.RateLimitConfiguration;
+import com.amazon.SellingPartnerAPIAA.LWAException;
 
 public class ShipmentInvoiceApi {
     private ApiClient apiClient;
@@ -75,8 +72,9 @@ public class ShipmentInvoiceApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getInvoiceStatusCall(String shipmentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getInvoiceStatusCall(String shipmentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -119,7 +117,7 @@ public class ShipmentInvoiceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getInvoiceStatusValidateBeforeCall(String shipmentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getInvoiceStatusValidateBeforeCall(String shipmentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'shipmentId' is set
         if (shipmentId == null) {
@@ -138,8 +136,9 @@ public class ShipmentInvoiceApi {
      * @param shipmentId The shipment identifier for the shipment. (required)
      * @return GetInvoiceStatusResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public GetInvoiceStatusResponse getInvoiceStatus(String shipmentId) throws ApiException {
+    public GetInvoiceStatusResponse getInvoiceStatus(String shipmentId) throws ApiException,LWAException {
         ApiResponse<GetInvoiceStatusResponse> resp = getInvoiceStatusWithHttpInfo(shipmentId);
         return resp.getData();
     }
@@ -150,8 +149,9 @@ public class ShipmentInvoiceApi {
      * @param shipmentId The shipment identifier for the shipment. (required)
      * @return ApiResponse&lt;GetInvoiceStatusResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<GetInvoiceStatusResponse> getInvoiceStatusWithHttpInfo(String shipmentId) throws ApiException {
+    public ApiResponse<GetInvoiceStatusResponse> getInvoiceStatusWithHttpInfo(String shipmentId) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = getInvoiceStatusValidateBeforeCall(shipmentId, null, null);
         Type localVarReturnType = new TypeToken<GetInvoiceStatusResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -164,8 +164,9 @@ public class ShipmentInvoiceApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getInvoiceStatusAsync(String shipmentId, final ApiCallback<GetInvoiceStatusResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getInvoiceStatusAsync(String shipmentId, final ApiCallback<GetInvoiceStatusResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -198,8 +199,9 @@ public class ShipmentInvoiceApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getShipmentDetailsCall(String shipmentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getShipmentDetailsCall(String shipmentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -242,7 +244,7 @@ public class ShipmentInvoiceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getShipmentDetailsValidateBeforeCall(String shipmentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getShipmentDetailsValidateBeforeCall(String shipmentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'shipmentId' is set
         if (shipmentId == null) {
@@ -261,8 +263,9 @@ public class ShipmentInvoiceApi {
      * @param shipmentId The identifier for the shipment. Get this value from the FBAOutboundShipmentStatus notification. For information about subscribing to notifications, see the [Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
      * @return GetShipmentDetailsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public GetShipmentDetailsResponse getShipmentDetails(String shipmentId) throws ApiException {
+    public GetShipmentDetailsResponse getShipmentDetails(String shipmentId) throws ApiException,LWAException {
         ApiResponse<GetShipmentDetailsResponse> resp = getShipmentDetailsWithHttpInfo(shipmentId);
         return resp.getData();
     }
@@ -273,8 +276,9 @@ public class ShipmentInvoiceApi {
      * @param shipmentId The identifier for the shipment. Get this value from the FBAOutboundShipmentStatus notification. For information about subscribing to notifications, see the [Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
      * @return ApiResponse&lt;GetShipmentDetailsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<GetShipmentDetailsResponse> getShipmentDetailsWithHttpInfo(String shipmentId) throws ApiException {
+    public ApiResponse<GetShipmentDetailsResponse> getShipmentDetailsWithHttpInfo(String shipmentId) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = getShipmentDetailsValidateBeforeCall(shipmentId, null, null);
         Type localVarReturnType = new TypeToken<GetShipmentDetailsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -287,8 +291,9 @@ public class ShipmentInvoiceApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getShipmentDetailsAsync(String shipmentId, final ApiCallback<GetShipmentDetailsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getShipmentDetailsAsync(String shipmentId, final ApiCallback<GetShipmentDetailsResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -322,8 +327,9 @@ public class ShipmentInvoiceApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call submitInvoiceCall(String shipmentId, SubmitInvoiceRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call submitInvoiceCall(String shipmentId, SubmitInvoiceRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -366,7 +372,7 @@ public class ShipmentInvoiceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call submitInvoiceValidateBeforeCall(String shipmentId, SubmitInvoiceRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call submitInvoiceValidateBeforeCall(String shipmentId, SubmitInvoiceRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'shipmentId' is set
         if (shipmentId == null) {
@@ -391,8 +397,9 @@ public class ShipmentInvoiceApi {
      * @param body  (required)
      * @return SubmitInvoiceResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public SubmitInvoiceResponse submitInvoice(String shipmentId, SubmitInvoiceRequest body) throws ApiException {
+    public SubmitInvoiceResponse submitInvoice(String shipmentId, SubmitInvoiceRequest body) throws ApiException,LWAException {
         ApiResponse<SubmitInvoiceResponse> resp = submitInvoiceWithHttpInfo(shipmentId, body);
         return resp.getData();
     }
@@ -404,8 +411,9 @@ public class ShipmentInvoiceApi {
      * @param body  (required)
      * @return ApiResponse&lt;SubmitInvoiceResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<SubmitInvoiceResponse> submitInvoiceWithHttpInfo(String shipmentId, SubmitInvoiceRequest body) throws ApiException {
+    public ApiResponse<SubmitInvoiceResponse> submitInvoiceWithHttpInfo(String shipmentId, SubmitInvoiceRequest body) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = submitInvoiceValidateBeforeCall(shipmentId, body, null, null);
         Type localVarReturnType = new TypeToken<SubmitInvoiceResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -419,8 +427,9 @@ public class ShipmentInvoiceApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call submitInvoiceAsync(String shipmentId, SubmitInvoiceRequest body, final ApiCallback<SubmitInvoiceResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call submitInvoiceAsync(String shipmentId, SubmitInvoiceRequest body, final ApiCallback<SubmitInvoiceResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -448,19 +457,12 @@ public class ShipmentInvoiceApi {
     }
 
     public static class Builder {
-        private AWSAuthenticationCredentials awsAuthenticationCredentials;
         private LWAAuthorizationCredentials lwaAuthorizationCredentials;
         private String endpoint;
         private LWAAccessTokenCache lwaAccessTokenCache;
         private Boolean disableAccessTokenCache = false;
-        private AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider;
         private RateLimitConfiguration rateLimitConfiguration;
-        private AWSAuthenticationCustomCredentialsProvider awsAuthenticationCustomCredentialsProvider;
 
-        public Builder awsAuthenticationCredentials(AWSAuthenticationCredentials awsAuthenticationCredentials) {
-            this.awsAuthenticationCredentials = awsAuthenticationCredentials;
-            return this;
-        }
 
         public Builder lwaAuthorizationCredentials(LWAAuthorizationCredentials lwaAuthorizationCredentials) {
             this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
@@ -481,12 +483,7 @@ public class ShipmentInvoiceApi {
             this.disableAccessTokenCache = true;
             return this;
         }
-        
-        public Builder awsAuthenticationCredentialsProvider(AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider) {
-            this.awsAuthenticationCredentialsProvider = awsAuthenticationCredentialsProvider;
-            return this;
-        }
-        
+
         public Builder rateLimitConfigurationOnRequests(RateLimitConfiguration rateLimitConfiguration){
             this.rateLimitConfiguration = rateLimitConfiguration;
             return this;
@@ -497,34 +494,13 @@ public class ShipmentInvoiceApi {
             return this;
         }
 
-        public Builder awsAuthenticationCustomCredentialsProvider(AWSAuthenticationCustomCredentialsProvider awsAuthenticationCustomCredentialsProvider) {
-            this.awsAuthenticationCustomCredentialsProvider = awsAuthenticationCustomCredentialsProvider;
-            return this;
-        }
-        
-
         public ShipmentInvoiceApi build() {
-            if (awsAuthenticationCredentials == null && awsAuthenticationCustomCredentialsProvider == null) {
-                throw new RuntimeException("Neither AWSAuthenticationCredentials or AWSAuthenticationCustomCredentialsProvider are set");
-            }
-
             if (lwaAuthorizationCredentials == null) {
                 throw new RuntimeException("LWAAuthorizationCredentials not set");
             }
 
             if (StringUtil.isEmpty(endpoint)) {
                 throw new RuntimeException("Endpoint not set");
-            }
-
-            AWSSigV4Signer awsSigV4Signer;
-            if (awsAuthenticationCustomCredentialsProvider != null ) {
-                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCustomCredentialsProvider);
-            }
-            else if (awsAuthenticationCredentialsProvider == null) {
-                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCredentials);
-            }
-            else {
-                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCredentials,awsAuthenticationCredentialsProvider);
             }
             
             LWAAuthorizationSigner lwaAuthorizationSigner = null;            
@@ -539,7 +515,6 @@ public class ShipmentInvoiceApi {
             }
 
             return new ShipmentInvoiceApi(new ApiClient()
-                .setAWSSigV4Signer(awsSigV4Signer)
                 .setLWAAuthorizationSigner(lwaAuthorizationSigner)
                 .setBasePath(endpoint)
                 .setRateLimiter(rateLimitConfiguration));

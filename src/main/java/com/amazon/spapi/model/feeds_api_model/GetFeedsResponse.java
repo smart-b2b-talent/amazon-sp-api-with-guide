@@ -29,7 +29,7 @@ import java.io.IOException;
  * Response schema.
  */
 @ApiModel(description = "Response schema.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:45.016-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:47.973+08:00")
 public class GetFeedsResponse {
   @SerializedName("feeds")
   private FeedList feeds = null;

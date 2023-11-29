@@ -44,15 +44,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCredentials;
-import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCredentialsProvider;
-import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCustomCredentialsProvider;
-import com.amazon.SellingPartnerAPIAA.AWSSigV4Signer;
 import com.amazon.SellingPartnerAPIAA.LWAAccessTokenCache;
 import com.amazon.SellingPartnerAPIAA.LWAAccessTokenCacheImpl;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationCredentials;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationSigner;
 import com.amazon.SellingPartnerAPIAA.RateLimitConfiguration;
+import com.amazon.SellingPartnerAPIAA.LWAException;
 
 public class EasyShipApi {
     private ApiClient apiClient;
@@ -80,8 +77,9 @@ public class EasyShipApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createScheduledPackageCall(CreateScheduledPackageRequest createScheduledPackageRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createScheduledPackageCall(CreateScheduledPackageRequest createScheduledPackageRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = createScheduledPackageRequest;
 
         // create path and map variables
@@ -123,7 +121,7 @@ public class EasyShipApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createScheduledPackageValidateBeforeCall(CreateScheduledPackageRequest createScheduledPackageRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createScheduledPackageValidateBeforeCall(CreateScheduledPackageRequest createScheduledPackageRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'createScheduledPackageRequest' is set
         if (createScheduledPackageRequest == null) {
@@ -142,8 +140,9 @@ public class EasyShipApi {
      * @param createScheduledPackageRequest  (required)
      * @return ModelPackage
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ModelPackage createScheduledPackage(CreateScheduledPackageRequest createScheduledPackageRequest) throws ApiException {
+    public ModelPackage createScheduledPackage(CreateScheduledPackageRequest createScheduledPackageRequest) throws ApiException,LWAException {
         ApiResponse<ModelPackage> resp = createScheduledPackageWithHttpInfo(createScheduledPackageRequest);
         return resp.getData();
     }
@@ -154,8 +153,9 @@ public class EasyShipApi {
      * @param createScheduledPackageRequest  (required)
      * @return ApiResponse&lt;ModelPackage&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<ModelPackage> createScheduledPackageWithHttpInfo(CreateScheduledPackageRequest createScheduledPackageRequest) throws ApiException {
+    public ApiResponse<ModelPackage> createScheduledPackageWithHttpInfo(CreateScheduledPackageRequest createScheduledPackageRequest) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = createScheduledPackageValidateBeforeCall(createScheduledPackageRequest, null, null);
         Type localVarReturnType = new TypeToken<ModelPackage>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -168,8 +168,9 @@ public class EasyShipApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createScheduledPackageAsync(CreateScheduledPackageRequest createScheduledPackageRequest, final ApiCallback<ModelPackage> callback) throws ApiException {
+    public com.squareup.okhttp.Call createScheduledPackageAsync(CreateScheduledPackageRequest createScheduledPackageRequest, final ApiCallback<ModelPackage> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -202,8 +203,9 @@ public class EasyShipApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createScheduledPackageBulkCall(CreateScheduledPackagesRequest createScheduledPackagesRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createScheduledPackageBulkCall(CreateScheduledPackagesRequest createScheduledPackagesRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = createScheduledPackagesRequest;
 
         // create path and map variables
@@ -245,7 +247,7 @@ public class EasyShipApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createScheduledPackageBulkValidateBeforeCall(CreateScheduledPackagesRequest createScheduledPackagesRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createScheduledPackageBulkValidateBeforeCall(CreateScheduledPackagesRequest createScheduledPackagesRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'createScheduledPackagesRequest' is set
         if (createScheduledPackagesRequest == null) {
@@ -264,8 +266,9 @@ public class EasyShipApi {
      * @param createScheduledPackagesRequest  (required)
      * @return CreateScheduledPackagesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public CreateScheduledPackagesResponse createScheduledPackageBulk(CreateScheduledPackagesRequest createScheduledPackagesRequest) throws ApiException {
+    public CreateScheduledPackagesResponse createScheduledPackageBulk(CreateScheduledPackagesRequest createScheduledPackagesRequest) throws ApiException,LWAException {
         ApiResponse<CreateScheduledPackagesResponse> resp = createScheduledPackageBulkWithHttpInfo(createScheduledPackagesRequest);
         return resp.getData();
     }
@@ -276,8 +279,9 @@ public class EasyShipApi {
      * @param createScheduledPackagesRequest  (required)
      * @return ApiResponse&lt;CreateScheduledPackagesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<CreateScheduledPackagesResponse> createScheduledPackageBulkWithHttpInfo(CreateScheduledPackagesRequest createScheduledPackagesRequest) throws ApiException {
+    public ApiResponse<CreateScheduledPackagesResponse> createScheduledPackageBulkWithHttpInfo(CreateScheduledPackagesRequest createScheduledPackagesRequest) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = createScheduledPackageBulkValidateBeforeCall(createScheduledPackagesRequest, null, null);
         Type localVarReturnType = new TypeToken<CreateScheduledPackagesResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -290,8 +294,9 @@ public class EasyShipApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createScheduledPackageBulkAsync(CreateScheduledPackagesRequest createScheduledPackagesRequest, final ApiCallback<CreateScheduledPackagesResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createScheduledPackageBulkAsync(CreateScheduledPackagesRequest createScheduledPackagesRequest, final ApiCallback<CreateScheduledPackagesResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -325,8 +330,9 @@ public class EasyShipApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getScheduledPackageCall(String amazonOrderId, String marketplaceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getScheduledPackageCall(String amazonOrderId, String marketplaceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -372,7 +378,7 @@ public class EasyShipApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getScheduledPackageValidateBeforeCall(String amazonOrderId, String marketplaceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getScheduledPackageValidateBeforeCall(String amazonOrderId, String marketplaceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'amazonOrderId' is set
         if (amazonOrderId == null) {
@@ -397,8 +403,9 @@ public class EasyShipApi {
      * @param marketplaceId An identifier for the marketplace in which the seller is selling. (required)
      * @return ModelPackage
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ModelPackage getScheduledPackage(String amazonOrderId, String marketplaceId) throws ApiException {
+    public ModelPackage getScheduledPackage(String amazonOrderId, String marketplaceId) throws ApiException,LWAException {
         ApiResponse<ModelPackage> resp = getScheduledPackageWithHttpInfo(amazonOrderId, marketplaceId);
         return resp.getData();
     }
@@ -410,8 +417,9 @@ public class EasyShipApi {
      * @param marketplaceId An identifier for the marketplace in which the seller is selling. (required)
      * @return ApiResponse&lt;ModelPackage&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<ModelPackage> getScheduledPackageWithHttpInfo(String amazonOrderId, String marketplaceId) throws ApiException {
+    public ApiResponse<ModelPackage> getScheduledPackageWithHttpInfo(String amazonOrderId, String marketplaceId) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = getScheduledPackageValidateBeforeCall(amazonOrderId, marketplaceId, null, null);
         Type localVarReturnType = new TypeToken<ModelPackage>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -425,8 +433,9 @@ public class EasyShipApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getScheduledPackageAsync(String amazonOrderId, String marketplaceId, final ApiCallback<ModelPackage> callback) throws ApiException {
+    public com.squareup.okhttp.Call getScheduledPackageAsync(String amazonOrderId, String marketplaceId, final ApiCallback<ModelPackage> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -459,8 +468,9 @@ public class EasyShipApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call listHandoverSlotsCall(ListHandoverSlotsRequest listHandoverSlotsRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listHandoverSlotsCall(ListHandoverSlotsRequest listHandoverSlotsRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = listHandoverSlotsRequest;
 
         // create path and map variables
@@ -502,7 +512,7 @@ public class EasyShipApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listHandoverSlotsValidateBeforeCall(ListHandoverSlotsRequest listHandoverSlotsRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listHandoverSlotsValidateBeforeCall(ListHandoverSlotsRequest listHandoverSlotsRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
 
         com.squareup.okhttp.Call call = listHandoverSlotsCall(listHandoverSlotsRequest, progressListener, progressRequestListener);
@@ -516,8 +526,9 @@ public class EasyShipApi {
      * @param listHandoverSlotsRequest  (optional)
      * @return ListHandoverSlotsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ListHandoverSlotsResponse listHandoverSlots(ListHandoverSlotsRequest listHandoverSlotsRequest) throws ApiException {
+    public ListHandoverSlotsResponse listHandoverSlots(ListHandoverSlotsRequest listHandoverSlotsRequest) throws ApiException,LWAException {
         ApiResponse<ListHandoverSlotsResponse> resp = listHandoverSlotsWithHttpInfo(listHandoverSlotsRequest);
         return resp.getData();
     }
@@ -528,8 +539,9 @@ public class EasyShipApi {
      * @param listHandoverSlotsRequest  (optional)
      * @return ApiResponse&lt;ListHandoverSlotsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<ListHandoverSlotsResponse> listHandoverSlotsWithHttpInfo(ListHandoverSlotsRequest listHandoverSlotsRequest) throws ApiException {
+    public ApiResponse<ListHandoverSlotsResponse> listHandoverSlotsWithHttpInfo(ListHandoverSlotsRequest listHandoverSlotsRequest) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = listHandoverSlotsValidateBeforeCall(listHandoverSlotsRequest, null, null);
         Type localVarReturnType = new TypeToken<ListHandoverSlotsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -542,8 +554,9 @@ public class EasyShipApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call listHandoverSlotsAsync(ListHandoverSlotsRequest listHandoverSlotsRequest, final ApiCallback<ListHandoverSlotsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listHandoverSlotsAsync(ListHandoverSlotsRequest listHandoverSlotsRequest, final ApiCallback<ListHandoverSlotsResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -576,8 +589,9 @@ public class EasyShipApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call updateScheduledPackagesCall(UpdateScheduledPackagesRequest updateScheduledPackagesRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateScheduledPackagesCall(UpdateScheduledPackagesRequest updateScheduledPackagesRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = updateScheduledPackagesRequest;
 
         // create path and map variables
@@ -619,7 +633,7 @@ public class EasyShipApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateScheduledPackagesValidateBeforeCall(UpdateScheduledPackagesRequest updateScheduledPackagesRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateScheduledPackagesValidateBeforeCall(UpdateScheduledPackagesRequest updateScheduledPackagesRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
 
         com.squareup.okhttp.Call call = updateScheduledPackagesCall(updateScheduledPackagesRequest, progressListener, progressRequestListener);
@@ -633,8 +647,9 @@ public class EasyShipApi {
      * @param updateScheduledPackagesRequest  (optional)
      * @return Packages
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public Packages updateScheduledPackages(UpdateScheduledPackagesRequest updateScheduledPackagesRequest) throws ApiException {
+    public Packages updateScheduledPackages(UpdateScheduledPackagesRequest updateScheduledPackagesRequest) throws ApiException,LWAException {
         ApiResponse<Packages> resp = updateScheduledPackagesWithHttpInfo(updateScheduledPackagesRequest);
         return resp.getData();
     }
@@ -645,8 +660,9 @@ public class EasyShipApi {
      * @param updateScheduledPackagesRequest  (optional)
      * @return ApiResponse&lt;Packages&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<Packages> updateScheduledPackagesWithHttpInfo(UpdateScheduledPackagesRequest updateScheduledPackagesRequest) throws ApiException {
+    public ApiResponse<Packages> updateScheduledPackagesWithHttpInfo(UpdateScheduledPackagesRequest updateScheduledPackagesRequest) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = updateScheduledPackagesValidateBeforeCall(updateScheduledPackagesRequest, null, null);
         Type localVarReturnType = new TypeToken<Packages>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -659,8 +675,9 @@ public class EasyShipApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call updateScheduledPackagesAsync(UpdateScheduledPackagesRequest updateScheduledPackagesRequest, final ApiCallback<Packages> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateScheduledPackagesAsync(UpdateScheduledPackagesRequest updateScheduledPackagesRequest, final ApiCallback<Packages> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -688,19 +705,12 @@ public class EasyShipApi {
     }
 
     public static class Builder {
-        private AWSAuthenticationCredentials awsAuthenticationCredentials;
         private LWAAuthorizationCredentials lwaAuthorizationCredentials;
         private String endpoint;
         private LWAAccessTokenCache lwaAccessTokenCache;
         private Boolean disableAccessTokenCache = false;
-        private AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider;
         private RateLimitConfiguration rateLimitConfiguration;
-        private AWSAuthenticationCustomCredentialsProvider awsAuthenticationCustomCredentialsProvider;
 
-        public Builder awsAuthenticationCredentials(AWSAuthenticationCredentials awsAuthenticationCredentials) {
-            this.awsAuthenticationCredentials = awsAuthenticationCredentials;
-            return this;
-        }
 
         public Builder lwaAuthorizationCredentials(LWAAuthorizationCredentials lwaAuthorizationCredentials) {
             this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
@@ -721,12 +731,7 @@ public class EasyShipApi {
             this.disableAccessTokenCache = true;
             return this;
         }
-        
-        public Builder awsAuthenticationCredentialsProvider(AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider) {
-            this.awsAuthenticationCredentialsProvider = awsAuthenticationCredentialsProvider;
-            return this;
-        }
-        
+
         public Builder rateLimitConfigurationOnRequests(RateLimitConfiguration rateLimitConfiguration){
             this.rateLimitConfiguration = rateLimitConfiguration;
             return this;
@@ -737,34 +742,13 @@ public class EasyShipApi {
             return this;
         }
 
-        public Builder awsAuthenticationCustomCredentialsProvider(AWSAuthenticationCustomCredentialsProvider awsAuthenticationCustomCredentialsProvider) {
-            this.awsAuthenticationCustomCredentialsProvider = awsAuthenticationCustomCredentialsProvider;
-            return this;
-        }
-        
-
         public EasyShipApi build() {
-            if (awsAuthenticationCredentials == null && awsAuthenticationCustomCredentialsProvider == null) {
-                throw new RuntimeException("Neither AWSAuthenticationCredentials or AWSAuthenticationCustomCredentialsProvider are set");
-            }
-
             if (lwaAuthorizationCredentials == null) {
                 throw new RuntimeException("LWAAuthorizationCredentials not set");
             }
 
             if (StringUtil.isEmpty(endpoint)) {
                 throw new RuntimeException("Endpoint not set");
-            }
-
-            AWSSigV4Signer awsSigV4Signer;
-            if (awsAuthenticationCustomCredentialsProvider != null ) {
-                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCustomCredentialsProvider);
-            }
-            else if (awsAuthenticationCredentialsProvider == null) {
-                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCredentials);
-            }
-            else {
-                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCredentials,awsAuthenticationCredentialsProvider);
             }
             
             LWAAuthorizationSigner lwaAuthorizationSigner = null;            
@@ -779,7 +763,6 @@ public class EasyShipApi {
             }
 
             return new EasyShipApi(new ApiClient()
-                .setAWSSigV4Signer(awsSigV4Signer)
                 .setLWAAuthorizationSigner(lwaAuthorizationSigner)
                 .setBasePath(endpoint)
                 .setRateLimiter(rateLimitConfiguration));

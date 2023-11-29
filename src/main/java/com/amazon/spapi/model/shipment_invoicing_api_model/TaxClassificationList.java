@@ -24,7 +24,7 @@ import java.util.List;
  * The list of tax classifications.
  */
 @ApiModel(description = "The list of tax classifications.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:55.432-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:19.307+08:00")
 public class TaxClassificationList extends ArrayList<TaxClassification> {
 
   @Override

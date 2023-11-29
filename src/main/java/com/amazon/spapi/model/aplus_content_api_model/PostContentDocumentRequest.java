@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * PostContentDocumentRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:54.086-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:30.497+08:00")
 public class PostContentDocumentRequest {
   @SerializedName("contentDocument")
   private ContentDocument contentDocument = null;

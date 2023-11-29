@@ -1,6 +1,6 @@
 /*
  * Selling Partner API for Orders
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
  *
  * OpenAPI spec version: v0
  * 
@@ -24,7 +24,7 @@ import java.util.List;
  * A list of payment execution detail items.
  */
 @ApiModel(description = "A list of payment execution detail items.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:51.478-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:02.473+08:00")
 public class PaymentExecutionDetailItemList extends ArrayList<PaymentExecutionDetailItem> {
 
   @Override

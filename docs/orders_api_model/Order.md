@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **paymentMethod** | [**PaymentMethodEnum**](#PaymentMethodEnum) | The payment method for the order. This property is limited to Cash On Delivery (COD) and Convenience Store (CVS) payment methods. Unless you need the specific COD payment information provided by the PaymentExecutionDetailItem object, we recommend using the PaymentMethodDetails property to get payment method information. |  [optional]
 **paymentMethodDetails** | [**PaymentMethodDetailItemList**](PaymentMethodDetailItemList.md) | A list of payment methods for the order. |  [optional]
 **marketplaceId** | **String** | The identifier for the marketplace where the order was placed. |  [optional]
-**shipmentServiceLevelCategory** | **String** | The shipment service level category of the order.  Possible values: Expedited, FreeEconomy, NextDay, SameDay, SecondDay, Scheduled, Standard. |  [optional]
+**shipmentServiceLevelCategory** | **String** | The shipment service level category of the order.  Possible values: Expedited, FreeEconomy, NextDay, Priority, SameDay, SecondDay, Scheduled, Standard. |  [optional]
 **easyShipShipmentStatus** | [**EasyShipShipmentStatus**](EasyShipShipmentStatus.md) | The status of the Amazon Easy Ship order. This property is included only for Amazon Easy Ship orders. |  [optional]
 **cbaDisplayableShippingLabel** | **String** | Custom ship label for Checkout by Amazon (CBA). |  [optional]
 **orderType** | [**OrderTypeEnum**](#OrderTypeEnum) | The type of the order. |  [optional]
@@ -51,8 +51,6 @@ Name | Type | Description | Notes
 **automatedShippingSettings** | [**AutomatedShippingSettings**](AutomatedShippingSettings.md) | Contains information regarding the Shipping Settings Automaton program, such as whether the order&#39;s shipping settings were generated automatically, and what those settings are. |  [optional]
 **hasRegulatedItems** | **Boolean** | Whether the order contains regulated items which may require additional approval steps before being fulfilled. |  [optional]
 **electronicInvoiceStatus** | [**ElectronicInvoiceStatus**](ElectronicInvoiceStatus.md) | The status of the electronic invoice. |  [optional]
-**itemApprovalTypes** | [**List&lt;ItemApprovalType&gt;**](ItemApprovalType.md) | Set of approval types which applies to at least one order item in the order. |  [optional]
-**itemApprovalStatus** | [**List&lt;ItemApprovalStatus&gt;**](ItemApprovalStatus.md) | Subset of all ItemApprovalStatus that are set in at least one of the order items subject to approvals. |  [optional]
 
 
 <a name="OrderStatusEnum"></a>

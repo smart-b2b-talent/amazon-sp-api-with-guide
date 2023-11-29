@@ -36,7 +36,7 @@ import java.util.List;
  * A listings item.
  */
 @ApiModel(description = "A listings item.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:28:03.156-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:55.494+08:00")
 public class Item {
   @SerializedName("sku")
   private String sku = null;
@@ -57,7 +57,7 @@ public class Item {
   private List<FulfillmentAvailability> fulfillmentAvailability = null;
 
   @SerializedName("procurement")
-  private ItemProcurement procurement = null;
+  private List<ItemProcurement> procurement = null;
 
   public Item sku(String sku) {
     this.sku = sku;
@@ -175,21 +175,29 @@ public class Item {
     this.fulfillmentAvailability = fulfillmentAvailability;
   }
 
-  public Item procurement(ItemProcurement procurement) {
+  public Item procurement(List<ItemProcurement> procurement) {
     this.procurement = procurement;
     return this;
   }
 
+  public Item addProcurementItem(ItemProcurement procurementItem) {
+    if (this.procurement == null) {
+      this.procurement = new ArrayList<ItemProcurement>();
+    }
+    this.procurement.add(procurementItem);
+    return this;
+  }
+
    /**
-   * Get procurement
+   * Vendor procurement information for the listings item.
    * @return procurement
   **/
-  @ApiModelProperty(value = "")
-  public ItemProcurement getProcurement() {
+  @ApiModelProperty(value = "Vendor procurement information for the listings item.")
+  public List<ItemProcurement> getProcurement() {
     return procurement;
   }
 
-  public void setProcurement(ItemProcurement procurement) {
+  public void setProcurement(List<ItemProcurement> procurement) {
     this.procurement = procurement;
   }
 

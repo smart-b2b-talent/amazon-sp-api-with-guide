@@ -67,7 +67,7 @@ No authorization required
 
 <a name="searchDefinitionsProductTypes"></a>
 # **searchDefinitionsProductTypes**
-> ProductTypeList searchDefinitionsProductTypes(marketplaceIds, keywords)
+> ProductTypeList searchDefinitionsProductTypes(marketplaceIds, keywords, itemName, locale, searchLocale)
 
 
 
@@ -82,9 +82,12 @@ Search for and return a list of Amazon product types that have definitions avail
 
 DefinitionsApi apiInstance = new DefinitionsApi();
 List<String> marketplaceIds = Arrays.asList("ATVPDKIKX0DER"); // List<String> | A comma-delimited list of Amazon marketplace identifiers for the request.
-List<String> keywords = Arrays.asList("LUGGAGE"); // List<String> | A comma-delimited list of keywords to search product types by.
+List<String> keywords = Arrays.asList("LUGGAGE"); // List<String> | A comma-delimited list of keywords to search product types. **Note:** Cannot be used with `itemName`.
+String itemName = "Running shoes"; // String | The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with `keywords`.
+String locale = "en_US"; // String | The locale for the display names in the response. Defaults to the primary locale of the marketplace.
+String searchLocale = "en_US"; // String | The locale used for the `keywords` and `itemName` parameters. Defaults to the primary locale of the marketplace.
 try {
-    ProductTypeList result = apiInstance.searchDefinitionsProductTypes(marketplaceIds, keywords);
+    ProductTypeList result = apiInstance.searchDefinitionsProductTypes(marketplaceIds, keywords, itemName, locale, searchLocale);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DefinitionsApi#searchDefinitionsProductTypes");
@@ -97,7 +100,10 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **marketplaceIds** | [**List&lt;String&gt;**](String.md)| A comma-delimited list of Amazon marketplace identifiers for the request. |
- **keywords** | [**List&lt;String&gt;**](String.md)| A comma-delimited list of keywords to search product types by. | [optional]
+ **keywords** | [**List&lt;String&gt;**](String.md)| A comma-delimited list of keywords to search product types. **Note:** Cannot be used with &#x60;itemName&#x60;. | [optional]
+ **itemName** | **String**| The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with &#x60;keywords&#x60;. | [optional]
+ **locale** | **String**| The locale for the display names in the response. Defaults to the primary locale of the marketplace. | [optional]
+ **searchLocale** | **String**| The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. | [optional]
 
 ### Return type
 

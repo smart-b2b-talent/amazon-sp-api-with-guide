@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **taxRegistrationType** | [**TaxRegistrationTypeEnum**](#TaxRegistrationTypeEnum) | The tax registration type for the entity. | 
-**taxRegistrationNumber** | **String** | The tax registration number for the entity. For example, VAT ID. | 
+**taxRegistrationNumber** | **String** | The tax registration number for the entity. For example, VAT ID, Consumption Tax ID. | 
 
 
 <a name="TaxRegistrationTypeEnum"></a>

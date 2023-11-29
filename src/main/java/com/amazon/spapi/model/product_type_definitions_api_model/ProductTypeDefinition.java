@@ -35,7 +35,7 @@ import java.util.Map;
  * A product type definition represents the attributes and data requirements for a product type in the Amazon catalog. Product type definitions are used interchangeably between the Selling Partner API for Listings Items, Selling Partner API for Catalog Items, and JSON-based listings feeds in the Selling Partner API for Feeds.
  */
 @ApiModel(description = "A product type definition represents the attributes and data requirements for a product type in the Amazon catalog. Product type definitions are used interchangeably between the Selling Partner API for Listings Items, Selling Partner API for Catalog Items, and JSON-based listings feeds in the Selling Partner API for Feeds.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:28:00.970-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:08.350+08:00")
 public class ProductTypeDefinition {
   @SerializedName("metaSchema")
   private SchemaLink metaSchema = null;
@@ -156,6 +156,9 @@ public class ProductTypeDefinition {
 
   @SerializedName("productType")
   private String productType = null;
+
+  @SerializedName("displayName")
+  private String displayName = null;
 
   @SerializedName("productTypeVersion")
   private ProductTypeVersion productTypeVersion = null;
@@ -314,6 +317,24 @@ public class ProductTypeDefinition {
     this.productType = productType;
   }
 
+  public ProductTypeDefinition displayName(String displayName) {
+    this.displayName = displayName;
+    return this;
+  }
+
+   /**
+   * Human-readable and localized description of the Amazon product type.
+   * @return displayName
+  **/
+  @ApiModelProperty(required = true, value = "Human-readable and localized description of the Amazon product type.")
+  public String getDisplayName() {
+    return displayName;
+  }
+
+  public void setDisplayName(String displayName) {
+    this.displayName = displayName;
+  }
+
   public ProductTypeDefinition productTypeVersion(ProductTypeVersion productTypeVersion) {
     this.productTypeVersion = productTypeVersion;
     return this;
@@ -350,12 +371,13 @@ public class ProductTypeDefinition {
         Objects.equals(this.locale, productTypeDefinition.locale) &&
         Objects.equals(this.marketplaceIds, productTypeDefinition.marketplaceIds) &&
         Objects.equals(this.productType, productTypeDefinition.productType) &&
+        Objects.equals(this.displayName, productTypeDefinition.displayName) &&
         Objects.equals(this.productTypeVersion, productTypeDefinition.productTypeVersion);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(metaSchema, schema, requirements, requirementsEnforced, propertyGroups, locale, marketplaceIds, productType, productTypeVersion);
+    return Objects.hash(metaSchema, schema, requirements, requirementsEnforced, propertyGroups, locale, marketplaceIds, productType, displayName, productTypeVersion);
   }
 
 
@@ -372,6 +394,7 @@ public class ProductTypeDefinition {
     sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
     sb.append("    marketplaceIds: ").append(toIndentedString(marketplaceIds)).append("\n");
     sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
+    sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("    productTypeVersion: ").append(toIndentedString(productTypeVersion)).append("\n");
     sb.append("}");
     return sb.toString();

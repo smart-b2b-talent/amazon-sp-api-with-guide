@@ -29,7 +29,7 @@ import java.io.IOException;
  * Request schema for the &#x60;updateReservation&#x60; operation.
  */
 @ApiModel(description = "Request schema for the `updateReservation` operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:53.305-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:17.007+08:00")
 public class UpdateReservationRequest {
   @SerializedName("resourceId")
   private String resourceId = null;

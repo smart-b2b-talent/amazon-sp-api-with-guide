@@ -25,7 +25,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * How the seller intends to provide box contents information for a shipment.
+ * How the seller intends to provide box contents information for a shipment. Leaving this field blank is equivalent to selecting &#x60;NONE&#x60;, which will incur a fee if the seller does not provide box contents information.
  */
 @JsonAdapter(IntendedBoxContentsSource.Adapter.class)
 public enum IntendedBoxContentsSource {

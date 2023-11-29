@@ -31,7 +31,7 @@ import java.util.List;
  * A listing restriction, optionally qualified by a condition, with a list of reasons for the restriction.
  */
 @ApiModel(description = "A listing restriction, optionally qualified by a condition, with a list of reasons for the restriction.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:52.797-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:56.751+08:00")
 public class Restriction {
   @SerializedName("marketplaceId")
   private String marketplaceId = null;

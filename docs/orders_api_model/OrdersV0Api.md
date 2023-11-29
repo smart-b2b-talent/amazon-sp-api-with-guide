@@ -337,7 +337,7 @@ No authorization required
 
 <a name="getOrders"></a>
 # **getOrders**
-> GetOrdersResponse getOrders(marketplaceIds, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, orderStatuses, fulfillmentChannels, paymentMethods, buyerEmail, sellerOrderId, maxResultsPerPage, easyShipShipmentStatuses, electronicInvoiceStatuses, nextToken, amazonOrderIds, actualFulfillmentSupplySourceId, isISPU, storeChainStoreId, itemApprovalTypes, itemApprovalStatus)
+> GetOrdersResponse getOrders(marketplaceIds, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, orderStatuses, fulfillmentChannels, paymentMethods, buyerEmail, sellerOrderId, maxResultsPerPage, easyShipShipmentStatuses, electronicInvoiceStatuses, nextToken, amazonOrderIds, actualFulfillmentSupplySourceId, isISPU, storeChainStoreId, earliestDeliveryDateBefore, earliestDeliveryDateAfter, latestDeliveryDateBefore, latestDeliveryDateAfter)
 
 
 
@@ -351,7 +351,7 @@ Returns orders created or updated during the time frame indicated by the specifi
 
 
 OrdersV0Api apiInstance = new OrdersV0Api();
-List<String> marketplaceIds = Arrays.asList("marketplaceIds_example"); // List<String> | A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.  See the [Selling Partner API Developer Guide](doc:marketplace-ids) for a complete list of marketplaceId values.
+List<String> marketplaceIds = Arrays.asList("marketplaceIds_example"); // List<String> | A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of marketplaceId values.
 String createdAfter = "createdAfter_example"; // String | A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format.
 String createdBefore = "createdBefore_example"; // String | A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format.
 String lastUpdatedAfter = "lastUpdatedAfter_example"; // String | A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format.
@@ -369,10 +369,12 @@ List<String> amazonOrderIds = Arrays.asList("amazonOrderIds_example"); // List<S
 String actualFulfillmentSupplySourceId = "actualFulfillmentSupplySourceId_example"; // String | Denotes the recommended sourceId where the order should be fulfilled from.
 Boolean isISPU = true; // Boolean | When true, this order is marked to be picked up from a store rather than delivered.
 String storeChainStoreId = "storeChainStoreId_example"; // String | The store chain store identifier. Linked to a specific store in a store chain.
-List<ItemApprovalType> itemApprovalTypes = Arrays.asList(new ItemApprovalType()); // List<ItemApprovalType> | When set, only return orders that contain items which approval type is contained in the specified approval types.
-List<ItemApprovalStatus> itemApprovalStatus = Arrays.asList(new ItemApprovalStatus()); // List<ItemApprovalStatus> | When set, only return orders that contain items which approval status is contained in the specified approval status.
+String earliestDeliveryDateBefore = "earliestDeliveryDateBefore_example"; // String | A date used for selecting orders with a earliest delivery date before (or at) a specified time. The date must be in ISO 8601 format.
+String earliestDeliveryDateAfter = "earliestDeliveryDateAfter_example"; // String | A date used for selecting orders with a earliest delivery date after (or at) a specified time. The date must be in ISO 8601 format.
+String latestDeliveryDateBefore = "latestDeliveryDateBefore_example"; // String | A date used for selecting orders with a latest delivery date before (or at) a specified time. The date must be in ISO 8601 format.
+String latestDeliveryDateAfter = "latestDeliveryDateAfter_example"; // String | A date used for selecting orders with a latest delivery date after (or at) a specified time. The date must be in ISO 8601 format.
 try {
-    GetOrdersResponse result = apiInstance.getOrders(marketplaceIds, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, orderStatuses, fulfillmentChannels, paymentMethods, buyerEmail, sellerOrderId, maxResultsPerPage, easyShipShipmentStatuses, electronicInvoiceStatuses, nextToken, amazonOrderIds, actualFulfillmentSupplySourceId, isISPU, storeChainStoreId, itemApprovalTypes, itemApprovalStatus);
+    GetOrdersResponse result = apiInstance.getOrders(marketplaceIds, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, orderStatuses, fulfillmentChannels, paymentMethods, buyerEmail, sellerOrderId, maxResultsPerPage, easyShipShipmentStatuses, electronicInvoiceStatuses, nextToken, amazonOrderIds, actualFulfillmentSupplySourceId, isISPU, storeChainStoreId, earliestDeliveryDateBefore, earliestDeliveryDateAfter, latestDeliveryDateBefore, latestDeliveryDateAfter);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrdersV0Api#getOrders");
@@ -384,7 +386,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **marketplaceIds** | [**List&lt;String&gt;**](String.md)| A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.  See the [Selling Partner API Developer Guide](doc:marketplace-ids) for a complete list of marketplaceId values. |
+ **marketplaceIds** | [**List&lt;String&gt;**](String.md)| A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of marketplaceId values. |
  **createdAfter** | **String**| A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format. | [optional]
  **createdBefore** | **String**| A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format. | [optional]
  **lastUpdatedAfter** | **String**| A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format. | [optional]
@@ -402,8 +404,10 @@ Name | Type | Description  | Notes
  **actualFulfillmentSupplySourceId** | **String**| Denotes the recommended sourceId where the order should be fulfilled from. | [optional]
  **isISPU** | **Boolean**| When true, this order is marked to be picked up from a store rather than delivered. | [optional]
  **storeChainStoreId** | **String**| The store chain store identifier. Linked to a specific store in a store chain. | [optional]
- **itemApprovalTypes** | [**List&lt;ItemApprovalType&gt;**](ItemApprovalType.md)| When set, only return orders that contain items which approval type is contained in the specified approval types. | [optional]
- **itemApprovalStatus** | [**List&lt;ItemApprovalStatus&gt;**](ItemApprovalStatus.md)| When set, only return orders that contain items which approval status is contained in the specified approval status. | [optional]
+ **earliestDeliveryDateBefore** | **String**| A date used for selecting orders with a earliest delivery date before (or at) a specified time. The date must be in ISO 8601 format. | [optional]
+ **earliestDeliveryDateAfter** | **String**| A date used for selecting orders with a earliest delivery date after (or at) a specified time. The date must be in ISO 8601 format. | [optional]
+ **latestDeliveryDateBefore** | **String**| A date used for selecting orders with a latest delivery date before (or at) a specified time. The date must be in ISO 8601 format. | [optional]
+ **latestDeliveryDateAfter** | **String**| A date used for selecting orders with a latest delivery date after (or at) a specified time. The date must be in ISO 8601 format. | [optional]
 
 ### Return type
 

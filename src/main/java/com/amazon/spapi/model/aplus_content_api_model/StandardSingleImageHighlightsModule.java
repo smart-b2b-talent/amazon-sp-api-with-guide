@@ -32,7 +32,7 @@ import java.io.IOException;
  * A standard image with several paragraphs and a bulleted list.
  */
 @ApiModel(description = "A standard image with several paragraphs and a bulleted list.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:54.086-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:30.497+08:00")
 public class StandardSingleImageHighlightsModule {
   @SerializedName("image")
   private ImageComponent image = null;

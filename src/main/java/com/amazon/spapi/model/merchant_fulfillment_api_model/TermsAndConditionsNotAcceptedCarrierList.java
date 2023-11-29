@@ -24,7 +24,7 @@ import java.util.List;
  * List of carriers whose terms and conditions were not accepted by the seller.
  */
 @ApiModel(description = "List of carriers whose terms and conditions were not accepted by the seller.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:50.699-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:57.882+08:00")
 public class TermsAndConditionsNotAcceptedCarrierList extends ArrayList<TermsAndConditionsNotAcceptedCarrier> {
 
   @Override

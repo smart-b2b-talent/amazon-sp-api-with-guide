@@ -29,7 +29,7 @@ import java.io.IOException;
  * The reason that the item is invalid for return.
  */
 @ApiModel(description = "The reason that the item is invalid for return.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:41.721-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:53.196+08:00")
 public class InvalidItemReason {
   @SerializedName("invalidItemReasonCode")
   private InvalidItemReasonCode invalidItemReasonCode = null;

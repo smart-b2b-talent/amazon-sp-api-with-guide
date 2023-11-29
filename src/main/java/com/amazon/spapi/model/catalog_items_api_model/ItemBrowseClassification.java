@@ -28,7 +28,7 @@ import java.io.IOException;
  * Classification (browse node) associated with an Amazon catalog item.
  */
 @ApiModel(description = "Classification (browse node) associated with an Amazon catalog item.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:54.867-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:39.638+08:00")
 public class ItemBrowseClassification {
   @SerializedName("displayName")
   private String displayName = null;

@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * ListAllFulfillmentOrdersResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:41.721-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:53.196+08:00")
 public class ListAllFulfillmentOrdersResult {
   @SerializedName("nextToken")
   private String nextToken = null;

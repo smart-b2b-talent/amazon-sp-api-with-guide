@@ -54,15 +54,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCredentials;
-import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCredentialsProvider;
-import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCustomCredentialsProvider;
-import com.amazon.SellingPartnerAPIAA.AWSSigV4Signer;
 import com.amazon.SellingPartnerAPIAA.LWAAccessTokenCache;
 import com.amazon.SellingPartnerAPIAA.LWAAccessTokenCacheImpl;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationCredentials;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationSigner;
 import com.amazon.SellingPartnerAPIAA.RateLimitConfiguration;
+import com.amazon.SellingPartnerAPIAA.LWAException;
 
 public class FbaOutboundApi {
     private ApiClient apiClient;
@@ -90,8 +87,9 @@ public class FbaOutboundApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call cancelFulfillmentOrderCall(String sellerFulfillmentOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cancelFulfillmentOrderCall(String sellerFulfillmentOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -134,7 +132,7 @@ public class FbaOutboundApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cancelFulfillmentOrderValidateBeforeCall(String sellerFulfillmentOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cancelFulfillmentOrderValidateBeforeCall(String sellerFulfillmentOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'sellerFulfillmentOrderId' is set
         if (sellerFulfillmentOrderId == null) {
@@ -153,8 +151,9 @@ public class FbaOutboundApi {
      * @param sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created. (required)
      * @return CancelFulfillmentOrderResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public CancelFulfillmentOrderResponse cancelFulfillmentOrder(String sellerFulfillmentOrderId) throws ApiException {
+    public CancelFulfillmentOrderResponse cancelFulfillmentOrder(String sellerFulfillmentOrderId) throws ApiException,LWAException {
         ApiResponse<CancelFulfillmentOrderResponse> resp = cancelFulfillmentOrderWithHttpInfo(sellerFulfillmentOrderId);
         return resp.getData();
     }
@@ -165,8 +164,9 @@ public class FbaOutboundApi {
      * @param sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created. (required)
      * @return ApiResponse&lt;CancelFulfillmentOrderResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<CancelFulfillmentOrderResponse> cancelFulfillmentOrderWithHttpInfo(String sellerFulfillmentOrderId) throws ApiException {
+    public ApiResponse<CancelFulfillmentOrderResponse> cancelFulfillmentOrderWithHttpInfo(String sellerFulfillmentOrderId) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = cancelFulfillmentOrderValidateBeforeCall(sellerFulfillmentOrderId, null, null);
         Type localVarReturnType = new TypeToken<CancelFulfillmentOrderResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -179,8 +179,9 @@ public class FbaOutboundApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call cancelFulfillmentOrderAsync(String sellerFulfillmentOrderId, final ApiCallback<CancelFulfillmentOrderResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cancelFulfillmentOrderAsync(String sellerFulfillmentOrderId, final ApiCallback<CancelFulfillmentOrderResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -213,8 +214,9 @@ public class FbaOutboundApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createFulfillmentOrderCall(CreateFulfillmentOrderRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createFulfillmentOrderCall(CreateFulfillmentOrderRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -256,7 +258,7 @@ public class FbaOutboundApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createFulfillmentOrderValidateBeforeCall(CreateFulfillmentOrderRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createFulfillmentOrderValidateBeforeCall(CreateFulfillmentOrderRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'body' is set
         if (body == null) {
@@ -275,8 +277,9 @@ public class FbaOutboundApi {
      * @param body  (required)
      * @return CreateFulfillmentOrderResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public CreateFulfillmentOrderResponse createFulfillmentOrder(CreateFulfillmentOrderRequest body) throws ApiException {
+    public CreateFulfillmentOrderResponse createFulfillmentOrder(CreateFulfillmentOrderRequest body) throws ApiException,LWAException {
         ApiResponse<CreateFulfillmentOrderResponse> resp = createFulfillmentOrderWithHttpInfo(body);
         return resp.getData();
     }
@@ -287,8 +290,9 @@ public class FbaOutboundApi {
      * @param body  (required)
      * @return ApiResponse&lt;CreateFulfillmentOrderResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<CreateFulfillmentOrderResponse> createFulfillmentOrderWithHttpInfo(CreateFulfillmentOrderRequest body) throws ApiException {
+    public ApiResponse<CreateFulfillmentOrderResponse> createFulfillmentOrderWithHttpInfo(CreateFulfillmentOrderRequest body) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = createFulfillmentOrderValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<CreateFulfillmentOrderResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -301,8 +305,9 @@ public class FbaOutboundApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createFulfillmentOrderAsync(CreateFulfillmentOrderRequest body, final ApiCallback<CreateFulfillmentOrderResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createFulfillmentOrderAsync(CreateFulfillmentOrderRequest body, final ApiCallback<CreateFulfillmentOrderResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -336,8 +341,9 @@ public class FbaOutboundApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createFulfillmentReturnCall(CreateFulfillmentReturnRequest body, String sellerFulfillmentOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createFulfillmentReturnCall(CreateFulfillmentReturnRequest body, String sellerFulfillmentOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -380,7 +386,7 @@ public class FbaOutboundApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createFulfillmentReturnValidateBeforeCall(CreateFulfillmentReturnRequest body, String sellerFulfillmentOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createFulfillmentReturnValidateBeforeCall(CreateFulfillmentReturnRequest body, String sellerFulfillmentOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'body' is set
         if (body == null) {
@@ -405,8 +411,9 @@ public class FbaOutboundApi {
      * @param sellerFulfillmentOrderId An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer&#39;s request to return items. (required)
      * @return CreateFulfillmentReturnResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public CreateFulfillmentReturnResponse createFulfillmentReturn(CreateFulfillmentReturnRequest body, String sellerFulfillmentOrderId) throws ApiException {
+    public CreateFulfillmentReturnResponse createFulfillmentReturn(CreateFulfillmentReturnRequest body, String sellerFulfillmentOrderId) throws ApiException,LWAException {
         ApiResponse<CreateFulfillmentReturnResponse> resp = createFulfillmentReturnWithHttpInfo(body, sellerFulfillmentOrderId);
         return resp.getData();
     }
@@ -418,8 +425,9 @@ public class FbaOutboundApi {
      * @param sellerFulfillmentOrderId An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer&#39;s request to return items. (required)
      * @return ApiResponse&lt;CreateFulfillmentReturnResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<CreateFulfillmentReturnResponse> createFulfillmentReturnWithHttpInfo(CreateFulfillmentReturnRequest body, String sellerFulfillmentOrderId) throws ApiException {
+    public ApiResponse<CreateFulfillmentReturnResponse> createFulfillmentReturnWithHttpInfo(CreateFulfillmentReturnRequest body, String sellerFulfillmentOrderId) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = createFulfillmentReturnValidateBeforeCall(body, sellerFulfillmentOrderId, null, null);
         Type localVarReturnType = new TypeToken<CreateFulfillmentReturnResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -433,8 +441,9 @@ public class FbaOutboundApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createFulfillmentReturnAsync(CreateFulfillmentReturnRequest body, String sellerFulfillmentOrderId, final ApiCallback<CreateFulfillmentReturnResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createFulfillmentReturnAsync(CreateFulfillmentReturnRequest body, String sellerFulfillmentOrderId, final ApiCallback<CreateFulfillmentReturnResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -469,8 +478,9 @@ public class FbaOutboundApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getFeatureInventoryCall(String marketplaceId, String featureName, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getFeatureInventoryCall(String marketplaceId, String featureName, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -517,7 +527,7 @@ public class FbaOutboundApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getFeatureInventoryValidateBeforeCall(String marketplaceId, String featureName, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getFeatureInventoryValidateBeforeCall(String marketplaceId, String featureName, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'marketplaceId' is set
         if (marketplaceId == null) {
@@ -543,8 +553,9 @@ public class FbaOutboundApi {
      * @param nextToken A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page. (optional)
      * @return GetFeatureInventoryResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public GetFeatureInventoryResponse getFeatureInventory(String marketplaceId, String featureName, String nextToken) throws ApiException {
+    public GetFeatureInventoryResponse getFeatureInventory(String marketplaceId, String featureName, String nextToken) throws ApiException,LWAException {
         ApiResponse<GetFeatureInventoryResponse> resp = getFeatureInventoryWithHttpInfo(marketplaceId, featureName, nextToken);
         return resp.getData();
     }
@@ -557,8 +568,9 @@ public class FbaOutboundApi {
      * @param nextToken A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page. (optional)
      * @return ApiResponse&lt;GetFeatureInventoryResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<GetFeatureInventoryResponse> getFeatureInventoryWithHttpInfo(String marketplaceId, String featureName, String nextToken) throws ApiException {
+    public ApiResponse<GetFeatureInventoryResponse> getFeatureInventoryWithHttpInfo(String marketplaceId, String featureName, String nextToken) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = getFeatureInventoryValidateBeforeCall(marketplaceId, featureName, nextToken, null, null);
         Type localVarReturnType = new TypeToken<GetFeatureInventoryResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -573,8 +585,9 @@ public class FbaOutboundApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getFeatureInventoryAsync(String marketplaceId, String featureName, String nextToken, final ApiCallback<GetFeatureInventoryResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getFeatureInventoryAsync(String marketplaceId, String featureName, String nextToken, final ApiCallback<GetFeatureInventoryResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -609,8 +622,9 @@ public class FbaOutboundApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getFeatureSKUCall(String marketplaceId, String featureName, String sellerSku, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getFeatureSKUCall(String marketplaceId, String featureName, String sellerSku, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -656,7 +670,7 @@ public class FbaOutboundApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getFeatureSKUValidateBeforeCall(String marketplaceId, String featureName, String sellerSku, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getFeatureSKUValidateBeforeCall(String marketplaceId, String featureName, String sellerSku, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'marketplaceId' is set
         if (marketplaceId == null) {
@@ -687,8 +701,9 @@ public class FbaOutboundApi {
      * @param sellerSku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
      * @return GetFeatureSkuResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public GetFeatureSkuResponse getFeatureSKU(String marketplaceId, String featureName, String sellerSku) throws ApiException {
+    public GetFeatureSkuResponse getFeatureSKU(String marketplaceId, String featureName, String sellerSku) throws ApiException,LWAException {
         ApiResponse<GetFeatureSkuResponse> resp = getFeatureSKUWithHttpInfo(marketplaceId, featureName, sellerSku);
         return resp.getData();
     }
@@ -701,8 +716,9 @@ public class FbaOutboundApi {
      * @param sellerSku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
      * @return ApiResponse&lt;GetFeatureSkuResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<GetFeatureSkuResponse> getFeatureSKUWithHttpInfo(String marketplaceId, String featureName, String sellerSku) throws ApiException {
+    public ApiResponse<GetFeatureSkuResponse> getFeatureSKUWithHttpInfo(String marketplaceId, String featureName, String sellerSku) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = getFeatureSKUValidateBeforeCall(marketplaceId, featureName, sellerSku, null, null);
         Type localVarReturnType = new TypeToken<GetFeatureSkuResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -717,8 +733,9 @@ public class FbaOutboundApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getFeatureSKUAsync(String marketplaceId, String featureName, String sellerSku, final ApiCallback<GetFeatureSkuResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getFeatureSKUAsync(String marketplaceId, String featureName, String sellerSku, final ApiCallback<GetFeatureSkuResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -751,8 +768,9 @@ public class FbaOutboundApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getFeaturesCall(String marketplaceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getFeaturesCall(String marketplaceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -796,7 +814,7 @@ public class FbaOutboundApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getFeaturesValidateBeforeCall(String marketplaceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getFeaturesValidateBeforeCall(String marketplaceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'marketplaceId' is set
         if (marketplaceId == null) {
@@ -815,8 +833,9 @@ public class FbaOutboundApi {
      * @param marketplaceId The marketplace for which to return the list of features. (required)
      * @return GetFeaturesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public GetFeaturesResponse getFeatures(String marketplaceId) throws ApiException {
+    public GetFeaturesResponse getFeatures(String marketplaceId) throws ApiException,LWAException {
         ApiResponse<GetFeaturesResponse> resp = getFeaturesWithHttpInfo(marketplaceId);
         return resp.getData();
     }
@@ -827,8 +846,9 @@ public class FbaOutboundApi {
      * @param marketplaceId The marketplace for which to return the list of features. (required)
      * @return ApiResponse&lt;GetFeaturesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<GetFeaturesResponse> getFeaturesWithHttpInfo(String marketplaceId) throws ApiException {
+    public ApiResponse<GetFeaturesResponse> getFeaturesWithHttpInfo(String marketplaceId) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = getFeaturesValidateBeforeCall(marketplaceId, null, null);
         Type localVarReturnType = new TypeToken<GetFeaturesResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -841,8 +861,9 @@ public class FbaOutboundApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getFeaturesAsync(String marketplaceId, final ApiCallback<GetFeaturesResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getFeaturesAsync(String marketplaceId, final ApiCallback<GetFeaturesResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -875,8 +896,9 @@ public class FbaOutboundApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getFulfillmentOrderCall(String sellerFulfillmentOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getFulfillmentOrderCall(String sellerFulfillmentOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -919,7 +941,7 @@ public class FbaOutboundApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getFulfillmentOrderValidateBeforeCall(String sellerFulfillmentOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getFulfillmentOrderValidateBeforeCall(String sellerFulfillmentOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'sellerFulfillmentOrderId' is set
         if (sellerFulfillmentOrderId == null) {
@@ -938,8 +960,9 @@ public class FbaOutboundApi {
      * @param sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created. (required)
      * @return GetFulfillmentOrderResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public GetFulfillmentOrderResponse getFulfillmentOrder(String sellerFulfillmentOrderId) throws ApiException {
+    public GetFulfillmentOrderResponse getFulfillmentOrder(String sellerFulfillmentOrderId) throws ApiException,LWAException {
         ApiResponse<GetFulfillmentOrderResponse> resp = getFulfillmentOrderWithHttpInfo(sellerFulfillmentOrderId);
         return resp.getData();
     }
@@ -950,8 +973,9 @@ public class FbaOutboundApi {
      * @param sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created. (required)
      * @return ApiResponse&lt;GetFulfillmentOrderResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<GetFulfillmentOrderResponse> getFulfillmentOrderWithHttpInfo(String sellerFulfillmentOrderId) throws ApiException {
+    public ApiResponse<GetFulfillmentOrderResponse> getFulfillmentOrderWithHttpInfo(String sellerFulfillmentOrderId) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = getFulfillmentOrderValidateBeforeCall(sellerFulfillmentOrderId, null, null);
         Type localVarReturnType = new TypeToken<GetFulfillmentOrderResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -964,8 +988,9 @@ public class FbaOutboundApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getFulfillmentOrderAsync(String sellerFulfillmentOrderId, final ApiCallback<GetFulfillmentOrderResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getFulfillmentOrderAsync(String sellerFulfillmentOrderId, final ApiCallback<GetFulfillmentOrderResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -998,8 +1023,9 @@ public class FbaOutboundApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getFulfillmentPreviewCall(GetFulfillmentPreviewRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getFulfillmentPreviewCall(GetFulfillmentPreviewRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -1041,7 +1067,7 @@ public class FbaOutboundApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getFulfillmentPreviewValidateBeforeCall(GetFulfillmentPreviewRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getFulfillmentPreviewValidateBeforeCall(GetFulfillmentPreviewRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'body' is set
         if (body == null) {
@@ -1060,8 +1086,9 @@ public class FbaOutboundApi {
      * @param body  (required)
      * @return GetFulfillmentPreviewResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public GetFulfillmentPreviewResponse getFulfillmentPreview(GetFulfillmentPreviewRequest body) throws ApiException {
+    public GetFulfillmentPreviewResponse getFulfillmentPreview(GetFulfillmentPreviewRequest body) throws ApiException,LWAException {
         ApiResponse<GetFulfillmentPreviewResponse> resp = getFulfillmentPreviewWithHttpInfo(body);
         return resp.getData();
     }
@@ -1072,8 +1099,9 @@ public class FbaOutboundApi {
      * @param body  (required)
      * @return ApiResponse&lt;GetFulfillmentPreviewResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<GetFulfillmentPreviewResponse> getFulfillmentPreviewWithHttpInfo(GetFulfillmentPreviewRequest body) throws ApiException {
+    public ApiResponse<GetFulfillmentPreviewResponse> getFulfillmentPreviewWithHttpInfo(GetFulfillmentPreviewRequest body) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = getFulfillmentPreviewValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<GetFulfillmentPreviewResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1086,8 +1114,9 @@ public class FbaOutboundApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getFulfillmentPreviewAsync(GetFulfillmentPreviewRequest body, final ApiCallback<GetFulfillmentPreviewResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getFulfillmentPreviewAsync(GetFulfillmentPreviewRequest body, final ApiCallback<GetFulfillmentPreviewResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1120,8 +1149,9 @@ public class FbaOutboundApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getPackageTrackingDetailsCall(Integer packageNumber, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getPackageTrackingDetailsCall(Integer packageNumber, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1165,7 +1195,7 @@ public class FbaOutboundApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getPackageTrackingDetailsValidateBeforeCall(Integer packageNumber, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getPackageTrackingDetailsValidateBeforeCall(Integer packageNumber, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'packageNumber' is set
         if (packageNumber == null) {
@@ -1184,8 +1214,9 @@ public class FbaOutboundApi {
      * @param packageNumber The unencrypted package identifier returned by the getFulfillmentOrder operation. (required)
      * @return GetPackageTrackingDetailsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public GetPackageTrackingDetailsResponse getPackageTrackingDetails(Integer packageNumber) throws ApiException {
+    public GetPackageTrackingDetailsResponse getPackageTrackingDetails(Integer packageNumber) throws ApiException,LWAException {
         ApiResponse<GetPackageTrackingDetailsResponse> resp = getPackageTrackingDetailsWithHttpInfo(packageNumber);
         return resp.getData();
     }
@@ -1196,8 +1227,9 @@ public class FbaOutboundApi {
      * @param packageNumber The unencrypted package identifier returned by the getFulfillmentOrder operation. (required)
      * @return ApiResponse&lt;GetPackageTrackingDetailsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<GetPackageTrackingDetailsResponse> getPackageTrackingDetailsWithHttpInfo(Integer packageNumber) throws ApiException {
+    public ApiResponse<GetPackageTrackingDetailsResponse> getPackageTrackingDetailsWithHttpInfo(Integer packageNumber) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = getPackageTrackingDetailsValidateBeforeCall(packageNumber, null, null);
         Type localVarReturnType = new TypeToken<GetPackageTrackingDetailsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1210,8 +1242,9 @@ public class FbaOutboundApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getPackageTrackingDetailsAsync(Integer packageNumber, final ApiCallback<GetPackageTrackingDetailsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getPackageTrackingDetailsAsync(Integer packageNumber, final ApiCallback<GetPackageTrackingDetailsResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1245,8 +1278,9 @@ public class FbaOutboundApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call listAllFulfillmentOrdersCall(OffsetDateTime queryStartDate, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listAllFulfillmentOrdersCall(OffsetDateTime queryStartDate, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1292,7 +1326,7 @@ public class FbaOutboundApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listAllFulfillmentOrdersValidateBeforeCall(OffsetDateTime queryStartDate, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listAllFulfillmentOrdersValidateBeforeCall(OffsetDateTime queryStartDate, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
 
         com.squareup.okhttp.Call call = listAllFulfillmentOrdersCall(queryStartDate, nextToken, progressListener, progressRequestListener);
@@ -1307,8 +1341,9 @@ public class FbaOutboundApi {
      * @param nextToken A string token returned in the response to your previous request. (optional)
      * @return ListAllFulfillmentOrdersResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ListAllFulfillmentOrdersResponse listAllFulfillmentOrders(OffsetDateTime queryStartDate, String nextToken) throws ApiException {
+    public ListAllFulfillmentOrdersResponse listAllFulfillmentOrders(OffsetDateTime queryStartDate, String nextToken) throws ApiException,LWAException {
         ApiResponse<ListAllFulfillmentOrdersResponse> resp = listAllFulfillmentOrdersWithHttpInfo(queryStartDate, nextToken);
         return resp.getData();
     }
@@ -1320,8 +1355,9 @@ public class FbaOutboundApi {
      * @param nextToken A string token returned in the response to your previous request. (optional)
      * @return ApiResponse&lt;ListAllFulfillmentOrdersResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<ListAllFulfillmentOrdersResponse> listAllFulfillmentOrdersWithHttpInfo(OffsetDateTime queryStartDate, String nextToken) throws ApiException {
+    public ApiResponse<ListAllFulfillmentOrdersResponse> listAllFulfillmentOrdersWithHttpInfo(OffsetDateTime queryStartDate, String nextToken) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = listAllFulfillmentOrdersValidateBeforeCall(queryStartDate, nextToken, null, null);
         Type localVarReturnType = new TypeToken<ListAllFulfillmentOrdersResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1335,8 +1371,9 @@ public class FbaOutboundApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call listAllFulfillmentOrdersAsync(OffsetDateTime queryStartDate, String nextToken, final ApiCallback<ListAllFulfillmentOrdersResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listAllFulfillmentOrdersAsync(OffsetDateTime queryStartDate, String nextToken, final ApiCallback<ListAllFulfillmentOrdersResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1372,8 +1409,9 @@ public class FbaOutboundApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call listReturnReasonCodesCall(String sellerSku, String language, String marketplaceId, String sellerFulfillmentOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listReturnReasonCodesCall(String sellerSku, String language, String marketplaceId, String sellerFulfillmentOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1423,7 +1461,7 @@ public class FbaOutboundApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listReturnReasonCodesValidateBeforeCall(String sellerSku, String language, String marketplaceId, String sellerFulfillmentOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listReturnReasonCodesValidateBeforeCall(String sellerSku, String language, String marketplaceId, String sellerFulfillmentOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'sellerSku' is set
         if (sellerSku == null) {
@@ -1450,8 +1488,9 @@ public class FbaOutboundApi {
      * @param sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes. (optional)
      * @return ListReturnReasonCodesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ListReturnReasonCodesResponse listReturnReasonCodes(String sellerSku, String language, String marketplaceId, String sellerFulfillmentOrderId) throws ApiException {
+    public ListReturnReasonCodesResponse listReturnReasonCodes(String sellerSku, String language, String marketplaceId, String sellerFulfillmentOrderId) throws ApiException,LWAException {
         ApiResponse<ListReturnReasonCodesResponse> resp = listReturnReasonCodesWithHttpInfo(sellerSku, language, marketplaceId, sellerFulfillmentOrderId);
         return resp.getData();
     }
@@ -1465,8 +1504,9 @@ public class FbaOutboundApi {
      * @param sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes. (optional)
      * @return ApiResponse&lt;ListReturnReasonCodesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<ListReturnReasonCodesResponse> listReturnReasonCodesWithHttpInfo(String sellerSku, String language, String marketplaceId, String sellerFulfillmentOrderId) throws ApiException {
+    public ApiResponse<ListReturnReasonCodesResponse> listReturnReasonCodesWithHttpInfo(String sellerSku, String language, String marketplaceId, String sellerFulfillmentOrderId) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = listReturnReasonCodesValidateBeforeCall(sellerSku, language, marketplaceId, sellerFulfillmentOrderId, null, null);
         Type localVarReturnType = new TypeToken<ListReturnReasonCodesResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1482,8 +1522,9 @@ public class FbaOutboundApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call listReturnReasonCodesAsync(String sellerSku, String language, String marketplaceId, String sellerFulfillmentOrderId, final ApiCallback<ListReturnReasonCodesResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listReturnReasonCodesAsync(String sellerSku, String language, String marketplaceId, String sellerFulfillmentOrderId, final ApiCallback<ListReturnReasonCodesResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1517,8 +1558,9 @@ public class FbaOutboundApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call submitFulfillmentOrderStatusUpdateCall(String sellerFulfillmentOrderId, SubmitFulfillmentOrderStatusUpdateRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call submitFulfillmentOrderStatusUpdateCall(String sellerFulfillmentOrderId, SubmitFulfillmentOrderStatusUpdateRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -1561,7 +1603,7 @@ public class FbaOutboundApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call submitFulfillmentOrderStatusUpdateValidateBeforeCall(String sellerFulfillmentOrderId, SubmitFulfillmentOrderStatusUpdateRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call submitFulfillmentOrderStatusUpdateValidateBeforeCall(String sellerFulfillmentOrderId, SubmitFulfillmentOrderStatusUpdateRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'sellerFulfillmentOrderId' is set
         if (sellerFulfillmentOrderId == null) {
@@ -1586,8 +1628,9 @@ public class FbaOutboundApi {
      * @param body  (required)
      * @return SubmitFulfillmentOrderStatusUpdateResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public SubmitFulfillmentOrderStatusUpdateResponse submitFulfillmentOrderStatusUpdate(String sellerFulfillmentOrderId, SubmitFulfillmentOrderStatusUpdateRequest body) throws ApiException {
+    public SubmitFulfillmentOrderStatusUpdateResponse submitFulfillmentOrderStatusUpdate(String sellerFulfillmentOrderId, SubmitFulfillmentOrderStatusUpdateRequest body) throws ApiException,LWAException {
         ApiResponse<SubmitFulfillmentOrderStatusUpdateResponse> resp = submitFulfillmentOrderStatusUpdateWithHttpInfo(sellerFulfillmentOrderId, body);
         return resp.getData();
     }
@@ -1599,8 +1642,9 @@ public class FbaOutboundApi {
      * @param body  (required)
      * @return ApiResponse&lt;SubmitFulfillmentOrderStatusUpdateResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<SubmitFulfillmentOrderStatusUpdateResponse> submitFulfillmentOrderStatusUpdateWithHttpInfo(String sellerFulfillmentOrderId, SubmitFulfillmentOrderStatusUpdateRequest body) throws ApiException {
+    public ApiResponse<SubmitFulfillmentOrderStatusUpdateResponse> submitFulfillmentOrderStatusUpdateWithHttpInfo(String sellerFulfillmentOrderId, SubmitFulfillmentOrderStatusUpdateRequest body) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = submitFulfillmentOrderStatusUpdateValidateBeforeCall(sellerFulfillmentOrderId, body, null, null);
         Type localVarReturnType = new TypeToken<SubmitFulfillmentOrderStatusUpdateResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1614,8 +1658,9 @@ public class FbaOutboundApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call submitFulfillmentOrderStatusUpdateAsync(String sellerFulfillmentOrderId, SubmitFulfillmentOrderStatusUpdateRequest body, final ApiCallback<SubmitFulfillmentOrderStatusUpdateResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call submitFulfillmentOrderStatusUpdateAsync(String sellerFulfillmentOrderId, SubmitFulfillmentOrderStatusUpdateRequest body, final ApiCallback<SubmitFulfillmentOrderStatusUpdateResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1649,8 +1694,9 @@ public class FbaOutboundApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call updateFulfillmentOrderCall(UpdateFulfillmentOrderRequest body, String sellerFulfillmentOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateFulfillmentOrderCall(UpdateFulfillmentOrderRequest body, String sellerFulfillmentOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -1693,7 +1739,7 @@ public class FbaOutboundApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateFulfillmentOrderValidateBeforeCall(UpdateFulfillmentOrderRequest body, String sellerFulfillmentOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateFulfillmentOrderValidateBeforeCall(UpdateFulfillmentOrderRequest body, String sellerFulfillmentOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'body' is set
         if (body == null) {
@@ -1718,8 +1764,9 @@ public class FbaOutboundApi {
      * @param sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created. (required)
      * @return UpdateFulfillmentOrderResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public UpdateFulfillmentOrderResponse updateFulfillmentOrder(UpdateFulfillmentOrderRequest body, String sellerFulfillmentOrderId) throws ApiException {
+    public UpdateFulfillmentOrderResponse updateFulfillmentOrder(UpdateFulfillmentOrderRequest body, String sellerFulfillmentOrderId) throws ApiException,LWAException {
         ApiResponse<UpdateFulfillmentOrderResponse> resp = updateFulfillmentOrderWithHttpInfo(body, sellerFulfillmentOrderId);
         return resp.getData();
     }
@@ -1731,8 +1778,9 @@ public class FbaOutboundApi {
      * @param sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created. (required)
      * @return ApiResponse&lt;UpdateFulfillmentOrderResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<UpdateFulfillmentOrderResponse> updateFulfillmentOrderWithHttpInfo(UpdateFulfillmentOrderRequest body, String sellerFulfillmentOrderId) throws ApiException {
+    public ApiResponse<UpdateFulfillmentOrderResponse> updateFulfillmentOrderWithHttpInfo(UpdateFulfillmentOrderRequest body, String sellerFulfillmentOrderId) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = updateFulfillmentOrderValidateBeforeCall(body, sellerFulfillmentOrderId, null, null);
         Type localVarReturnType = new TypeToken<UpdateFulfillmentOrderResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1746,8 +1794,9 @@ public class FbaOutboundApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call updateFulfillmentOrderAsync(UpdateFulfillmentOrderRequest body, String sellerFulfillmentOrderId, final ApiCallback<UpdateFulfillmentOrderResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateFulfillmentOrderAsync(UpdateFulfillmentOrderRequest body, String sellerFulfillmentOrderId, final ApiCallback<UpdateFulfillmentOrderResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1775,19 +1824,12 @@ public class FbaOutboundApi {
     }
 
     public static class Builder {
-        private AWSAuthenticationCredentials awsAuthenticationCredentials;
         private LWAAuthorizationCredentials lwaAuthorizationCredentials;
         private String endpoint;
         private LWAAccessTokenCache lwaAccessTokenCache;
         private Boolean disableAccessTokenCache = false;
-        private AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider;
         private RateLimitConfiguration rateLimitConfiguration;
-        private AWSAuthenticationCustomCredentialsProvider awsAuthenticationCustomCredentialsProvider;
 
-        public Builder awsAuthenticationCredentials(AWSAuthenticationCredentials awsAuthenticationCredentials) {
-            this.awsAuthenticationCredentials = awsAuthenticationCredentials;
-            return this;
-        }
 
         public Builder lwaAuthorizationCredentials(LWAAuthorizationCredentials lwaAuthorizationCredentials) {
             this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
@@ -1808,12 +1850,7 @@ public class FbaOutboundApi {
             this.disableAccessTokenCache = true;
             return this;
         }
-        
-        public Builder awsAuthenticationCredentialsProvider(AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider) {
-            this.awsAuthenticationCredentialsProvider = awsAuthenticationCredentialsProvider;
-            return this;
-        }
-        
+
         public Builder rateLimitConfigurationOnRequests(RateLimitConfiguration rateLimitConfiguration){
             this.rateLimitConfiguration = rateLimitConfiguration;
             return this;
@@ -1824,34 +1861,13 @@ public class FbaOutboundApi {
             return this;
         }
 
-        public Builder awsAuthenticationCustomCredentialsProvider(AWSAuthenticationCustomCredentialsProvider awsAuthenticationCustomCredentialsProvider) {
-            this.awsAuthenticationCustomCredentialsProvider = awsAuthenticationCustomCredentialsProvider;
-            return this;
-        }
-        
-
         public FbaOutboundApi build() {
-            if (awsAuthenticationCredentials == null && awsAuthenticationCustomCredentialsProvider == null) {
-                throw new RuntimeException("Neither AWSAuthenticationCredentials or AWSAuthenticationCustomCredentialsProvider are set");
-            }
-
             if (lwaAuthorizationCredentials == null) {
                 throw new RuntimeException("LWAAuthorizationCredentials not set");
             }
 
             if (StringUtil.isEmpty(endpoint)) {
                 throw new RuntimeException("Endpoint not set");
-            }
-
-            AWSSigV4Signer awsSigV4Signer;
-            if (awsAuthenticationCustomCredentialsProvider != null ) {
-                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCustomCredentialsProvider);
-            }
-            else if (awsAuthenticationCredentialsProvider == null) {
-                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCredentials);
-            }
-            else {
-                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCredentials,awsAuthenticationCredentialsProvider);
             }
             
             LWAAuthorizationSigner lwaAuthorizationSigner = null;            
@@ -1866,7 +1882,6 @@ public class FbaOutboundApi {
             }
 
             return new FbaOutboundApi(new ApiClient()
-                .setAWSSigV4Signer(awsSigV4Signer)
                 .setLWAAuthorizationSigner(lwaAuthorizationSigner)
                 .setBasePath(endpoint)
                 .setRateLimiter(rateLimitConfiguration));

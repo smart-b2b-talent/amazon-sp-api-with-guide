@@ -1,6 +1,6 @@
 /*
  * Selling Partner API for Pricing
- * The Selling Partner API for Pricing helps you programmatically retrieve product pricing and offer pricing information for Amazon Marketplace products.  For more information, see the [Product Pricing v2022-05-01 Use Case Guide](doc:product-pricing-api-v2022-05-01-use-case-guide).
+ * The Selling Partner API for Pricing helps you programmatically retrieve product pricing and offer pricing information for Amazon Marketplace products.  For more information, refer to the [Product Pricing v2022-05-01 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/product-pricing-api-v2022-05-01-use-case-guide).
  *
  * OpenAPI spec version: 2022-05-01
  * 
@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * Points
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:47.660-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:06.258+08:00")
 public class Points {
   @SerializedName("pointsNumber")
   private Integer pointsNumber = null;

@@ -38,15 +38,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCredentials;
-import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCredentialsProvider;
-import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCustomCredentialsProvider;
-import com.amazon.SellingPartnerAPIAA.AWSSigV4Signer;
 import com.amazon.SellingPartnerAPIAA.LWAAccessTokenCache;
 import com.amazon.SellingPartnerAPIAA.LWAAccessTokenCacheImpl;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationCredentials;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationSigner;
 import com.amazon.SellingPartnerAPIAA.RateLimitConfiguration;
+import com.amazon.SellingPartnerAPIAA.LWAException;
 
 public class CatalogApi {
     private ApiClient apiClient;
@@ -77,8 +74,9 @@ public class CatalogApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getCatalogItemCall(String asin, List<String> marketplaceIds, List<String> includedData, String locale, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getCatalogItemCall(String asin, List<String> marketplaceIds, List<String> includedData, String locale, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -127,7 +125,7 @@ public class CatalogApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getCatalogItemValidateBeforeCall(String asin, List<String> marketplaceIds, List<String> includedData, String locale, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getCatalogItemValidateBeforeCall(String asin, List<String> marketplaceIds, List<String> includedData, String locale, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'asin' is set
         if (asin == null) {
@@ -154,8 +152,9 @@ public class CatalogApi {
      * @param locale Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)
      * @return Item
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public Item getCatalogItem(String asin, List<String> marketplaceIds, List<String> includedData, String locale) throws ApiException {
+    public Item getCatalogItem(String asin, List<String> marketplaceIds, List<String> includedData, String locale) throws ApiException,LWAException {
         ApiResponse<Item> resp = getCatalogItemWithHttpInfo(asin, marketplaceIds, includedData, locale);
         return resp.getData();
     }
@@ -169,8 +168,9 @@ public class CatalogApi {
      * @param locale Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)
      * @return ApiResponse&lt;Item&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<Item> getCatalogItemWithHttpInfo(String asin, List<String> marketplaceIds, List<String> includedData, String locale) throws ApiException {
+    public ApiResponse<Item> getCatalogItemWithHttpInfo(String asin, List<String> marketplaceIds, List<String> includedData, String locale) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = getCatalogItemValidateBeforeCall(asin, marketplaceIds, includedData, locale, null, null);
         Type localVarReturnType = new TypeToken<Item>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -186,8 +186,9 @@ public class CatalogApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getCatalogItemAsync(String asin, List<String> marketplaceIds, List<String> includedData, String locale, final ApiCallback<Item> callback) throws ApiException {
+    public com.squareup.okhttp.Call getCatalogItemAsync(String asin, List<String> marketplaceIds, List<String> includedData, String locale, final ApiCallback<Item> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -231,8 +232,9 @@ public class CatalogApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call searchCatalogItemsCall(List<String> marketplaceIds, List<String> identifiers, String identifiersType, List<String> includedData, String locale, String sellerId, List<String> keywords, List<String> brandNames, List<String> classificationIds, Integer pageSize, String pageToken, String keywordsLocale, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call searchCatalogItemsCall(List<String> marketplaceIds, List<String> identifiers, String identifiersType, List<String> includedData, String locale, String sellerId, List<String> keywords, List<String> brandNames, List<String> classificationIds, Integer pageSize, String pageToken, String keywordsLocale, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -298,7 +300,7 @@ public class CatalogApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call searchCatalogItemsValidateBeforeCall(List<String> marketplaceIds, List<String> identifiers, String identifiersType, List<String> includedData, String locale, String sellerId, List<String> keywords, List<String> brandNames, List<String> classificationIds, Integer pageSize, String pageToken, String keywordsLocale, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call searchCatalogItemsValidateBeforeCall(List<String> marketplaceIds, List<String> identifiers, String identifiersType, List<String> includedData, String locale, String sellerId, List<String> keywords, List<String> brandNames, List<String> classificationIds, Integer pageSize, String pageToken, String keywordsLocale, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'marketplaceIds' is set
         if (marketplaceIds == null) {
@@ -328,8 +330,9 @@ public class CatalogApi {
      * @param keywordsLocale The language of the keywords provided for &#x60;keywords&#x60;-based queries. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)
      * @return ItemSearchResults
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ItemSearchResults searchCatalogItems(List<String> marketplaceIds, List<String> identifiers, String identifiersType, List<String> includedData, String locale, String sellerId, List<String> keywords, List<String> brandNames, List<String> classificationIds, Integer pageSize, String pageToken, String keywordsLocale) throws ApiException {
+    public ItemSearchResults searchCatalogItems(List<String> marketplaceIds, List<String> identifiers, String identifiersType, List<String> includedData, String locale, String sellerId, List<String> keywords, List<String> brandNames, List<String> classificationIds, Integer pageSize, String pageToken, String keywordsLocale) throws ApiException,LWAException {
         ApiResponse<ItemSearchResults> resp = searchCatalogItemsWithHttpInfo(marketplaceIds, identifiers, identifiersType, includedData, locale, sellerId, keywords, brandNames, classificationIds, pageSize, pageToken, keywordsLocale);
         return resp.getData();
     }
@@ -351,8 +354,9 @@ public class CatalogApi {
      * @param keywordsLocale The language of the keywords provided for &#x60;keywords&#x60;-based queries. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)
      * @return ApiResponse&lt;ItemSearchResults&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<ItemSearchResults> searchCatalogItemsWithHttpInfo(List<String> marketplaceIds, List<String> identifiers, String identifiersType, List<String> includedData, String locale, String sellerId, List<String> keywords, List<String> brandNames, List<String> classificationIds, Integer pageSize, String pageToken, String keywordsLocale) throws ApiException {
+    public ApiResponse<ItemSearchResults> searchCatalogItemsWithHttpInfo(List<String> marketplaceIds, List<String> identifiers, String identifiersType, List<String> includedData, String locale, String sellerId, List<String> keywords, List<String> brandNames, List<String> classificationIds, Integer pageSize, String pageToken, String keywordsLocale) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = searchCatalogItemsValidateBeforeCall(marketplaceIds, identifiers, identifiersType, includedData, locale, sellerId, keywords, brandNames, classificationIds, pageSize, pageToken, keywordsLocale, null, null);
         Type localVarReturnType = new TypeToken<ItemSearchResults>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -376,8 +380,9 @@ public class CatalogApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call searchCatalogItemsAsync(List<String> marketplaceIds, List<String> identifiers, String identifiersType, List<String> includedData, String locale, String sellerId, List<String> keywords, List<String> brandNames, List<String> classificationIds, Integer pageSize, String pageToken, String keywordsLocale, final ApiCallback<ItemSearchResults> callback) throws ApiException {
+    public com.squareup.okhttp.Call searchCatalogItemsAsync(List<String> marketplaceIds, List<String> identifiers, String identifiersType, List<String> includedData, String locale, String sellerId, List<String> keywords, List<String> brandNames, List<String> classificationIds, Integer pageSize, String pageToken, String keywordsLocale, final ApiCallback<ItemSearchResults> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -405,19 +410,12 @@ public class CatalogApi {
     }
 
     public static class Builder {
-        private AWSAuthenticationCredentials awsAuthenticationCredentials;
         private LWAAuthorizationCredentials lwaAuthorizationCredentials;
         private String endpoint;
         private LWAAccessTokenCache lwaAccessTokenCache;
         private Boolean disableAccessTokenCache = false;
-        private AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider;
         private RateLimitConfiguration rateLimitConfiguration;
-        private AWSAuthenticationCustomCredentialsProvider awsAuthenticationCustomCredentialsProvider;
 
-        public Builder awsAuthenticationCredentials(AWSAuthenticationCredentials awsAuthenticationCredentials) {
-            this.awsAuthenticationCredentials = awsAuthenticationCredentials;
-            return this;
-        }
 
         public Builder lwaAuthorizationCredentials(LWAAuthorizationCredentials lwaAuthorizationCredentials) {
             this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
@@ -438,12 +436,7 @@ public class CatalogApi {
             this.disableAccessTokenCache = true;
             return this;
         }
-        
-        public Builder awsAuthenticationCredentialsProvider(AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider) {
-            this.awsAuthenticationCredentialsProvider = awsAuthenticationCredentialsProvider;
-            return this;
-        }
-        
+
         public Builder rateLimitConfigurationOnRequests(RateLimitConfiguration rateLimitConfiguration){
             this.rateLimitConfiguration = rateLimitConfiguration;
             return this;
@@ -454,34 +447,13 @@ public class CatalogApi {
             return this;
         }
 
-        public Builder awsAuthenticationCustomCredentialsProvider(AWSAuthenticationCustomCredentialsProvider awsAuthenticationCustomCredentialsProvider) {
-            this.awsAuthenticationCustomCredentialsProvider = awsAuthenticationCustomCredentialsProvider;
-            return this;
-        }
-        
-
         public CatalogApi build() {
-            if (awsAuthenticationCredentials == null && awsAuthenticationCustomCredentialsProvider == null) {
-                throw new RuntimeException("Neither AWSAuthenticationCredentials or AWSAuthenticationCustomCredentialsProvider are set");
-            }
-
             if (lwaAuthorizationCredentials == null) {
                 throw new RuntimeException("LWAAuthorizationCredentials not set");
             }
 
             if (StringUtil.isEmpty(endpoint)) {
                 throw new RuntimeException("Endpoint not set");
-            }
-
-            AWSSigV4Signer awsSigV4Signer;
-            if (awsAuthenticationCustomCredentialsProvider != null ) {
-                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCustomCredentialsProvider);
-            }
-            else if (awsAuthenticationCredentialsProvider == null) {
-                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCredentials);
-            }
-            else {
-                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCredentials,awsAuthenticationCredentialsProvider);
             }
             
             LWAAuthorizationSigner lwaAuthorizationSigner = null;            
@@ -496,7 +468,6 @@ public class CatalogApi {
             }
 
             return new CatalogApi(new ApiClient()
-                .setAWSSigV4Signer(awsSigV4Signer)
                 .setLWAAuthorizationSigner(lwaAuthorizationSigner)
                 .setBasePath(endpoint)
                 .setRateLimiter(rateLimitConfiguration));

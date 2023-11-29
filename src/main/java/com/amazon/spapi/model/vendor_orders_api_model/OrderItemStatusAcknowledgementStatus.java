@@ -32,7 +32,7 @@ import java.util.List;
  * Acknowledgement status information.
  */
 @ApiModel(description = "Acknowledgement status information.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:42.994-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:41.239+08:00")
 public class OrderItemStatusAcknowledgementStatus {
   /**
    * Confirmation status of line item.

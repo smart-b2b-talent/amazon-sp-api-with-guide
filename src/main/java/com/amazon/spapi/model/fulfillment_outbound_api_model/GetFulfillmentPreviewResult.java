@@ -29,7 +29,7 @@ import java.io.IOException;
  * A list of fulfillment order previews, including estimated shipping weights, estimated shipping fees, and estimated ship dates and arrival dates.
  */
 @ApiModel(description = "A list of fulfillment order previews, including estimated shipping weights, estimated shipping fees, and estimated ship dates and arrival dates.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:41.721-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:53.196+08:00")
 public class GetFulfillmentPreviewResult {
   @SerializedName("fulfillmentPreviews")
   private FulfillmentPreviewList fulfillmentPreviews = null;

@@ -15,7 +15,7 @@ package com.amazon.spapi.model.finances_api_model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.amazon.spapi.model.finances_api_model.ChargeRefundTransaction;
+import com.amazon.spapi.model.finances_api_model.ChargeRefundTransactions;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -29,7 +29,7 @@ import java.io.IOException;
  * An event related to charge refund.
  */
 @ApiModel(description = "An event related to charge refund.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:56.981-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:49.128+08:00")
 public class ChargeRefundEvent {
   @SerializedName("PostedDate")
   private String postedDate = null;
@@ -41,7 +41,7 @@ public class ChargeRefundEvent {
   private String reasonCodeDescription = null;
 
   @SerializedName("ChargeRefundTransactions")
-  private ChargeRefundTransaction chargeRefundTransactions = null;
+  private ChargeRefundTransactions chargeRefundTransactions = null;
 
   public ChargeRefundEvent postedDate(String postedDate) {
     this.postedDate = postedDate;
@@ -97,7 +97,7 @@ public class ChargeRefundEvent {
     this.reasonCodeDescription = reasonCodeDescription;
   }
 
-  public ChargeRefundEvent chargeRefundTransactions(ChargeRefundTransaction chargeRefundTransactions) {
+  public ChargeRefundEvent chargeRefundTransactions(ChargeRefundTransactions chargeRefundTransactions) {
     this.chargeRefundTransactions = chargeRefundTransactions;
     return this;
   }
@@ -107,11 +107,11 @@ public class ChargeRefundEvent {
    * @return chargeRefundTransactions
   **/
   @ApiModelProperty(value = "The amount of the charge refund credit.")
-  public ChargeRefundTransaction getChargeRefundTransactions() {
+  public ChargeRefundTransactions getChargeRefundTransactions() {
     return chargeRefundTransactions;
   }
 
-  public void setChargeRefundTransactions(ChargeRefundTransaction chargeRefundTransactions) {
+  public void setChargeRefundTransactions(ChargeRefundTransactions chargeRefundTransactions) {
     this.chargeRefundTransactions = chargeRefundTransactions;
   }
 

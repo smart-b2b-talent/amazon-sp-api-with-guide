@@ -28,7 +28,7 @@ import java.io.IOException;
  * The response schema for the createRestrictedDataToken operation.
  */
 @ApiModel(description = "The response schema for the createRestrictedDataToken operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:52.194-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:26.743+08:00")
 public class CreateRestrictedDataTokenResponse {
   @SerializedName("restrictedDataToken")
   private String restrictedDataToken = null;

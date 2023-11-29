@@ -19,6 +19,8 @@ import com.amazon.spapi.model.notifications_api_model.AggregationFilter;
 import com.amazon.spapi.model.notifications_api_model.AggregationSettings;
 import com.amazon.spapi.model.notifications_api_model.MarketplaceFilter;
 import com.amazon.spapi.model.notifications_api_model.MarketplaceIds;
+import com.amazon.spapi.model.notifications_api_model.OrderChangeTypeFilter;
+import com.amazon.spapi.model.notifications_api_model.OrderChangeTypes;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -32,13 +34,63 @@ import java.io.IOException;
  * A notificationType specific filter. This object contains all of the currently available filters and properties that you can use to define a notificationType specific filter.
  */
 @ApiModel(description = "A notificationType specific filter. This object contains all of the currently available filters and properties that you can use to define a notificationType specific filter.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:59.274-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:01.140+08:00")
 public class EventFilter extends AggregationFilter {
   @SerializedName("marketplaceIds")
   private MarketplaceIds marketplaceIds = null;
 
+  @SerializedName("orderChangeTypes")
+  private OrderChangeTypes orderChangeTypes = null;
+
+  /**
+   * An eventFilterType value that is supported by the specific notificationType. This is used by the subscription service to determine the type of event filter. Refer to the section of the [Notifications Use Case Guide](doc:notifications-api-v1-use-case-guide) that describes the specific notificationType to determine if an eventFilterType is supported.
+   */
+  @JsonAdapter(EventFilterTypeEnum.Adapter.class)
+  public enum EventFilterTypeEnum {
+    ANY_OFFER_CHANGED("ANY_OFFER_CHANGED"),
+    
+    ORDER_CHANGE("ORDER_CHANGE");
+
+    private String value;
+
+    EventFilterTypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static EventFilterTypeEnum fromValue(String text) {
+      for (EventFilterTypeEnum b : EventFilterTypeEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<EventFilterTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final EventFilterTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public EventFilterTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return EventFilterTypeEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
   @SerializedName("eventFilterType")
-  private String eventFilterType = null;
+  private EventFilterTypeEnum eventFilterType = null;
 
   public EventFilter marketplaceIds(MarketplaceIds marketplaceIds) {
     this.marketplaceIds = marketplaceIds;
@@ -58,7 +110,25 @@ public class EventFilter extends AggregationFilter {
     this.marketplaceIds = marketplaceIds;
   }
 
-  public EventFilter eventFilterType(String eventFilterType) {
+  public EventFilter orderChangeTypes(OrderChangeTypes orderChangeTypes) {
+    this.orderChangeTypes = orderChangeTypes;
+    return this;
+  }
+
+   /**
+   * Get orderChangeTypes
+   * @return orderChangeTypes
+  **/
+  @ApiModelProperty(value = "")
+  public OrderChangeTypes getOrderChangeTypes() {
+    return orderChangeTypes;
+  }
+
+  public void setOrderChangeTypes(OrderChangeTypes orderChangeTypes) {
+    this.orderChangeTypes = orderChangeTypes;
+  }
+
+  public EventFilter eventFilterType(EventFilterTypeEnum eventFilterType) {
     this.eventFilterType = eventFilterType;
     return this;
   }
@@ -68,11 +138,11 @@ public class EventFilter extends AggregationFilter {
    * @return eventFilterType
   **/
   @ApiModelProperty(required = true, value = "An eventFilterType value that is supported by the specific notificationType. This is used by the subscription service to determine the type of event filter. Refer to the section of the [Notifications Use Case Guide](doc:notifications-api-v1-use-case-guide) that describes the specific notificationType to determine if an eventFilterType is supported.")
-  public String getEventFilterType() {
+  public EventFilterTypeEnum getEventFilterType() {
     return eventFilterType;
   }
 
-  public void setEventFilterType(String eventFilterType) {
+  public void setEventFilterType(EventFilterTypeEnum eventFilterType) {
     this.eventFilterType = eventFilterType;
   }
 
@@ -87,13 +157,14 @@ public class EventFilter extends AggregationFilter {
     }
     EventFilter eventFilter = (EventFilter) o;
     return Objects.equals(this.marketplaceIds, eventFilter.marketplaceIds) &&
+        Objects.equals(this.orderChangeTypes, eventFilter.orderChangeTypes) &&
         Objects.equals(this.eventFilterType, eventFilter.eventFilterType) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(marketplaceIds, eventFilterType, super.hashCode());
+    return Objects.hash(marketplaceIds, orderChangeTypes, eventFilterType, super.hashCode());
   }
 
 
@@ -103,6 +174,7 @@ public class EventFilter extends AggregationFilter {
     sb.append("class EventFilter {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    marketplaceIds: ").append(toIndentedString(marketplaceIds)).append("\n");
+    sb.append("    orderChangeTypes: ").append(toIndentedString(orderChangeTypes)).append("\n");
     sb.append("    eventFilterType: ").append(toIndentedString(eventFilterType)).append("\n");
     sb.append("}");
     return sb.toString();

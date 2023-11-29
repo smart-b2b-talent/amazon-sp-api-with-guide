@@ -24,7 +24,7 @@ import java.util.List;
  * A list of payment events for deal-related fees.
  */
 @ApiModel(description = "A list of payment events for deal-related fees.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:56.981-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:49.128+08:00")
 public class SellerDealPaymentEventList extends ArrayList<SellerDealPaymentEvent> {
 
   @Override

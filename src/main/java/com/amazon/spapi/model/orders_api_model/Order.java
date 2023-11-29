@@ -1,6 +1,6 @@
 /*
  * Selling Partner API for Orders
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
  *
  * OpenAPI spec version: v0
  * 
@@ -22,8 +22,6 @@ import com.amazon.spapi.model.orders_api_model.BuyerTaxInformation;
 import com.amazon.spapi.model.orders_api_model.EasyShipShipmentStatus;
 import com.amazon.spapi.model.orders_api_model.ElectronicInvoiceStatus;
 import com.amazon.spapi.model.orders_api_model.FulfillmentInstruction;
-import com.amazon.spapi.model.orders_api_model.ItemApprovalStatus;
-import com.amazon.spapi.model.orders_api_model.ItemApprovalType;
 import com.amazon.spapi.model.orders_api_model.MarketplaceTaxInfo;
 import com.amazon.spapi.model.orders_api_model.Money;
 import com.amazon.spapi.model.orders_api_model.PaymentExecutionDetailItemList;
@@ -36,14 +34,12 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Order information.
  */
 @ApiModel(description = "Order information.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:51.478-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:02.473+08:00")
 public class Order {
   @SerializedName("AmazonOrderId")
   private String amazonOrderId = null;
@@ -441,12 +437,6 @@ public class Order {
   @SerializedName("ElectronicInvoiceStatus")
   private ElectronicInvoiceStatus electronicInvoiceStatus = null;
 
-  @SerializedName("ItemApprovalTypes")
-  private List<ItemApprovalType> itemApprovalTypes = null;
-
-  @SerializedName("ItemApprovalStatus")
-  private List<ItemApprovalStatus> itemApprovalStatus = null;
-
   public Order amazonOrderId(String amazonOrderId) {
     this.amazonOrderId = amazonOrderId;
     return this;
@@ -741,10 +731,10 @@ public class Order {
   }
 
    /**
-   * The shipment service level category of the order.  Possible values: Expedited, FreeEconomy, NextDay, SameDay, SecondDay, Scheduled, Standard.
+   * The shipment service level category of the order.  Possible values: Expedited, FreeEconomy, NextDay, Priority, SameDay, SecondDay, Scheduled, Standard.
    * @return shipmentServiceLevelCategory
   **/
-  @ApiModelProperty(value = "The shipment service level category of the order.  Possible values: Expedited, FreeEconomy, NextDay, SameDay, SecondDay, Scheduled, Standard.")
+  @ApiModelProperty(value = "The shipment service level category of the order.  Possible values: Expedited, FreeEconomy, NextDay, Priority, SameDay, SecondDay, Scheduled, Standard.")
   public String getShipmentServiceLevelCategory() {
     return shipmentServiceLevelCategory;
   }
@@ -1293,58 +1283,6 @@ public class Order {
     this.electronicInvoiceStatus = electronicInvoiceStatus;
   }
 
-  public Order itemApprovalTypes(List<ItemApprovalType> itemApprovalTypes) {
-    this.itemApprovalTypes = itemApprovalTypes;
-    return this;
-  }
-
-  public Order addItemApprovalTypesItem(ItemApprovalType itemApprovalTypesItem) {
-    if (this.itemApprovalTypes == null) {
-      this.itemApprovalTypes = new ArrayList<ItemApprovalType>();
-    }
-    this.itemApprovalTypes.add(itemApprovalTypesItem);
-    return this;
-  }
-
-   /**
-   * Set of approval types which applies to at least one order item in the order.
-   * @return itemApprovalTypes
-  **/
-  @ApiModelProperty(value = "Set of approval types which applies to at least one order item in the order.")
-  public List<ItemApprovalType> getItemApprovalTypes() {
-    return itemApprovalTypes;
-  }
-
-  public void setItemApprovalTypes(List<ItemApprovalType> itemApprovalTypes) {
-    this.itemApprovalTypes = itemApprovalTypes;
-  }
-
-  public Order itemApprovalStatus(List<ItemApprovalStatus> itemApprovalStatus) {
-    this.itemApprovalStatus = itemApprovalStatus;
-    return this;
-  }
-
-  public Order addItemApprovalStatusItem(ItemApprovalStatus itemApprovalStatusItem) {
-    if (this.itemApprovalStatus == null) {
-      this.itemApprovalStatus = new ArrayList<ItemApprovalStatus>();
-    }
-    this.itemApprovalStatus.add(itemApprovalStatusItem);
-    return this;
-  }
-
-   /**
-   * Subset of all ItemApprovalStatus that are set in at least one of the order items subject to approvals.
-   * @return itemApprovalStatus
-  **/
-  @ApiModelProperty(value = "Subset of all ItemApprovalStatus that are set in at least one of the order items subject to approvals.")
-  public List<ItemApprovalStatus> getItemApprovalStatus() {
-    return itemApprovalStatus;
-  }
-
-  public void setItemApprovalStatus(List<ItemApprovalStatus> itemApprovalStatus) {
-    this.itemApprovalStatus = itemApprovalStatus;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1401,14 +1339,12 @@ public class Order {
         Objects.equals(this.buyerInfo, order.buyerInfo) &&
         Objects.equals(this.automatedShippingSettings, order.automatedShippingSettings) &&
         Objects.equals(this.hasRegulatedItems, order.hasRegulatedItems) &&
-        Objects.equals(this.electronicInvoiceStatus, order.electronicInvoiceStatus) &&
-        Objects.equals(this.itemApprovalTypes, order.itemApprovalTypes) &&
-        Objects.equals(this.itemApprovalStatus, order.itemApprovalStatus);
+        Objects.equals(this.electronicInvoiceStatus, order.electronicInvoiceStatus);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amazonOrderId, sellerOrderId, purchaseDate, lastUpdateDate, orderStatus, fulfillmentChannel, salesChannel, orderChannel, shipServiceLevel, orderTotal, numberOfItemsShipped, numberOfItemsUnshipped, paymentExecutionDetail, paymentMethod, paymentMethodDetails, marketplaceId, shipmentServiceLevelCategory, easyShipShipmentStatus, cbaDisplayableShippingLabel, orderType, earliestShipDate, latestShipDate, earliestDeliveryDate, latestDeliveryDate, isBusinessOrder, isPrime, isPremiumOrder, isGlobalExpressEnabled, replacedOrderId, isReplacementOrder, promiseResponseDueDate, isEstimatedShipDateSet, isSoldByAB, isIBA, defaultShipFromLocationAddress, buyerInvoicePreference, buyerTaxInformation, fulfillmentInstruction, isISPU, isAccessPointOrder, marketplaceTaxInfo, sellerDisplayName, shippingAddress, buyerInfo, automatedShippingSettings, hasRegulatedItems, electronicInvoiceStatus, itemApprovalTypes, itemApprovalStatus);
+    return Objects.hash(amazonOrderId, sellerOrderId, purchaseDate, lastUpdateDate, orderStatus, fulfillmentChannel, salesChannel, orderChannel, shipServiceLevel, orderTotal, numberOfItemsShipped, numberOfItemsUnshipped, paymentExecutionDetail, paymentMethod, paymentMethodDetails, marketplaceId, shipmentServiceLevelCategory, easyShipShipmentStatus, cbaDisplayableShippingLabel, orderType, earliestShipDate, latestShipDate, earliestDeliveryDate, latestDeliveryDate, isBusinessOrder, isPrime, isPremiumOrder, isGlobalExpressEnabled, replacedOrderId, isReplacementOrder, promiseResponseDueDate, isEstimatedShipDateSet, isSoldByAB, isIBA, defaultShipFromLocationAddress, buyerInvoicePreference, buyerTaxInformation, fulfillmentInstruction, isISPU, isAccessPointOrder, marketplaceTaxInfo, sellerDisplayName, shippingAddress, buyerInfo, automatedShippingSettings, hasRegulatedItems, electronicInvoiceStatus);
   }
 
 
@@ -1464,8 +1400,6 @@ public class Order {
     sb.append("    automatedShippingSettings: ").append(toIndentedString(automatedShippingSettings)).append("\n");
     sb.append("    hasRegulatedItems: ").append(toIndentedString(hasRegulatedItems)).append("\n");
     sb.append("    electronicInvoiceStatus: ").append(toIndentedString(electronicInvoiceStatus)).append("\n");
-    sb.append("    itemApprovalTypes: ").append(toIndentedString(itemApprovalTypes)).append("\n");
-    sb.append("    itemApprovalStatus: ").append(toIndentedString(itemApprovalStatus)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -15,106 +15,17 @@ package com.amazon.spapi.model.finances_api_model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.amazon.spapi.model.finances_api_model.Currency;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.amazon.spapi.model.finances_api_model.ValueAddedServiceChargeEvent;
 import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * An event related to a value added service charge.
+ * A list of &#x60;ValueAddedServiceCharge&#x60; events.
  */
-@ApiModel(description = "An event related to a value added service charge.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:27:56.981-04:00")
-public class ValueAddedServiceChargeEventList {
-  @SerializedName("TransactionType")
-  private String transactionType = null;
-
-  @SerializedName("PostedDate")
-  private String postedDate = null;
-
-  @SerializedName("Description")
-  private String description = null;
-
-  @SerializedName("TransactionAmount")
-  private Currency transactionAmount = null;
-
-  public ValueAddedServiceChargeEventList transactionType(String transactionType) {
-    this.transactionType = transactionType;
-    return this;
-  }
-
-   /**
-   * Indicates the type of transaction.  Example: &#39;Other Support Service fees&#39;
-   * @return transactionType
-  **/
-  @ApiModelProperty(value = "Indicates the type of transaction.  Example: 'Other Support Service fees'")
-  public String getTransactionType() {
-    return transactionType;
-  }
-
-  public void setTransactionType(String transactionType) {
-    this.transactionType = transactionType;
-  }
-
-  public ValueAddedServiceChargeEventList postedDate(String postedDate) {
-    this.postedDate = postedDate;
-    return this;
-  }
-
-   /**
-   * The date and time when the financial event was posted.
-   * @return postedDate
-  **/
-  @ApiModelProperty(value = "The date and time when the financial event was posted.")
-  public String getPostedDate() {
-    return postedDate;
-  }
-
-  public void setPostedDate(String postedDate) {
-    this.postedDate = postedDate;
-  }
-
-  public ValueAddedServiceChargeEventList description(String description) {
-    this.description = description;
-    return this;
-  }
-
-   /**
-   * A short description of the service charge event.
-   * @return description
-  **/
-  @ApiModelProperty(value = "A short description of the service charge event.")
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  public ValueAddedServiceChargeEventList transactionAmount(Currency transactionAmount) {
-    this.transactionAmount = transactionAmount;
-    return this;
-  }
-
-   /**
-   * The amount of the service charge event.
-   * @return transactionAmount
-  **/
-  @ApiModelProperty(value = "The amount of the service charge event.")
-  public Currency getTransactionAmount() {
-    return transactionAmount;
-  }
-
-  public void setTransactionAmount(Currency transactionAmount) {
-    this.transactionAmount = transactionAmount;
-  }
-
+@ApiModel(description = "A list of `ValueAddedServiceCharge` events.")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:49.128+08:00")
+public class ValueAddedServiceChargeEventList extends ArrayList<ValueAddedServiceChargeEvent> {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -124,16 +35,12 @@ public class ValueAddedServiceChargeEventList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ValueAddedServiceChargeEventList valueAddedServiceChargeEventList = (ValueAddedServiceChargeEventList) o;
-    return Objects.equals(this.transactionType, valueAddedServiceChargeEventList.transactionType) &&
-        Objects.equals(this.postedDate, valueAddedServiceChargeEventList.postedDate) &&
-        Objects.equals(this.description, valueAddedServiceChargeEventList.description) &&
-        Objects.equals(this.transactionAmount, valueAddedServiceChargeEventList.transactionAmount);
+    return super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(transactionType, postedDate, description, transactionAmount);
+    return Objects.hash(super.hashCode());
   }
 
 
@@ -141,11 +48,7 @@ public class ValueAddedServiceChargeEventList {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ValueAddedServiceChargeEventList {\n");
-    
-    sb.append("    transactionType: ").append(toIndentedString(transactionType)).append("\n");
-    sb.append("    postedDate: ").append(toIndentedString(postedDate)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    transactionAmount: ").append(toIndentedString(transactionAmount)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("}");
     return sb.toString();
   }

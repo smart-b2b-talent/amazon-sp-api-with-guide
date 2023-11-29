@@ -1,6 +1,6 @@
 /*
- * Selling Partner API for Shipping
- * Provides programmatic access to Amazon Shipping APIs.   **Note:** If you are new to the Amazon Shipping API, refer to the latest version of <a href=\"https://developer-docs.amazon.com/amazon-shipping/docs/shipping-api-v2-reference\">Amazon Shipping API (v2)</a> on the <a href=\"https://developer-docs.amazon.com/amazon-shipping/\">Amazon Shipping Developer Documentation</a> site.
+ * Selling Partner API for Retail Procurement Transaction Status
+ * The Selling Partner API for Retail Procurement Transaction Status provides programmatic access to status information on specific asynchronous POST transactions for vendors.
  *
  * OpenAPI spec version: v1
  * 
@@ -27,57 +27,11 @@ import org.threeten.bp.LocalDate;
 import org.threeten.bp.OffsetDateTime;
 import org.threeten.bp.format.DateTimeFormatter;
 
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
-import com.amazon.spapi.model.shipping_api_model.*;
+import com.amazon.spapi.model.vendor_transaction_status_api_model.*;
+import com.amazon.spapi.model.vendor_transaction_status_api_model.*;
+import com.amazon.spapi.model.vendor_transaction_status_api_model.*;
+import com.amazon.spapi.model.vendor_transaction_status_api_model.*;
+import com.amazon.spapi.model.vendor_transaction_status_api_model.*;
 import okio.ByteString;
 
 import java.io.IOException;

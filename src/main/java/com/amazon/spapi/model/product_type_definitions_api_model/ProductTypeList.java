@@ -16,6 +16,7 @@ package com.amazon.spapi.model.product_type_definitions_api_model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.amazon.spapi.model.product_type_definitions_api_model.ProductType;
+import com.amazon.spapi.model.product_type_definitions_api_model.ProductTypeVersion;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -31,10 +32,13 @@ import java.util.List;
  * A list of Amazon product types with definitions available.
  */
 @ApiModel(description = "A list of Amazon product types with definitions available.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-05-03T23:28:00.970-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:08.350+08:00")
 public class ProductTypeList {
   @SerializedName("productTypes")
   private List<ProductType> productTypes = new ArrayList<ProductType>();
+
+  @SerializedName("productTypeVersion")
+  private ProductTypeVersion productTypeVersion = null;
 
   public ProductTypeList productTypes(List<ProductType> productTypes) {
     this.productTypes = productTypes;
@@ -59,6 +63,24 @@ public class ProductTypeList {
     this.productTypes = productTypes;
   }
 
+  public ProductTypeList productTypeVersion(ProductTypeVersion productTypeVersion) {
+    this.productTypeVersion = productTypeVersion;
+    return this;
+  }
+
+   /**
+   * The version details for the Amazon product type.
+   * @return productTypeVersion
+  **/
+  @ApiModelProperty(required = true, value = "The version details for the Amazon product type.")
+  public ProductTypeVersion getProductTypeVersion() {
+    return productTypeVersion;
+  }
+
+  public void setProductTypeVersion(ProductTypeVersion productTypeVersion) {
+    this.productTypeVersion = productTypeVersion;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -69,12 +91,13 @@ public class ProductTypeList {
       return false;
     }
     ProductTypeList productTypeList = (ProductTypeList) o;
-    return Objects.equals(this.productTypes, productTypeList.productTypes);
+    return Objects.equals(this.productTypes, productTypeList.productTypes) &&
+        Objects.equals(this.productTypeVersion, productTypeList.productTypeVersion);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(productTypes);
+    return Objects.hash(productTypes, productTypeVersion);
   }
 
 
@@ -84,6 +107,7 @@ public class ProductTypeList {
     sb.append("class ProductTypeList {\n");
     
     sb.append("    productTypes: ").append(toIndentedString(productTypes)).append("\n");
+    sb.append("    productTypeVersion: ").append(toIndentedString(productTypeVersion)).append("\n");
     sb.append("}");
     return sb.toString();
   }

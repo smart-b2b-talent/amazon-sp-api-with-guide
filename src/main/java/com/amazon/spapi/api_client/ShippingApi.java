@@ -49,15 +49,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCredentials;
-import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCredentialsProvider;
-import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCustomCredentialsProvider;
-import com.amazon.SellingPartnerAPIAA.AWSSigV4Signer;
 import com.amazon.SellingPartnerAPIAA.LWAAccessTokenCache;
 import com.amazon.SellingPartnerAPIAA.LWAAccessTokenCacheImpl;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationCredentials;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationSigner;
 import com.amazon.SellingPartnerAPIAA.RateLimitConfiguration;
+import com.amazon.SellingPartnerAPIAA.LWAException;
 
 public class ShippingApi {
     private ApiClient apiClient;
@@ -85,8 +82,9 @@ public class ShippingApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call cancelShipmentCall(String shipmentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cancelShipmentCall(String shipmentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -129,7 +127,7 @@ public class ShippingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cancelShipmentValidateBeforeCall(String shipmentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cancelShipmentValidateBeforeCall(String shipmentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'shipmentId' is set
         if (shipmentId == null) {
@@ -148,8 +146,9 @@ public class ShippingApi {
      * @param shipmentId  (required)
      * @return CancelShipmentResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public CancelShipmentResponse cancelShipment(String shipmentId) throws ApiException {
+    public CancelShipmentResponse cancelShipment(String shipmentId) throws ApiException,LWAException {
         ApiResponse<CancelShipmentResponse> resp = cancelShipmentWithHttpInfo(shipmentId);
         return resp.getData();
     }
@@ -160,8 +159,9 @@ public class ShippingApi {
      * @param shipmentId  (required)
      * @return ApiResponse&lt;CancelShipmentResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<CancelShipmentResponse> cancelShipmentWithHttpInfo(String shipmentId) throws ApiException {
+    public ApiResponse<CancelShipmentResponse> cancelShipmentWithHttpInfo(String shipmentId) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = cancelShipmentValidateBeforeCall(shipmentId, null, null);
         Type localVarReturnType = new TypeToken<CancelShipmentResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -174,8 +174,9 @@ public class ShippingApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call cancelShipmentAsync(String shipmentId, final ApiCallback<CancelShipmentResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cancelShipmentAsync(String shipmentId, final ApiCallback<CancelShipmentResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -208,8 +209,9 @@ public class ShippingApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createShipmentCall(CreateShipmentRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createShipmentCall(CreateShipmentRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -251,7 +253,7 @@ public class ShippingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createShipmentValidateBeforeCall(CreateShipmentRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createShipmentValidateBeforeCall(CreateShipmentRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'body' is set
         if (body == null) {
@@ -270,8 +272,9 @@ public class ShippingApi {
      * @param body  (required)
      * @return CreateShipmentResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public CreateShipmentResponse createShipment(CreateShipmentRequest body) throws ApiException {
+    public CreateShipmentResponse createShipment(CreateShipmentRequest body) throws ApiException,LWAException {
         ApiResponse<CreateShipmentResponse> resp = createShipmentWithHttpInfo(body);
         return resp.getData();
     }
@@ -282,8 +285,9 @@ public class ShippingApi {
      * @param body  (required)
      * @return ApiResponse&lt;CreateShipmentResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<CreateShipmentResponse> createShipmentWithHttpInfo(CreateShipmentRequest body) throws ApiException {
+    public ApiResponse<CreateShipmentResponse> createShipmentWithHttpInfo(CreateShipmentRequest body) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = createShipmentValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<CreateShipmentResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -296,8 +300,9 @@ public class ShippingApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call createShipmentAsync(CreateShipmentRequest body, final ApiCallback<CreateShipmentResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createShipmentAsync(CreateShipmentRequest body, final ApiCallback<CreateShipmentResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -329,8 +334,9 @@ public class ShippingApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getAccountCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getAccountCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -372,7 +378,7 @@ public class ShippingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getAccountValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getAccountValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
 
         com.squareup.okhttp.Call call = getAccountCall(progressListener, progressRequestListener);
@@ -385,8 +391,9 @@ public class ShippingApi {
      * Verify if the current account is valid.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @return GetAccountResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public GetAccountResponse getAccount() throws ApiException {
+    public GetAccountResponse getAccount() throws ApiException,LWAException {
         ApiResponse<GetAccountResponse> resp = getAccountWithHttpInfo();
         return resp.getData();
     }
@@ -396,8 +403,9 @@ public class ShippingApi {
      * Verify if the current account is valid.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @return ApiResponse&lt;GetAccountResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<GetAccountResponse> getAccountWithHttpInfo() throws ApiException {
+    public ApiResponse<GetAccountResponse> getAccountWithHttpInfo() throws ApiException,LWAException {
         com.squareup.okhttp.Call call = getAccountValidateBeforeCall(null, null);
         Type localVarReturnType = new TypeToken<GetAccountResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -409,8 +417,9 @@ public class ShippingApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getAccountAsync(final ApiCallback<GetAccountResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAccountAsync(final ApiCallback<GetAccountResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -443,8 +452,9 @@ public class ShippingApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getRatesCall(GetRatesRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getRatesCall(GetRatesRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -486,7 +496,7 @@ public class ShippingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getRatesValidateBeforeCall(GetRatesRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getRatesValidateBeforeCall(GetRatesRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'body' is set
         if (body == null) {
@@ -505,8 +515,9 @@ public class ShippingApi {
      * @param body  (required)
      * @return GetRatesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public GetRatesResponse getRates(GetRatesRequest body) throws ApiException {
+    public GetRatesResponse getRates(GetRatesRequest body) throws ApiException,LWAException {
         ApiResponse<GetRatesResponse> resp = getRatesWithHttpInfo(body);
         return resp.getData();
     }
@@ -517,8 +528,9 @@ public class ShippingApi {
      * @param body  (required)
      * @return ApiResponse&lt;GetRatesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<GetRatesResponse> getRatesWithHttpInfo(GetRatesRequest body) throws ApiException {
+    public ApiResponse<GetRatesResponse> getRatesWithHttpInfo(GetRatesRequest body) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = getRatesValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<GetRatesResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -531,8 +543,9 @@ public class ShippingApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getRatesAsync(GetRatesRequest body, final ApiCallback<GetRatesResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getRatesAsync(GetRatesRequest body, final ApiCallback<GetRatesResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -565,8 +578,9 @@ public class ShippingApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getShipmentCall(String shipmentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getShipmentCall(String shipmentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -609,7 +623,7 @@ public class ShippingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getShipmentValidateBeforeCall(String shipmentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getShipmentValidateBeforeCall(String shipmentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'shipmentId' is set
         if (shipmentId == null) {
@@ -628,8 +642,9 @@ public class ShippingApi {
      * @param shipmentId  (required)
      * @return GetShipmentResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public GetShipmentResponse getShipment(String shipmentId) throws ApiException {
+    public GetShipmentResponse getShipment(String shipmentId) throws ApiException,LWAException {
         ApiResponse<GetShipmentResponse> resp = getShipmentWithHttpInfo(shipmentId);
         return resp.getData();
     }
@@ -640,8 +655,9 @@ public class ShippingApi {
      * @param shipmentId  (required)
      * @return ApiResponse&lt;GetShipmentResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<GetShipmentResponse> getShipmentWithHttpInfo(String shipmentId) throws ApiException {
+    public ApiResponse<GetShipmentResponse> getShipmentWithHttpInfo(String shipmentId) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = getShipmentValidateBeforeCall(shipmentId, null, null);
         Type localVarReturnType = new TypeToken<GetShipmentResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -654,8 +670,9 @@ public class ShippingApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getShipmentAsync(String shipmentId, final ApiCallback<GetShipmentResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getShipmentAsync(String shipmentId, final ApiCallback<GetShipmentResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -688,8 +705,9 @@ public class ShippingApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getTrackingInformationCall(String trackingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getTrackingInformationCall(String trackingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -732,7 +750,7 @@ public class ShippingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getTrackingInformationValidateBeforeCall(String trackingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getTrackingInformationValidateBeforeCall(String trackingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'trackingId' is set
         if (trackingId == null) {
@@ -751,8 +769,9 @@ public class ShippingApi {
      * @param trackingId  (required)
      * @return GetTrackingInformationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public GetTrackingInformationResponse getTrackingInformation(String trackingId) throws ApiException {
+    public GetTrackingInformationResponse getTrackingInformation(String trackingId) throws ApiException,LWAException {
         ApiResponse<GetTrackingInformationResponse> resp = getTrackingInformationWithHttpInfo(trackingId);
         return resp.getData();
     }
@@ -763,8 +782,9 @@ public class ShippingApi {
      * @param trackingId  (required)
      * @return ApiResponse&lt;GetTrackingInformationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<GetTrackingInformationResponse> getTrackingInformationWithHttpInfo(String trackingId) throws ApiException {
+    public ApiResponse<GetTrackingInformationResponse> getTrackingInformationWithHttpInfo(String trackingId) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = getTrackingInformationValidateBeforeCall(trackingId, null, null);
         Type localVarReturnType = new TypeToken<GetTrackingInformationResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -777,8 +797,9 @@ public class ShippingApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getTrackingInformationAsync(String trackingId, final ApiCallback<GetTrackingInformationResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getTrackingInformationAsync(String trackingId, final ApiCallback<GetTrackingInformationResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -812,8 +833,9 @@ public class ShippingApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call purchaseLabelsCall(String shipmentId, PurchaseLabelsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call purchaseLabelsCall(String shipmentId, PurchaseLabelsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -856,7 +878,7 @@ public class ShippingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call purchaseLabelsValidateBeforeCall(String shipmentId, PurchaseLabelsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call purchaseLabelsValidateBeforeCall(String shipmentId, PurchaseLabelsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'shipmentId' is set
         if (shipmentId == null) {
@@ -881,8 +903,9 @@ public class ShippingApi {
      * @param body  (required)
      * @return PurchaseLabelsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public PurchaseLabelsResponse purchaseLabels(String shipmentId, PurchaseLabelsRequest body) throws ApiException {
+    public PurchaseLabelsResponse purchaseLabels(String shipmentId, PurchaseLabelsRequest body) throws ApiException,LWAException {
         ApiResponse<PurchaseLabelsResponse> resp = purchaseLabelsWithHttpInfo(shipmentId, body);
         return resp.getData();
     }
@@ -894,8 +917,9 @@ public class ShippingApi {
      * @param body  (required)
      * @return ApiResponse&lt;PurchaseLabelsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<PurchaseLabelsResponse> purchaseLabelsWithHttpInfo(String shipmentId, PurchaseLabelsRequest body) throws ApiException {
+    public ApiResponse<PurchaseLabelsResponse> purchaseLabelsWithHttpInfo(String shipmentId, PurchaseLabelsRequest body) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = purchaseLabelsValidateBeforeCall(shipmentId, body, null, null);
         Type localVarReturnType = new TypeToken<PurchaseLabelsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -909,8 +933,9 @@ public class ShippingApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call purchaseLabelsAsync(String shipmentId, PurchaseLabelsRequest body, final ApiCallback<PurchaseLabelsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call purchaseLabelsAsync(String shipmentId, PurchaseLabelsRequest body, final ApiCallback<PurchaseLabelsResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -943,8 +968,9 @@ public class ShippingApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call purchaseShipmentCall(PurchaseShipmentRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call purchaseShipmentCall(PurchaseShipmentRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -986,7 +1012,7 @@ public class ShippingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call purchaseShipmentValidateBeforeCall(PurchaseShipmentRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call purchaseShipmentValidateBeforeCall(PurchaseShipmentRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'body' is set
         if (body == null) {
@@ -1005,8 +1031,9 @@ public class ShippingApi {
      * @param body  (required)
      * @return PurchaseShipmentResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public PurchaseShipmentResponse purchaseShipment(PurchaseShipmentRequest body) throws ApiException {
+    public PurchaseShipmentResponse purchaseShipment(PurchaseShipmentRequest body) throws ApiException,LWAException {
         ApiResponse<PurchaseShipmentResponse> resp = purchaseShipmentWithHttpInfo(body);
         return resp.getData();
     }
@@ -1017,8 +1044,9 @@ public class ShippingApi {
      * @param body  (required)
      * @return ApiResponse&lt;PurchaseShipmentResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<PurchaseShipmentResponse> purchaseShipmentWithHttpInfo(PurchaseShipmentRequest body) throws ApiException {
+    public ApiResponse<PurchaseShipmentResponse> purchaseShipmentWithHttpInfo(PurchaseShipmentRequest body) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = purchaseShipmentValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<PurchaseShipmentResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1031,8 +1059,9 @@ public class ShippingApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call purchaseShipmentAsync(PurchaseShipmentRequest body, final ApiCallback<PurchaseShipmentResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call purchaseShipmentAsync(PurchaseShipmentRequest body, final ApiCallback<PurchaseShipmentResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1067,8 +1096,9 @@ public class ShippingApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call retrieveShippingLabelCall(String shipmentId, String trackingId, RetrieveShippingLabelRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call retrieveShippingLabelCall(String shipmentId, String trackingId, RetrieveShippingLabelRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -1112,7 +1142,7 @@ public class ShippingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call retrieveShippingLabelValidateBeforeCall(String shipmentId, String trackingId, RetrieveShippingLabelRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call retrieveShippingLabelValidateBeforeCall(String shipmentId, String trackingId, RetrieveShippingLabelRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         
         // verify the required parameter 'shipmentId' is set
         if (shipmentId == null) {
@@ -1143,8 +1173,9 @@ public class ShippingApi {
      * @param body  (required)
      * @return RetrieveShippingLabelResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public RetrieveShippingLabelResponse retrieveShippingLabel(String shipmentId, String trackingId, RetrieveShippingLabelRequest body) throws ApiException {
+    public RetrieveShippingLabelResponse retrieveShippingLabel(String shipmentId, String trackingId, RetrieveShippingLabelRequest body) throws ApiException,LWAException {
         ApiResponse<RetrieveShippingLabelResponse> resp = retrieveShippingLabelWithHttpInfo(shipmentId, trackingId, body);
         return resp.getData();
     }
@@ -1157,8 +1188,9 @@ public class ShippingApi {
      * @param body  (required)
      * @return ApiResponse&lt;RetrieveShippingLabelResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<RetrieveShippingLabelResponse> retrieveShippingLabelWithHttpInfo(String shipmentId, String trackingId, RetrieveShippingLabelRequest body) throws ApiException {
+    public ApiResponse<RetrieveShippingLabelResponse> retrieveShippingLabelWithHttpInfo(String shipmentId, String trackingId, RetrieveShippingLabelRequest body) throws ApiException,LWAException {
         com.squareup.okhttp.Call call = retrieveShippingLabelValidateBeforeCall(shipmentId, trackingId, body, null, null);
         Type localVarReturnType = new TypeToken<RetrieveShippingLabelResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1173,8 +1205,9 @@ public class ShippingApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call retrieveShippingLabelAsync(String shipmentId, String trackingId, RetrieveShippingLabelRequest body, final ApiCallback<RetrieveShippingLabelResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call retrieveShippingLabelAsync(String shipmentId, String trackingId, RetrieveShippingLabelRequest body, final ApiCallback<RetrieveShippingLabelResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1202,19 +1235,12 @@ public class ShippingApi {
     }
 
     public static class Builder {
-        private AWSAuthenticationCredentials awsAuthenticationCredentials;
         private LWAAuthorizationCredentials lwaAuthorizationCredentials;
         private String endpoint;
         private LWAAccessTokenCache lwaAccessTokenCache;
         private Boolean disableAccessTokenCache = false;
-        private AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider;
         private RateLimitConfiguration rateLimitConfiguration;
-        private AWSAuthenticationCustomCredentialsProvider awsAuthenticationCustomCredentialsProvider;
 
-        public Builder awsAuthenticationCredentials(AWSAuthenticationCredentials awsAuthenticationCredentials) {
-            this.awsAuthenticationCredentials = awsAuthenticationCredentials;
-            return this;
-        }
 
         public Builder lwaAuthorizationCredentials(LWAAuthorizationCredentials lwaAuthorizationCredentials) {
             this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
@@ -1235,12 +1261,7 @@ public class ShippingApi {
             this.disableAccessTokenCache = true;
             return this;
         }
-        
-        public Builder awsAuthenticationCredentialsProvider(AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider) {
-            this.awsAuthenticationCredentialsProvider = awsAuthenticationCredentialsProvider;
-            return this;
-        }
-        
+
         public Builder rateLimitConfigurationOnRequests(RateLimitConfiguration rateLimitConfiguration){
             this.rateLimitConfiguration = rateLimitConfiguration;
             return this;
@@ -1251,34 +1272,13 @@ public class ShippingApi {
             return this;
         }
 
-        public Builder awsAuthenticationCustomCredentialsProvider(AWSAuthenticationCustomCredentialsProvider awsAuthenticationCustomCredentialsProvider) {
-            this.awsAuthenticationCustomCredentialsProvider = awsAuthenticationCustomCredentialsProvider;
-            return this;
-        }
-        
-
         public ShippingApi build() {
-            if (awsAuthenticationCredentials == null && awsAuthenticationCustomCredentialsProvider == null) {
-                throw new RuntimeException("Neither AWSAuthenticationCredentials or AWSAuthenticationCustomCredentialsProvider are set");
-            }
-
             if (lwaAuthorizationCredentials == null) {
                 throw new RuntimeException("LWAAuthorizationCredentials not set");
             }
 
             if (StringUtil.isEmpty(endpoint)) {
                 throw new RuntimeException("Endpoint not set");
-            }
-
-            AWSSigV4Signer awsSigV4Signer;
-            if (awsAuthenticationCustomCredentialsProvider != null ) {
-                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCustomCredentialsProvider);
-            }
-            else if (awsAuthenticationCredentialsProvider == null) {
-                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCredentials);
-            }
-            else {
-                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCredentials,awsAuthenticationCredentialsProvider);
             }
             
             LWAAuthorizationSigner lwaAuthorizationSigner = null;            
@@ -1293,7 +1293,6 @@ public class ShippingApi {
             }
 
             return new ShippingApi(new ApiClient()
-                .setAWSSigV4Signer(awsSigV4Signer)
                 .setLWAAuthorizationSigner(lwaAuthorizationSigner)
                 .setBasePath(endpoint)
                 .setRateLimiter(rateLimitConfiguration));

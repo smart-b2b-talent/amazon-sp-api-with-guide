@@ -1,6 +1,6 @@
 /*
- * Selling Partner API for Shipping
- * Provides programmatic access to Amazon Shipping APIs.   **Note:** If you are new to the Amazon Shipping API, refer to the latest version of <a href=\"https://developer-docs.amazon.com/amazon-shipping/docs/shipping-api-v2-reference\">Amazon Shipping API (v2)</a> on the <a href=\"https://developer-docs.amazon.com/amazon-shipping/\">Amazon Shipping Developer Documentation</a> site.
+ * Selling Partner API for Retail Procurement Transaction Status
+ * The Selling Partner API for Retail Procurement Transaction Status provides programmatic access to status information on specific asynchronous POST transactions for vendors.
  *
  * OpenAPI spec version: v1
  * 
@@ -50,10 +50,10 @@ import com.amazon.spapi.auth.HttpBasicAuth;
 import com.amazon.spapi.auth.ApiKeyAuth;
 import com.amazon.spapi.auth.OAuth;
 
-import com.amazon.SellingPartnerAPIAA.AWSSigV4Signer;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationSigner;
 import com.google.common.util.concurrent.RateLimiter;
 import com.amazon.SellingPartnerAPIAA.RateLimitConfiguration;
+import com.amazon.SellingPartnerAPIAA.LWAException;
 
 public class ApiClient {
 
@@ -78,7 +78,6 @@ public class ApiClient {
     private HttpLoggingInterceptor loggingInterceptor;
 
     private LWAAuthorizationSigner lwaAuthorizationSigner;
-    private AWSSigV4Signer awsSigV4Signer;
     private RateLimiter rateLimiter;
     private RateLimitConfiguration rateLimitConfiguration;
 
@@ -474,17 +473,6 @@ public class ApiClient {
         this.lwaAuthorizationSigner = lwaAuthorizationSigner;
         return this;
     }
-
-    /**
-     * Sets the AWSSigV4Signer
-     *
-     * @param awsSigV4Signer AWSSigV4Signer instance
-     * @return Api client
-     */
-     public ApiClient setAWSSigV4Signer(AWSSigV4Signer awsSigV4Signer) {
-          this.awsSigV4Signer = awsSigV4Signer;
-          return this;
-     }
      
     /**
      * Sets the RateLimiter
@@ -963,8 +951,9 @@ public class ApiClient {
      * @param progressRequestListener Progress request listener
      * @return The HTTP call
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public Call buildCall(String path, String method, List<Pair> queryParams, List<Pair> collectionQueryParams, Object body, Map<String, String> headerParams, Map<String, Object> formParams, String[] authNames, ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public Call buildCall(String path, String method, List<Pair> queryParams, List<Pair> collectionQueryParams, Object body, Map<String, String> headerParams, Map<String, Object> formParams, String[] authNames, ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Request request = buildRequest(path, method, queryParams, collectionQueryParams, body, headerParams, formParams, authNames, progressRequestListener);
 
         return httpClient.newCall(request);
@@ -984,8 +973,9 @@ public class ApiClient {
      * @param progressRequestListener Progress request listener
      * @return The HTTP request 
      * @throws ApiException If fail to serialize the request body object
+     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public Request buildRequest(String path, String method, List<Pair> queryParams, List<Pair> collectionQueryParams, Object body, Map<String, String> headerParams, Map<String, Object> formParams, String[] authNames, ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public Request buildRequest(String path, String method, List<Pair> queryParams, List<Pair> collectionQueryParams, Object body, Map<String, String> headerParams, Map<String, Object> formParams, String[] authNames, ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         updateParamsForAuth(authNames, queryParams, headerParams);
 
         final String url = buildUrl(path, queryParams, collectionQueryParams);
@@ -1027,7 +1017,6 @@ public class ApiClient {
         }
 
         request = lwaAuthorizationSigner.sign(request);
-        request = awsSigV4Signer.sign(request);
 
         return request;
     }
