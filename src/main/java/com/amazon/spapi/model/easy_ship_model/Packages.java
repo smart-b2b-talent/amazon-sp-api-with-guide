@@ -31,7 +31,7 @@ import java.util.List;
  * A list of packages.
  */
 @ApiModel(description = "A list of packages.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:43.315+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:49.741+08:00")
 public class Packages {
   @SerializedName("packages")
   private List<ModelPackage> packages = new ArrayList<ModelPackage>();

@@ -30,7 +30,7 @@ import java.io.IOException;
  * Shipment measurement details.
  */
 @ApiModel(description = "Shipment measurement details.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:42.836+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:12:16.566+08:00")
 public class TransportShipmentMeasurements {
   @SerializedName("totalCartonCount")
   private Integer totalCartonCount = null;

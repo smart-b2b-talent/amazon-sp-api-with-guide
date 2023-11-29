@@ -29,7 +29,7 @@ import java.io.IOException;
  * An additional set of seller inputs required to purchase shipping.
  */
 @ApiModel(description = "An additional set of seller inputs required to purchase shipping.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:57.882+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:20.124+08:00")
 public class AdditionalSellerInputs {
   @SerializedName("AdditionalInputFieldName")
   private String additionalInputFieldName = null;

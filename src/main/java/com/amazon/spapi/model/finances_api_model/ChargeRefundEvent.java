@@ -29,7 +29,7 @@ import java.io.IOException;
  * An event related to charge refund.
  */
 @ApiModel(description = "An event related to charge refund.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:49.128+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:09.317+08:00")
 public class ChargeRefundEvent {
   @SerializedName("PostedDate")
   private String postedDate = null;

@@ -24,7 +24,7 @@ import java.util.List;
  * A list of inventory summaries.
  */
 @ApiModel(description = "A list of inventory summaries.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:45.694+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:56.728+08:00")
 public class InventorySummaries extends ArrayList<InventorySummary> {
 
   @Override

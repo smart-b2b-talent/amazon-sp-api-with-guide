@@ -29,7 +29,7 @@ import java.io.IOException;
  * A time window to hand over an Easy Ship package to Amazon Logistics.
  */
 @ApiModel(description = "A time window to hand over an Easy Ship package to Amazon Logistics.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:43.315+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:49.741+08:00")
 public class TimeSlot {
   @SerializedName("slotId")
   private String slotId = null;

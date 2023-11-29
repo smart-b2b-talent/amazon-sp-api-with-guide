@@ -24,7 +24,7 @@ import java.util.List;
  * A list of replenishment program types.
  */
 @ApiModel(description = "A list of replenishment program types.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:09.675+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:32.279+08:00")
 public class ProgramTypes extends ArrayList<ProgramType> {
 
   @Override

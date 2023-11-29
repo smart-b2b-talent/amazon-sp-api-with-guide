@@ -24,7 +24,7 @@ import java.util.List;
  * Relationships by marketplace for an Amazon catalog item (for example, variations).
  */
 @ApiModel(description = "Relationships by marketplace for an Amazon catalog item (for example, variations).")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:39.638+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:41.117+08:00")
 public class ItemRelationships extends ArrayList<ItemRelationshipsByMarketplace> {
 
   @Override

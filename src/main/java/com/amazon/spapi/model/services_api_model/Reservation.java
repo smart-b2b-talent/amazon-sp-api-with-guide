@@ -29,7 +29,7 @@ import java.io.IOException;
  * Reservation object reduces the capacity of a resource.
  */
 @ApiModel(description = "Reservation object reduces the capacity of a resource.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:17.007+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:40.519+08:00")
 public class Reservation {
   @SerializedName("reservationId")
   private String reservationId = null;

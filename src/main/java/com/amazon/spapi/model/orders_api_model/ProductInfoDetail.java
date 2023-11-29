@@ -28,7 +28,7 @@ import java.io.IOException;
  * Product information on the number of items.
  */
 @ApiModel(description = "Product information on the number of items.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:02.473+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:25.479+08:00")
 public class ProductInfoDetail {
   @SerializedName("NumberOfItems")
   private Integer numberOfItems = null;

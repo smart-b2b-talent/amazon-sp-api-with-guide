@@ -29,7 +29,7 @@ import java.io.IOException;
  * An event related to a capacity reservation billing charge.
  */
 @ApiModel(description = "An event related to a capacity reservation billing charge.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:49.128+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:09.317+08:00")
 public class CapacityReservationBillingEvent {
   @SerializedName("TransactionType")
   private String transactionType = null;

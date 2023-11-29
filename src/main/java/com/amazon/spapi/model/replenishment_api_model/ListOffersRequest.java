@@ -31,7 +31,7 @@ import java.io.IOException;
  * The request body for the &#x60;listOffers&#x60; operation.
  */
 @ApiModel(description = "The request body for the `listOffers` operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:09.675+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:32.279+08:00")
 public class ListOffersRequest {
   @SerializedName("pagination")
   private ListOffersRequestPagination pagination = null;

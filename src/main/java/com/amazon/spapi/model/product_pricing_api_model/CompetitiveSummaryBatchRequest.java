@@ -29,7 +29,7 @@ import java.io.IOException;
  * The &#x60;competitiveSummary&#x60; batch request data.
  */
 @ApiModel(description = "The `competitiveSummary` batch request data.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:06.258+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:28.929+08:00")
 public class CompetitiveSummaryBatchRequest {
   @SerializedName("requests")
   private CompetitiveSummaryRequestList requests = null;

@@ -24,7 +24,7 @@ import java.util.List;
  * A list of packages, including carrier, tracking number, and status information for each package.
  */
 @ApiModel(description = "A list of packages, including carrier, tracking number, and status information for each package.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:51.210+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:12.118+08:00")
 public class NonPartneredSmallParcelPackageOutputList extends ArrayList<NonPartneredSmallParcelPackageOutput> {
 
   @Override

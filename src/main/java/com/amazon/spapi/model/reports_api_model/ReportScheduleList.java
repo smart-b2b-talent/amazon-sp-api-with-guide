@@ -31,7 +31,7 @@ import java.util.List;
  * A list of report schedules.
  */
 @ApiModel(description = "A list of report schedules.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:11.910+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:34.370+08:00")
 public class ReportScheduleList {
   @SerializedName("reportSchedules")
   private List<ReportSchedule> reportSchedules = new ArrayList<ReportSchedule>();

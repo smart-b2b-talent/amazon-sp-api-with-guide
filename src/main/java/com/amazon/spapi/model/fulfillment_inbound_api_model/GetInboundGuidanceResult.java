@@ -31,7 +31,7 @@ import java.io.IOException;
 /**
  * GetInboundGuidanceResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:51.210+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:12.118+08:00")
 public class GetInboundGuidanceResult {
   @SerializedName("SKUInboundGuidanceList")
   private SKUInboundGuidanceList skUInboundGuidanceList = null;

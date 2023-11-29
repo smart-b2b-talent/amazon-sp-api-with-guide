@@ -30,7 +30,7 @@ import java.io.IOException;
  * An adjustment to the seller&#39;s account.
  */
 @ApiModel(description = "An adjustment to the seller's account.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:49.128+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:09.317+08:00")
 public class AdjustmentEvent {
   @SerializedName("AdjustmentType")
   private String adjustmentType = null;

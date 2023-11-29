@@ -30,7 +30,7 @@ import java.io.IOException;
  * The response for the &#x60;getQueries&#x60; operation.
  */
 @ApiModel(description = "The response for the `getQueries` operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:41.923+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:46.579+08:00")
 public class GetQueriesResponse {
   @SerializedName("queries")
   private QueryList queries = null;

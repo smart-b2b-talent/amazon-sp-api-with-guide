@@ -31,7 +31,7 @@ import java.io.IOException;
  * An item identifier and the estimated fees for the item.
  */
 @ApiModel(description = "An item identifier and the estimated fees for the item.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:04.348+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:27.695+08:00")
 public class FeesEstimateResult {
   @SerializedName("Status")
   private String status = null;

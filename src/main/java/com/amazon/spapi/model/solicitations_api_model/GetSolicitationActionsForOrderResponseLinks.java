@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * GetSolicitationActionsForOrderResponseLinks
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:23.541+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:49.072+08:00")
 public class GetSolicitationActionsForOrderResponseLinks {
   @SerializedName("self")
   private LinkObject self = null;

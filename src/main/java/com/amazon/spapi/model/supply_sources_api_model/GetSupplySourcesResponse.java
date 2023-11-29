@@ -29,7 +29,7 @@ import java.io.IOException;
  * The paginated list of supply sources.
  */
 @ApiModel(description = "The paginated list of supply sources.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:24.793+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:50.997+08:00")
 public class GetSupplySourcesResponse {
   @SerializedName("supplySources")
   private SupplySourceList supplySources = null;

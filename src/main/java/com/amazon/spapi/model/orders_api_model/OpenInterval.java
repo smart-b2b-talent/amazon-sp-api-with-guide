@@ -29,7 +29,7 @@ import java.io.IOException;
  * The time interval for which the business is open.
  */
 @ApiModel(description = "The time interval for which the business is open.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:02.473+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:25.479+08:00")
 public class OpenInterval {
   @SerializedName("StartTime")
   private OpenTimeInterval startTime = null;

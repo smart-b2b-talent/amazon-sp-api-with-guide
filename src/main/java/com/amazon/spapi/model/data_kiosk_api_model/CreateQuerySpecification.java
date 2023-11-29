@@ -28,7 +28,7 @@ import java.io.IOException;
  * Information required to create the query.
  */
 @ApiModel(description = "Information required to create the query.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:41.923+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:46.579+08:00")
 public class CreateQuerySpecification {
   @SerializedName("query")
   private String query = null;

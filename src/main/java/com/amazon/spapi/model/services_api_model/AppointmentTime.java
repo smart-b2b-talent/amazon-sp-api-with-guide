@@ -29,7 +29,7 @@ import org.threeten.bp.OffsetDateTime;
  * The time of the appointment window.
  */
 @ApiModel(description = "The time of the appointment window.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:17.007+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:40.519+08:00")
 public class AppointmentTime {
   @SerializedName("startTime")
   private OffsetDateTime startTime = null;

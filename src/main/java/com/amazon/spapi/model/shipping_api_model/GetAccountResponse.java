@@ -30,7 +30,7 @@ import java.io.IOException;
  * The response schema for the getAccount operation.
  */
 @ApiModel(description = "The response schema for the getAccount operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:20.740+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:45.887+08:00")
 public class GetAccountResponse {
   @SerializedName("payload")
   private Account payload = null;

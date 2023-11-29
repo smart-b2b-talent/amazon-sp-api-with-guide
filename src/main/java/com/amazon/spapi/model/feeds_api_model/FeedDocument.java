@@ -28,7 +28,7 @@ import java.io.IOException;
  * Information required for the feed document.
  */
 @ApiModel(description = "Information required for the feed document.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:47.973+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:05.132+08:00")
 public class FeedDocument {
   @SerializedName("feedDocumentId")
   private String feedDocumentId = null;

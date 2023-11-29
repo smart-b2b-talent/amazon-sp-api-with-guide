@@ -30,7 +30,7 @@ import java.util.List;
  * Model of a restricted resource.
  */
 @ApiModel(description = "Model of a restricted resource.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:26.743+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:53.425+08:00")
 public class RestrictedResource {
   /**
    * The HTTP method in the restricted resource.

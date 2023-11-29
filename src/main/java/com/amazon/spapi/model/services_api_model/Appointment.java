@@ -33,7 +33,7 @@ import java.util.List;
  * The details of an appointment.
  */
 @ApiModel(description = "The details of an appointment.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:17.007+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:40.519+08:00")
 public class Appointment {
   @SerializedName("appointmentId")
   private String appointmentId = null;

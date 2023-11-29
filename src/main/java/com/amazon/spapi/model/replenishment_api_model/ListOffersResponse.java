@@ -32,7 +32,7 @@ import java.util.List;
  * The response schema for the &#x60;listOffers&#x60; operation.
  */
 @ApiModel(description = "The response schema for the `listOffers` operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:09.675+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:32.279+08:00")
 public class ListOffersResponse {
   @SerializedName("offers")
   private List<ListOffersResponseOffer> offers = null;

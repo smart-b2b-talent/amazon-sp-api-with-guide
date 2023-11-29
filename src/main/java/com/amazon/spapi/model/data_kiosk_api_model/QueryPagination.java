@@ -28,7 +28,7 @@ import java.io.IOException;
  * When a query produces results that are not included in the data document, pagination occurs. This means the results are divided into pages. To retrieve the next page, you must pass a &#x60;CreateQuerySpecification&#x60; object with &#x60;paginationToken&#x60; set to this object&#39;s &#x60;nextToken&#x60; and with &#x60;query&#x60; set to this object&#39;s &#x60;query&#x60; in the subsequent &#x60;createQuery&#x60; request. When there are no more pages to fetch, the &#x60;nextToken&#x60; field will be absent.
  */
 @ApiModel(description = "When a query produces results that are not included in the data document, pagination occurs. This means the results are divided into pages. To retrieve the next page, you must pass a `CreateQuerySpecification` object with `paginationToken` set to this object's `nextToken` and with `query` set to this object's `query` in the subsequent `createQuery` request. When there are no more pages to fetch, the `nextToken` field will be absent.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:41.923+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:46.579+08:00")
 public class QueryPagination {
   @SerializedName("nextToken")
   private String nextToken = null;

@@ -29,7 +29,7 @@ import java.io.IOException;
  * The address or reference to another &#x60;supplySourceId&#x60; to act as a return location.
  */
 @ApiModel(description = "The address or reference to another `supplySourceId` to act as a return location.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:24.793+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:50.997+08:00")
 public class ReturnLocation {
   @SerializedName("supplySourceId")
   private String supplySourceId = null;

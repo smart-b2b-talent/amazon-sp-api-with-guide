@@ -23,7 +23,7 @@ import java.util.List;
  * A list of order items.
  */
 @ApiModel(description = "A list of order items.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:02.473+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:25.479+08:00")
 public class TransparencyCodeList extends ArrayList<String> {
 
   @Override

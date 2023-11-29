@@ -28,7 +28,7 @@ import java.io.IOException;
  * A Multi-Channel Fulfillment feature.
  */
 @ApiModel(description = "A Multi-Channel Fulfillment feature.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:53.196+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:14.601+08:00")
 public class Feature {
   @SerializedName("featureName")
   private String featureName = null;

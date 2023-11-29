@@ -28,7 +28,7 @@ import java.io.IOException;
  * Product type associated with the Amazon catalog item for the indicated Amazon marketplace.
  */
 @ApiModel(description = "Product type associated with the Amazon catalog item for the indicated Amazon marketplace.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:39.638+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:41.117+08:00")
 public class ItemProductTypeByMarketplace {
   @SerializedName("marketplaceId")
   private String marketplaceId = null;

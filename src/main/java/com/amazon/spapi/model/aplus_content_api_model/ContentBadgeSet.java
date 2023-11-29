@@ -24,7 +24,7 @@ import java.util.List;
  * The set of content badges.
  */
 @ApiModel(description = "The set of content badges.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:30.497+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:32.689+08:00")
 public class ContentBadgeSet extends ArrayList<ContentBadge> {
 
   @Override

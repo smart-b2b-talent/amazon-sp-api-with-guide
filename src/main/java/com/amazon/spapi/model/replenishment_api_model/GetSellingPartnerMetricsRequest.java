@@ -35,7 +35,7 @@ import java.util.List;
  * The request body for the &#x60;getSellingPartnerMetrics&#x60; operation.
  */
 @ApiModel(description = "The request body for the `getSellingPartnerMetrics` operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:09.675+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:32.279+08:00")
 public class GetSellingPartnerMetricsRequest {
   @SerializedName("aggregationFrequency")
   private AggregationFrequency aggregationFrequency = null;

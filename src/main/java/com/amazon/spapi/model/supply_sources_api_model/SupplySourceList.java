@@ -24,7 +24,7 @@ import java.util.List;
  * The list of &#x60;SupplySource&#x60;s.
  */
 @ApiModel(description = "The list of `SupplySource`s.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:24.793+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:50.997+08:00")
 public class SupplySourceList extends ArrayList<SupplySourceListInner> {
 
   @Override

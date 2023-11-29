@@ -32,7 +32,7 @@ import java.io.IOException;
  * The parking configuration with the address.
  */
 @ApiModel(description = "The parking configuration with the address.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:24.793+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:50.997+08:00")
 public class ParkingWithAddressConfiguration extends ParkingConfiguration {
   @SerializedName("address")
   private Address address = null;

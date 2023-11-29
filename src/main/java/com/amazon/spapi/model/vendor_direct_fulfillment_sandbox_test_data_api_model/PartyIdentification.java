@@ -28,7 +28,7 @@ import java.io.IOException;
  * The identification object for the party information. For example, warehouse code or vendor code. Please refer to specific party for more details.
  */
 @ApiModel(description = "The identification object for the party information. For example, warehouse code or vendor code. Please refer to specific party for more details.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:34.381+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:12:06.074+08:00")
 public class PartyIdentification {
   @SerializedName("partyId")
   private String partyId = null;

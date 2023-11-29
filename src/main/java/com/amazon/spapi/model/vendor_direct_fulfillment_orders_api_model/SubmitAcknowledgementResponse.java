@@ -30,7 +30,7 @@ import java.io.IOException;
  * The response schema for the submitAcknowledgement operation.
  */
 @ApiModel(description = "The response schema for the submitAcknowledgement operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:30.605+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:12:01.408+08:00")
 public class SubmitAcknowledgementResponse {
   @SerializedName("payload")
   private TransactionId payload = null;

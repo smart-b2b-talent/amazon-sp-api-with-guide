@@ -30,7 +30,7 @@ import java.io.IOException;
  * Standard headline text, an image, and body text.
  */
 @ApiModel(description = "Standard headline text, an image, and body text.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:30.497+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:32.689+08:00")
 public class StandardHeaderImageTextModule {
   @SerializedName("headline")
   private TextComponent headline = null;

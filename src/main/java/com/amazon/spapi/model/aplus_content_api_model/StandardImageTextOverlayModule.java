@@ -30,7 +30,7 @@ import java.io.IOException;
  * A standard background image with a floating text box.
  */
 @ApiModel(description = "A standard background image with a floating text box.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:30.497+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:32.689+08:00")
 public class StandardImageTextOverlayModule {
   @SerializedName("overlayColorType")
   private ColorType overlayColorType = null;

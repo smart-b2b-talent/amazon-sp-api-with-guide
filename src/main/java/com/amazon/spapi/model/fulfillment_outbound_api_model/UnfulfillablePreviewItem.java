@@ -29,7 +29,7 @@ import java.io.IOException;
  * Information about unfulfillable items in a fulfillment order preview.
  */
 @ApiModel(description = "Information about unfulfillable items in a fulfillment order preview.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:53.196+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:14.601+08:00")
 public class UnfulfillablePreviewItem {
   @SerializedName("sellerSku")
   private String sellerSku = null;

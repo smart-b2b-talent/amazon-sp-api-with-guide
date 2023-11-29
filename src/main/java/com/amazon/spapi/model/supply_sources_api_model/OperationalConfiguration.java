@@ -32,7 +32,7 @@ import java.io.IOException;
  * The operational configuration of &#x60;supplySources&#x60;.
  */
 @ApiModel(description = "The operational configuration of `supplySources`.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:24.793+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:50.997+08:00")
 public class OperationalConfiguration {
   @SerializedName("contactDetails")
   private ContactDetails contactDetails = null;

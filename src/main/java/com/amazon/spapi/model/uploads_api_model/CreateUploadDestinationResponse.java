@@ -30,7 +30,7 @@ import java.io.IOException;
  * The response schema for the createUploadDestination operation.
  */
 @ApiModel(description = "The response schema for the createUploadDestination operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:27.989+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:56.204+08:00")
 public class CreateUploadDestinationResponse {
   @SerializedName("payload")
   private UploadDestination payload = null;

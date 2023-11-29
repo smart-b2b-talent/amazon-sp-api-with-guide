@@ -29,7 +29,7 @@ import java.io.IOException;
  * The shipment invoice status response.
  */
 @ApiModel(description = "The shipment invoice status response.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:19.307+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:43.849+08:00")
 public class ShipmentInvoiceStatusResponse {
   @SerializedName("Shipments")
   private ShipmentInvoiceStatusInfo shipments = null;

@@ -28,7 +28,7 @@ import java.io.IOException;
  * The process of returning the results to a request in batches of a defined size called pages. This is done to exercise some control over result size and overall throughput. It&#39;s a form of traffic management.
  */
 @ApiModel(description = "The process of returning the results to a request in batches of a defined size called pages. This is done to exercise some control over result size and overall throughput. It's a form of traffic management.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:45.694+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:56.728+08:00")
 public class Pagination {
   @SerializedName("nextToken")
   private String nextToken = null;

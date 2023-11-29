@@ -28,7 +28,7 @@ import java.io.IOException;
  * Location identifier.
  */
 @ApiModel(description = "Location identifier.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:42.836+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:12:16.566+08:00")
 public class Location {
   @SerializedName("type")
   private String type = null;

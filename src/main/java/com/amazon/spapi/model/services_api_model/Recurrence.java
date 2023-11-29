@@ -32,7 +32,7 @@ import org.threeten.bp.OffsetDateTime;
  * Repeated occurrence of an event in a time range.
  */
 @ApiModel(description = "Repeated occurrence of an event in a time range.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:17.007+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:40.519+08:00")
 public class Recurrence {
   @SerializedName("endTime")
   private OffsetDateTime endTime = null;

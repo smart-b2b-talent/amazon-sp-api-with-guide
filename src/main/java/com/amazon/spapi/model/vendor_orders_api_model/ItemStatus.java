@@ -24,7 +24,7 @@ import java.util.List;
  * Detailed description of items order status.
  */
 @ApiModel(description = "Detailed description of items order status.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:41.239+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:12:13.745+08:00")
 public class ItemStatus extends ArrayList<OrderItemStatus> {
 
   @Override

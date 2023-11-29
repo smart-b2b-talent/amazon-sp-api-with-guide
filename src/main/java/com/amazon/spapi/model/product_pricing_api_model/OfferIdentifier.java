@@ -29,7 +29,7 @@ import java.io.IOException;
  * Identifies an offer from a particular seller on an ASIN.
  */
 @ApiModel(description = "Identifies an offer from a particular seller on an ASIN.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:06.258+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:28.929+08:00")
 public class OfferIdentifier {
   @SerializedName("marketplaceId")
   private String marketplaceId = null;

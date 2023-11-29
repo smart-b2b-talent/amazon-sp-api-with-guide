@@ -31,7 +31,7 @@ import java.util.List;
  * Offer preferences that you can include in the result filter criteria.
  */
 @ApiModel(description = "Offer preferences that you can include in the result filter criteria.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:09.675+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:32.279+08:00")
 public class Preference {
   @SerializedName("autoEnrollment")
   private List<AutoEnrollmentPreference> autoEnrollment = null;

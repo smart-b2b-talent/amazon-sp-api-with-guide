@@ -29,7 +29,7 @@ import java.io.IOException;
  * Use this event filter to customize your subscription to send notifications for only the specified orderChangeType.
  */
 @ApiModel(description = "Use this event filter to customize your subscription to send notifications for only the specified orderChangeType.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:01.140+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:23.893+08:00")
 public class OrderChangeTypeFilter {
   @SerializedName("orderChangeTypes")
   private OrderChangeTypes orderChangeTypes = null;

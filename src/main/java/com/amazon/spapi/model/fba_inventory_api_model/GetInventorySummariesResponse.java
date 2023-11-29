@@ -31,7 +31,7 @@ import java.io.IOException;
  * The Response schema.
  */
 @ApiModel(description = "The Response schema.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:45.694+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:56.728+08:00")
 public class GetInventorySummariesResponse {
   @SerializedName("payload")
   private GetInventorySummariesResult payload = null;

@@ -30,7 +30,7 @@ import org.threeten.bp.OffsetDateTime;
  * Contractual or operational port or point relevant to the movement of the cargo.
  */
 @ApiModel(description = "Contractual or operational port or point relevant to the movement of the cargo.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:42.836+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:12:16.566+08:00")
 public class Stop {
   /**
    * Provide the function code.

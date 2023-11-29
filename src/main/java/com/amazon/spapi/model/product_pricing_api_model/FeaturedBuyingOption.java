@@ -31,7 +31,7 @@ import java.util.List;
  * Describes a featured buying option which includes a list of segmented featured offers for a particular item condition.
  */
 @ApiModel(description = "Describes a featured buying option which includes a list of segmented featured offers for a particular item condition.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:06.258+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:28.929+08:00")
 public class FeaturedBuyingOption {
   /**
    * The buying option type of the featured offer. This field represents the buying options that a customer sees on the detail page. For example, B2B, Fresh, and Subscribe n Save. Currently supports &#x60;NEW&#x60;

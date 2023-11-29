@@ -29,7 +29,7 @@ import java.io.IOException;
  * The response schema of the &#x60;competitiveSummaryBatch&#x60; operation.
  */
 @ApiModel(description = "The response schema of the `competitiveSummaryBatch` operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:06.258+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:28.929+08:00")
 public class CompetitiveSummaryBatchResponse {
   @SerializedName("responses")
   private CompetitiveSummaryResponseList responses = null;

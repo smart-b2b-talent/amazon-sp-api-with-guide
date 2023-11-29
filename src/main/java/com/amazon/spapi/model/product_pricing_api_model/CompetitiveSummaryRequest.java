@@ -32,7 +32,7 @@ import java.util.List;
  * An individual &#x60;competitiveSummary&#x60; request for an ASIN and &#x60;marketplaceId&#x60;.
  */
 @ApiModel(description = "An individual `competitiveSummary` request for an ASIN and `marketplaceId`.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:06.258+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:28.929+08:00")
 public class CompetitiveSummaryRequest {
   @SerializedName("asin")
   private String asin = null;

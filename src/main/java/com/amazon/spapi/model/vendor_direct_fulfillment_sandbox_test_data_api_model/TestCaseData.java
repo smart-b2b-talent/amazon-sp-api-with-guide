@@ -31,7 +31,7 @@ import java.util.List;
  * The set of test case data returned in response to the test data request.
  */
 @ApiModel(description = "The set of test case data returned in response to the test data request.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:34.381+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:12:06.074+08:00")
 public class TestCaseData {
   @SerializedName("scenarios")
   private List<Scenario> scenarios = null;

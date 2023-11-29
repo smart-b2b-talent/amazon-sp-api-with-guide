@@ -29,7 +29,7 @@ import java.io.IOException;
  * Item-level information for a removal shipment item adjustment.
  */
 @ApiModel(description = "Item-level information for a removal shipment item adjustment.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:49.128+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:09.317+08:00")
 public class RemovalShipmentItemAdjustment {
   @SerializedName("RemovalShipmentItemId")
   private String removalShipmentItemId = null;

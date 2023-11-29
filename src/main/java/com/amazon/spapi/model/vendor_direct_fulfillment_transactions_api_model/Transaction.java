@@ -29,7 +29,7 @@ import java.io.IOException;
  * The transaction status details.
  */
 @ApiModel(description = "The transaction status details.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:37.427+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:12:10.456+08:00")
 public class Transaction {
   @SerializedName("transactionId")
   private String transactionId = null;

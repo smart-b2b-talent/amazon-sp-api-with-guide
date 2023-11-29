@@ -29,7 +29,7 @@ import java.io.IOException;
  * An item associated with an order item. For example, a tire installation service purchased with tires.
  */
 @ApiModel(description = "An item associated with an order item. For example, a tire installation service purchased with tires.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:02.473+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:25.479+08:00")
 public class AssociatedItem {
   @SerializedName("OrderId")
   private String orderId = null;

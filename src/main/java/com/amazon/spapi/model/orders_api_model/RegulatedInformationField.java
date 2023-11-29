@@ -28,7 +28,7 @@ import java.io.IOException;
  * A field collected from the regulatory form.
  */
 @ApiModel(description = "A field collected from the regulatory form.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:02.473+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:25.479+08:00")
 public class RegulatedInformationField {
   @SerializedName("FieldId")
   private String fieldId = null;

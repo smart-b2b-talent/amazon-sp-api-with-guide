@@ -29,7 +29,7 @@ import org.threeten.bp.OffsetDateTime;
  * Details about the estimated delivery window.
  */
 @ApiModel(description = "Details about the estimated delivery window.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:35.708+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:12:07.873+08:00")
 public class ShipmentSchedule {
   @SerializedName("estimatedDeliveryDateTime")
   private OffsetDateTime estimatedDeliveryDateTime = null;

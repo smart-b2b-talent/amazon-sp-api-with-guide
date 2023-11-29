@@ -31,7 +31,7 @@ import java.io.IOException;
  * Item preparation instructions to help with item sourcing decisions.
  */
 @ApiModel(description = "Item preparation instructions to help with item sourcing decisions.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:51.210+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:12.118+08:00")
 public class ASINPrepInstructions {
   @SerializedName("ASIN")
   private String ASIN = null;

@@ -29,7 +29,7 @@ import java.io.IOException;
  * Fee details for a specific fee.
  */
 @ApiModel(description = "Fee details for a specific fee.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:46.820+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:01.031+08:00")
 public class FeeLineItem {
   /**
    * The type of fee charged to the seller.

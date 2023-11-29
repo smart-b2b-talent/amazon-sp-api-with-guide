@@ -24,7 +24,7 @@ import java.util.List;
  * An array of fulfillment shipment information.
  */
 @ApiModel(description = "An array of fulfillment shipment information.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:53.196+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:14.601+08:00")
 public class FulfillmentShipmentList extends ArrayList<FulfillmentShipment> {
 
   @Override

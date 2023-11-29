@@ -24,7 +24,7 @@ import java.util.List;
  * A set of order metrics, each scoped to a particular time interval.
  */
 @ApiModel(description = "A set of order metrics, each scoped to a particular time interval.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:13.476+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:36.328+08:00")
 public class OrderMetricsList extends ArrayList<OrderMetricsInterval> {
 
   @Override

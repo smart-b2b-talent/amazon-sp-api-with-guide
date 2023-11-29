@@ -29,7 +29,7 @@ import java.io.IOException;
  * The request schema for the &#x60;updateScheduledPackages&#x60; operation.
  */
 @ApiModel(description = "The request schema for the `updateScheduledPackages` operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:43.315+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:49.741+08:00")
 public class UpdateScheduledPackagesRequest {
   @SerializedName("marketplaceId")
   private String marketplaceId = null;

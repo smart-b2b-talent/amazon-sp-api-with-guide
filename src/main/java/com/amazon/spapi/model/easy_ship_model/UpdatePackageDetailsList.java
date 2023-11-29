@@ -24,7 +24,7 @@ import java.util.List;
  * A list of package update details.
  */
 @ApiModel(description = "A list of package update details.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:43.315+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:49.741+08:00")
 public class UpdatePackageDetailsList extends ArrayList<UpdatePackageDetails> {
 
   @Override

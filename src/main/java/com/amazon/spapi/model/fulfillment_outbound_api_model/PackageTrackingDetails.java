@@ -31,7 +31,7 @@ import java.io.IOException;
 /**
  * PackageTrackingDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:53.196+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:14.601+08:00")
 public class PackageTrackingDetails {
   @SerializedName("packageNumber")
   private Integer packageNumber = null;

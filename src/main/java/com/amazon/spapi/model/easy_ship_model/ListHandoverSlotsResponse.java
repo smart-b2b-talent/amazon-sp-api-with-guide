@@ -29,7 +29,7 @@ import java.io.IOException;
  * The response schema for the &#x60;listHandoverSlots&#x60; operation.
  */
 @ApiModel(description = "The response schema for the `listHandoverSlots` operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:43.315+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:49.741+08:00")
 public class ListHandoverSlotsResponse {
   @SerializedName("amazonOrderId")
   private String amazonOrderId = null;

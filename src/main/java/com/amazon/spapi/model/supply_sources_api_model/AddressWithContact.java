@@ -30,7 +30,7 @@ import java.io.IOException;
  * The address and contact details.
  */
 @ApiModel(description = "The address and contact details.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:24.793+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:50.997+08:00")
 public class AddressWithContact {
   @SerializedName("contactDetails")
   private ContactDetails contactDetails = null;

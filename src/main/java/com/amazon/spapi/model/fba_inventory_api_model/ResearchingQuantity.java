@@ -31,7 +31,7 @@ import java.util.List;
  * The number of misplaced or warehouse damaged units that are actively being confirmed at our fulfillment centers.
  */
 @ApiModel(description = "The number of misplaced or warehouse damaged units that are actively being confirmed at our fulfillment centers.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:45.694+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:56.728+08:00")
 public class ResearchingQuantity {
   @SerializedName("totalResearchingQuantity")
   private Integer totalResearchingQuantity = null;

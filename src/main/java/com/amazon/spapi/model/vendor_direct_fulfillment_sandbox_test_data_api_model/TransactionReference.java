@@ -28,7 +28,7 @@ import java.io.IOException;
  * A GUID assigned by Amazon to identify this transaction.
  */
 @ApiModel(description = "A GUID assigned by Amazon to identify this transaction.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:34.381+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:12:06.074+08:00")
 public class TransactionReference {
   @SerializedName("transactionId")
   private String transactionId = null;

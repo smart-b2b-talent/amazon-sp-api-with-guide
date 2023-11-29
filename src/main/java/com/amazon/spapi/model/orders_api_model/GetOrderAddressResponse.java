@@ -30,7 +30,7 @@ import java.io.IOException;
  * The response schema for the getOrderAddress operation.
  */
 @ApiModel(description = "The response schema for the getOrderAddress operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:02.473+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:25.479+08:00")
 public class GetOrderAddressResponse {
   @SerializedName("payload")
   private OrderAddress payload = null;

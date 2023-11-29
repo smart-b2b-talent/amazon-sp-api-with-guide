@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * GetMessagingActionsForOrderResponseEmbedded
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:59.849+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:22.311+08:00")
 public class GetMessagingActionsForOrderResponseEmbedded {
   @SerializedName("actions")
   private List<GetMessagingActionResponse> actions = new ArrayList<GetMessagingActionResponse>();

@@ -29,7 +29,7 @@ import java.io.IOException;
  * The base response data for all A+ Content operations when a request is successful or partially successful. Individual operations may extend this with additional data.
  */
 @ApiModel(description = "The base response data for all A+ Content operations when a request is successful or partially successful. Individual operations may extend this with additional data.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:30.497+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:32.689+08:00")
 public class AplusResponse {
   @SerializedName("warnings")
   private MessageSet warnings = null;

@@ -30,7 +30,7 @@ import java.util.List;
  * A property group represents a logical grouping of schema properties that can be used for display or informational purposes.
  */
 @ApiModel(description = "A property group represents a logical grouping of schema properties that can be used for display or informational purposes.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:08.350+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:30.729+08:00")
 public class PropertyGroup {
   @SerializedName("title")
   private String title = null;

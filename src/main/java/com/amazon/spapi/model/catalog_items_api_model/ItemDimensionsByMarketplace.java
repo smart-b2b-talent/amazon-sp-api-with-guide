@@ -29,7 +29,7 @@ import java.io.IOException;
  * Dimensions associated with the item in the Amazon catalog for the indicated Amazon marketplace.
  */
 @ApiModel(description = "Dimensions associated with the item in the Amazon catalog for the indicated Amazon marketplace.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:39.638+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:41.117+08:00")
 public class ItemDimensionsByMarketplace {
   @SerializedName("marketplaceId")
   private String marketplaceId = null;

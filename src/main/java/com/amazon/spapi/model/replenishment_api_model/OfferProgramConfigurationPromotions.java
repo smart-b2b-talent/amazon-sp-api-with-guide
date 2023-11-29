@@ -29,7 +29,7 @@ import java.io.IOException;
  * An object which represents all promotions applied to an offer.
  */
 @ApiModel(description = "An object which represents all promotions applied to an offer.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:09.675+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:32.279+08:00")
 public class OfferProgramConfigurationPromotions {
   @SerializedName("sellingPartnerFundedBaseDiscount")
   private OfferProgramConfigurationPromotionsDiscountFunding sellingPartnerFundedBaseDiscount = null;

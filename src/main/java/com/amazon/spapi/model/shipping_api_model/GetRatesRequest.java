@@ -32,7 +32,7 @@ import org.threeten.bp.OffsetDateTime;
  * The payload schema for the getRates operation.
  */
 @ApiModel(description = "The payload schema for the getRates operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:20.740+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:45.887+08:00")
 public class GetRatesRequest {
   @SerializedName("shipTo")
   private Address shipTo = null;

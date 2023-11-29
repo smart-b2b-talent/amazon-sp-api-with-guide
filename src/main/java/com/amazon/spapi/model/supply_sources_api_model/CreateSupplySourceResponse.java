@@ -28,7 +28,7 @@ import java.io.IOException;
  * The result of creating a new supply source.
  */
 @ApiModel(description = "The result of creating a new supply source.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:24.793+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:50.997+08:00")
 public class CreateSupplySourceResponse {
   @SerializedName("supplySourceId")
   private String supplySourceId = null;

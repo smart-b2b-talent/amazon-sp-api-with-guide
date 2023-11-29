@@ -30,7 +30,7 @@ import java.math.BigDecimal;
  * An object which contains metric data for a selling partner.
  */
 @ApiModel(description = "An object which contains metric data for a selling partner.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:09.675+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:32.279+08:00")
 public class GetSellingPartnerMetricsResponseMetric {
   @SerializedName("notDeliveredDueToOOS")
   private Double notDeliveredDueToOOS = null;

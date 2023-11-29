@@ -24,7 +24,7 @@ import java.util.List;
  * A list of fee events related to Amazon Imaging services.
  */
 @ApiModel(description = "A list of fee events related to Amazon Imaging services.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:49.128+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:09.317+08:00")
 public class ImagingServicesFeeEventList extends ArrayList<ImagingServicesFeeEvent> {
 
   @Override

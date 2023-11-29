@@ -24,7 +24,7 @@ import java.util.List;
  * A comma-delimited list of Removal shipmentAdjustment details for FBA inventory.
  */
 @ApiModel(description = "A comma-delimited list of Removal shipmentAdjustment details for FBA inventory.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:49.128+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:09.317+08:00")
 public class RemovalShipmentAdjustmentEventList extends ArrayList<RemovalShipmentAdjustmentEvent> {
 
   @Override

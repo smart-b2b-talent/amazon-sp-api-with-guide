@@ -31,7 +31,7 @@ import java.io.IOException;
  * The offer program configuration contains a set of program properties for an offer.
  */
 @ApiModel(description = "The offer program configuration contains a set of program properties for an offer.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:09.675+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:32.279+08:00")
 public class OfferProgramConfiguration {
   @SerializedName("preferences")
   private OfferProgramConfigurationPreferences preferences = null;

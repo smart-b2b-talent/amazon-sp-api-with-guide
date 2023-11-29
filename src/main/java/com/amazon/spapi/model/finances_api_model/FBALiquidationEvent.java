@@ -29,7 +29,7 @@ import java.io.IOException;
  * A payment event for Fulfillment by Amazon (FBA) inventory liquidation. This event is used only in the US marketplace.
  */
 @ApiModel(description = "A payment event for Fulfillment by Amazon (FBA) inventory liquidation. This event is used only in the US marketplace.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:49.128+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:09.317+08:00")
 public class FBALiquidationEvent {
   @SerializedName("PostedDate")
   private String postedDate = null;

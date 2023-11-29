@@ -30,7 +30,7 @@ import org.threeten.bp.OffsetDateTime;
  * Detailed information about the query.
  */
 @ApiModel(description = "Detailed information about the query.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:41.923+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:46.579+08:00")
 public class Query {
   @SerializedName("queryId")
   private String queryId = null;

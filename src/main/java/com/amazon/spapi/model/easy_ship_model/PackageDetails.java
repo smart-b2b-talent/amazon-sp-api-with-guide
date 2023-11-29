@@ -30,7 +30,7 @@ import java.io.IOException;
  * Package details. Includes &#x60;packageItems&#x60;, &#x60;packageTimeSlot&#x60;, and &#x60;packageIdentifier&#x60;.
  */
 @ApiModel(description = "Package details. Includes `packageItems`, `packageTimeSlot`, and `packageIdentifier`.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:43.315+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:49.741+08:00")
 public class PackageDetails {
   @SerializedName("packageItems")
   private Items packageItems = null;

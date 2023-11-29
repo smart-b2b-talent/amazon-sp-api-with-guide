@@ -29,7 +29,7 @@ import java.io.IOException;
  * An object which contains the preferences applied to the offer.
  */
 @ApiModel(description = "An object which contains the preferences applied to the offer.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:09.675+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:32.279+08:00")
 public class OfferProgramConfigurationPreferences {
   @SerializedName("autoEnrollment")
   private AutoEnrollmentPreference autoEnrollment = null;

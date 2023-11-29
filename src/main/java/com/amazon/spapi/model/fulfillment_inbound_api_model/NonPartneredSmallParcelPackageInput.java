@@ -28,7 +28,7 @@ import java.io.IOException;
  * The tracking number of the package, provided by the carrier.
  */
 @ApiModel(description = "The tracking number of the package, provided by the carrier.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:51.210+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:12.118+08:00")
 public class NonPartneredSmallParcelPackageInput {
   @SerializedName("TrackingId")
   private String trackingId = null;

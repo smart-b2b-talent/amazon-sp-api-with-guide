@@ -30,7 +30,7 @@ import java.io.IOException;
  * Pallet information.
  */
 @ApiModel(description = "Pallet information.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:51.210+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:12.118+08:00")
 public class Pallet {
   @SerializedName("Dimensions")
   private Dimensions dimensions = null;

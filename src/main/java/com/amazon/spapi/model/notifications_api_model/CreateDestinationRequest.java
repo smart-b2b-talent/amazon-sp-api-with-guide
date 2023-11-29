@@ -29,7 +29,7 @@ import java.io.IOException;
  * The request schema for the createDestination operation.
  */
 @ApiModel(description = "The request schema for the createDestination operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:01.140+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:23.893+08:00")
 public class CreateDestinationRequest {
   @SerializedName("resourceSpecification")
   private DestinationResourceSpecification resourceSpecification = null;

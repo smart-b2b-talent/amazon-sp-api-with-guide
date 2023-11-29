@@ -30,7 +30,7 @@ import java.io.IOException;
  * Request to update the time slot of a package.
  */
 @ApiModel(description = "Request to update the time slot of a package.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:43.315+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:49.741+08:00")
 public class UpdatePackageDetails {
   @SerializedName("scheduledPackageId")
   private ScheduledPackageId scheduledPackageId = null;

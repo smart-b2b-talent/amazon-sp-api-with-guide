@@ -30,7 +30,7 @@ import java.io.IOException;
  * The response schema for the listFinancialEvents operation.
  */
 @ApiModel(description = "The response schema for the listFinancialEvents operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:49.128+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:09.317+08:00")
 public class ListFinancialEventsResponse {
   @SerializedName("payload")
   private ListFinancialEventsPayload payload = null;

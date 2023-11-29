@@ -29,7 +29,7 @@ import java.io.IOException;
  * A container that holds all of the necessary properties to configure the aggregation of notifications.
  */
 @ApiModel(description = "A container that holds all of the necessary properties to configure the aggregation of notifications.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:01.140+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:23.893+08:00")
 public class AggregationSettings {
   @SerializedName("aggregationTimePeriod")
   private AggregationTimePeriod aggregationTimePeriod = null;

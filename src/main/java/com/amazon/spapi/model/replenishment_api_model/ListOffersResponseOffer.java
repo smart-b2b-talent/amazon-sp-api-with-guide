@@ -33,7 +33,7 @@ import java.util.List;
  * An object which contains details about an offer.
  */
 @ApiModel(description = "An object which contains details about an offer.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:09.675+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:32.279+08:00")
 public class ListOffersResponseOffer {
   @SerializedName("sku")
   private String sku = null;

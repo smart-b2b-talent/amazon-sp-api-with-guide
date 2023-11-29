@@ -30,7 +30,7 @@ import java.io.IOException;
  * The parking configuration.
  */
 @ApiModel(description = "The parking configuration.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:24.793+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:50.997+08:00")
 public class ParkingConfiguration {
   @SerializedName("parkingCostType")
   private ParkingCostType parkingCostType = null;

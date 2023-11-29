@@ -28,7 +28,7 @@ import java.io.IOException;
  * A validation constraint.
  */
 @ApiModel(description = "A validation constraint.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:46:57.882+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:20.124+08:00")
 public class Constraint {
   @SerializedName("ValidationRegEx")
   private String validationRegEx = null;

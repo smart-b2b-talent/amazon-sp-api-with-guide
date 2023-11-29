@@ -31,7 +31,7 @@ import java.io.IOException;
  * The featured offer expected price response data for a requested SKU.
  */
 @ApiModel(description = "The featured offer expected price response data for a requested SKU.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:06.258+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:28.929+08:00")
 public class FeaturedOfferExpectedPriceResponseBody {
   @SerializedName("offerIdentifier")
   private OfferIdentifier offerIdentifier = null;

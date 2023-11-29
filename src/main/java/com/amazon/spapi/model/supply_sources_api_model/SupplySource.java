@@ -32,7 +32,7 @@ import java.io.IOException;
  * The supply source details, including configurations and capabilities.
  */
 @ApiModel(description = "The supply source details, including configurations and capabilities.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T10:47:24.793+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:50.997+08:00")
 public class SupplySource {
   @SerializedName("supplySourceId")
   private String supplySourceId = null;
