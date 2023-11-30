@@ -1,6 +1,6 @@
 /*
  * Selling Partner API for Pricing
- * The Selling Partner API for Pricing helps you programmatically retrieve product pricing and offer pricing information for Amazon Marketplace products.  For more information, refer to the [Product Pricing v2022-05-01 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/product-pricing-api-v2022-05-01-use-case-guide).
+ * The Selling Partner API for Pricing helps you programmatically retrieve product pricing and offer pricing information for Amazon Marketplace products.  For more information, see the [Product Pricing v2022-05-01 Use Case Guide](doc:product-pricing-api-v2022-05-01-use-case-guide).
  *
  * OpenAPI spec version: 2022-05-01
  * 
@@ -30,7 +30,7 @@ import java.io.IOException;
  * The featured offer expected price result data for the requested offer.
  */
 @ApiModel(description = "The featured offer expected price result data for the requested offer.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:28.929+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:42.481+08:00")
 public class FeaturedOfferExpectedPriceResult {
   @SerializedName("featuredOfferExpectedPrice")
   private FeaturedOfferExpectedPrice featuredOfferExpectedPrice = null;
@@ -68,10 +68,10 @@ public class FeaturedOfferExpectedPriceResult {
   }
 
    /**
-   * The status of the featured offer expected price computation. Possible values include &#x60;VALID_FOEP&#x60;, &#x60;NO_COMPETING_OFFER&#x60;, &#x60;OFFER_NOT_ELIGIBLE&#x60;, &#x60;OFFER_NOT_FOUND&#x60;, &#x60;ASIN_NOT_ELIGIBLE&#x60;. Additional values may be added in the future.
+   * The status of the featured offer expected price computation. Possible values include VALID_FOEP, NO_COMPETING_OFFER, OFFER_NOT_ELIGIBLE, OFFER_NOT_FOUND.
    * @return resultStatus
   **/
-  @ApiModelProperty(required = true, value = "The status of the featured offer expected price computation. Possible values include `VALID_FOEP`, `NO_COMPETING_OFFER`, `OFFER_NOT_ELIGIBLE`, `OFFER_NOT_FOUND`, `ASIN_NOT_ELIGIBLE`. Additional values may be added in the future.")
+  @ApiModelProperty(required = true, value = "The status of the featured offer expected price computation. Possible values include VALID_FOEP, NO_COMPETING_OFFER, OFFER_NOT_ELIGIBLE, OFFER_NOT_FOUND.")
   public String getResultStatus() {
     return resultStatus;
   }
@@ -86,10 +86,10 @@ public class FeaturedOfferExpectedPriceResult {
   }
 
    /**
-   * The offer that will likely be the featured offer if the target offer is priced above its featured offer expected price. If the target offer is currently the featured offer, this property will be different than &#x60;currentFeaturedOffer&#x60;.
+   * The offer that will likely be the featured offer if the target offer is priced above its featured offer expected price. If the target offer is currently the featured offer, this property will be different than currentFeaturedOffer.
    * @return competingFeaturedOffer
   **/
-  @ApiModelProperty(value = "The offer that will likely be the featured offer if the target offer is priced above its featured offer expected price. If the target offer is currently the featured offer, this property will be different than `currentFeaturedOffer`.")
+  @ApiModelProperty(value = "The offer that will likely be the featured offer if the target offer is priced above its featured offer expected price. If the target offer is currently the featured offer, this property will be different than currentFeaturedOffer.")
   public FeaturedOffer getCompetingFeaturedOffer() {
     return competingFeaturedOffer;
   }
@@ -104,10 +104,10 @@ public class FeaturedOfferExpectedPriceResult {
   }
 
    /**
-   * The offer that is currently the featured offer. If the target offer is not currently featured, then this property will be equal to &#x60;competingFeaturedOffer&#x60;.
+   * The offer that is currently the featured offer. If the target offer is not currently featured, this property will be equal to competingFeaturedOffer.
    * @return currentFeaturedOffer
   **/
-  @ApiModelProperty(value = "The offer that is currently the featured offer. If the target offer is not currently featured, then this property will be equal to `competingFeaturedOffer`.")
+  @ApiModelProperty(value = "The offer that is currently the featured offer. If the target offer is not currently featured, this property will be equal to competingFeaturedOffer.")
   public FeaturedOffer getCurrentFeaturedOffer() {
     return currentFeaturedOffer;
   }

@@ -29,7 +29,7 @@ import java.math.BigDecimal;
  * Terms of the payment for the invoice. The basis of the payment terms is the invoice date.
  */
 @ApiModel(description = "Terms of the payment for the invoice. The basis of the payment terms is the invoice date.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:12:11.950+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:53:09.410+08:00")
 public class PaymentTerms {
   /**
    * The payment term type for the invoice.

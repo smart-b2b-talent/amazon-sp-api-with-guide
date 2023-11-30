@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * ShippingLabelRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:12:07.873+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:53:06.148+08:00")
 public class ShippingLabelRequest {
   @SerializedName("purchaseOrderNumber")
   private String purchaseOrderNumber = null;

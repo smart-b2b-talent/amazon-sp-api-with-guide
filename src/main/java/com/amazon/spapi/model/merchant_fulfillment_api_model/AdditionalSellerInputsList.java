@@ -24,7 +24,7 @@ import java.util.List;
  * A list of additional seller input pairs required to purchase shipping.
  */
 @ApiModel(description = "A list of additional seller input pairs required to purchase shipping.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:20.124+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:33.036+08:00")
 public class AdditionalSellerInputsList extends ArrayList<AdditionalSellerInputs> {
 
   @Override

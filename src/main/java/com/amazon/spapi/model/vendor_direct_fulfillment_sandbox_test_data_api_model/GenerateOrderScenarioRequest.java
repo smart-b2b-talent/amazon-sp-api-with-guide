@@ -31,7 +31,7 @@ import java.util.List;
  * The request body for the generateOrderScenarios operation.
  */
 @ApiModel(description = "The request body for the generateOrderScenarios operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:12:06.074+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:53:04.935+08:00")
 public class GenerateOrderScenarioRequest {
   @SerializedName("orders")
   private List<OrderScenarioRequest> orders = null;

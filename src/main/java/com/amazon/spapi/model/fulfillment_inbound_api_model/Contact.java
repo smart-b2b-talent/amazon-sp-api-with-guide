@@ -28,7 +28,7 @@ import java.io.IOException;
  * Contact information for the person in the seller&#39;s organization who is responsible for a Less Than Truckload/Full Truckload (LTL/FTL) shipment.
  */
 @ApiModel(description = "Contact information for the person in the seller's organization who is responsible for a Less Than Truckload/Full Truckload (LTL/FTL) shipment.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:12.118+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:24.487+08:00")
 public class Contact {
   @SerializedName("Name")
   private String name = null;

@@ -30,7 +30,7 @@ import java.io.IOException;
  * The response schema for the GetAuthorizationCode operation.
  */
 @ApiModel(description = "The response schema for the GetAuthorizationCode operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:38.704+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:51:59.896+08:00")
 public class GetAuthorizationCodeResponse {
   @SerializedName("payload")
   private AuthorizationCode payload = null;

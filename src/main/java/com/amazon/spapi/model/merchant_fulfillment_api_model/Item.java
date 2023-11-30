@@ -31,7 +31,7 @@ import java.io.IOException;
  * An Amazon order item identifier and a quantity.
  */
 @ApiModel(description = "An Amazon order item identifier and a quantity.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:20.124+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:33.036+08:00")
 public class Item {
   @SerializedName("OrderItemId")
   private String orderItemId = null;

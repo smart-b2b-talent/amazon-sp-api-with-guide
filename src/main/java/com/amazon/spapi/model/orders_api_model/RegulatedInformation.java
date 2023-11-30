@@ -31,7 +31,7 @@ import java.util.List;
  * The regulated information collected during purchase and used to verify the order.
  */
 @ApiModel(description = "The regulated information collected during purchase and used to verify the order.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:25.479+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:38.698+08:00")
 public class RegulatedInformation {
   @SerializedName("Fields")
   private List<RegulatedInformationField> fields = new ArrayList<RegulatedInformationField>();

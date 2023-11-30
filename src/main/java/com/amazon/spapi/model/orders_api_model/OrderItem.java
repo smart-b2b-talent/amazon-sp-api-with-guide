@@ -15,7 +15,6 @@ package com.amazon.spapi.model.orders_api_model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.amazon.spapi.model.orders_api_model.AssociatedItem;
 import com.amazon.spapi.model.orders_api_model.BuyerRequestedCancel;
 import com.amazon.spapi.model.orders_api_model.ItemBuyerInfo;
 import com.amazon.spapi.model.orders_api_model.Measurement;
@@ -40,7 +39,7 @@ import java.util.List;
  * A single order item.
  */
 @ApiModel(description = "A single order item.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:25.479+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:38.698+08:00")
 public class OrderItem {
   @SerializedName("ASIN")
   private String ASIN = null;
@@ -50,9 +49,6 @@ public class OrderItem {
 
   @SerializedName("OrderItemId")
   private String orderItemId = null;
-
-  @SerializedName("AssociatedItems")
-  private List<AssociatedItem> associatedItems = null;
 
   @SerializedName("Title")
   private String title = null;
@@ -255,32 +251,6 @@ public class OrderItem {
 
   public void setOrderItemId(String orderItemId) {
     this.orderItemId = orderItemId;
-  }
-
-  public OrderItem associatedItems(List<AssociatedItem> associatedItems) {
-    this.associatedItems = associatedItems;
-    return this;
-  }
-
-  public OrderItem addAssociatedItemsItem(AssociatedItem associatedItemsItem) {
-    if (this.associatedItems == null) {
-      this.associatedItems = new ArrayList<AssociatedItem>();
-    }
-    this.associatedItems.add(associatedItemsItem);
-    return this;
-  }
-
-   /**
-   * A list of associated items that a customer has purchased with a product. For example, a tire installation service purchased with tires.
-   * @return associatedItems
-  **/
-  @ApiModelProperty(value = "A list of associated items that a customer has purchased with a product. For example, a tire installation service purchased with tires.")
-  public List<AssociatedItem> getAssociatedItems() {
-    return associatedItems;
-  }
-
-  public void setAssociatedItems(List<AssociatedItem> associatedItems) {
-    this.associatedItems = associatedItems;
   }
 
   public OrderItem title(String title) {
@@ -916,7 +886,6 @@ public class OrderItem {
     return Objects.equals(this.ASIN, orderItem.ASIN) &&
         Objects.equals(this.sellerSKU, orderItem.sellerSKU) &&
         Objects.equals(this.orderItemId, orderItem.orderItemId) &&
-        Objects.equals(this.associatedItems, orderItem.associatedItems) &&
         Objects.equals(this.title, orderItem.title) &&
         Objects.equals(this.quantityOrdered, orderItem.quantityOrdered) &&
         Objects.equals(this.quantityShipped, orderItem.quantityShipped) &&
@@ -955,7 +924,7 @@ public class OrderItem {
 
   @Override
   public int hashCode() {
-    return Objects.hash(ASIN, sellerSKU, orderItemId, associatedItems, title, quantityOrdered, quantityShipped, productInfo, pointsGranted, itemPrice, shippingPrice, itemTax, shippingTax, shippingDiscount, shippingDiscountTax, promotionDiscount, promotionDiscountTax, promotionIds, coDFee, coDFeeDiscount, isGift, conditionNote, conditionId, conditionSubtypeId, scheduledDeliveryStartDate, scheduledDeliveryEndDate, priceDesignation, taxCollection, serialNumberRequired, isTransparency, iossNumber, storeChainStoreId, deemedResellerCategory, buyerInfo, buyerRequestedCancel, serialNumbers, substitutionPreferences, measurement);
+    return Objects.hash(ASIN, sellerSKU, orderItemId, title, quantityOrdered, quantityShipped, productInfo, pointsGranted, itemPrice, shippingPrice, itemTax, shippingTax, shippingDiscount, shippingDiscountTax, promotionDiscount, promotionDiscountTax, promotionIds, coDFee, coDFeeDiscount, isGift, conditionNote, conditionId, conditionSubtypeId, scheduledDeliveryStartDate, scheduledDeliveryEndDate, priceDesignation, taxCollection, serialNumberRequired, isTransparency, iossNumber, storeChainStoreId, deemedResellerCategory, buyerInfo, buyerRequestedCancel, serialNumbers, substitutionPreferences, measurement);
   }
 
 
@@ -967,7 +936,6 @@ public class OrderItem {
     sb.append("    ASIN: ").append(toIndentedString(ASIN)).append("\n");
     sb.append("    sellerSKU: ").append(toIndentedString(sellerSKU)).append("\n");
     sb.append("    orderItemId: ").append(toIndentedString(orderItemId)).append("\n");
-    sb.append("    associatedItems: ").append(toIndentedString(associatedItems)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    quantityOrdered: ").append(toIndentedString(quantityOrdered)).append("\n");
     sb.append("    quantityShipped: ").append(toIndentedString(quantityShipped)).append("\n");

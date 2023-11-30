@@ -28,7 +28,7 @@ import java.io.IOException;
  * Image for an item in the Amazon catalog.
  */
 @ApiModel(description = "Image for an item in the Amazon catalog.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:41.117+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:03.526+08:00")
 public class ItemImage {
   /**
    * Variant of the image, such as &#x60;MAIN&#x60; or &#x60;PT01&#x60;.

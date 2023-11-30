@@ -28,7 +28,7 @@ import java.io.IOException;
  * Description of a classification that can be used to get more fine-grained search results.
  */
 @ApiModel(description = "Description of a classification that can be used to get more fine-grained search results.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:41.117+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:03.526+08:00")
 public class ClassificationRefinement {
   @SerializedName("numberOfResults")
   private Integer numberOfResults = null;

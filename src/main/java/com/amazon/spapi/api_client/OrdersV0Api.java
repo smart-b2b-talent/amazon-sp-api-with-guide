@@ -46,12 +46,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCredentials;
+import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCredentialsProvider;
+import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCustomCredentialsProvider;
+import com.amazon.SellingPartnerAPIAA.AWSSigV4Signer;
 import com.amazon.SellingPartnerAPIAA.LWAAccessTokenCache;
 import com.amazon.SellingPartnerAPIAA.LWAAccessTokenCacheImpl;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationCredentials;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationSigner;
 import com.amazon.SellingPartnerAPIAA.RateLimitConfiguration;
-import com.amazon.SellingPartnerAPIAA.LWAException;
 
 public class OrdersV0Api {
     private ApiClient apiClient;
@@ -80,9 +83,8 @@ public class OrdersV0Api {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call confirmShipmentCall(String orderId, ConfirmShipmentRequest payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call confirmShipmentCall(String orderId, ConfirmShipmentRequest payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = payload;
 
         // create path and map variables
@@ -125,7 +127,7 @@ public class OrdersV0Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call confirmShipmentValidateBeforeCall(String orderId, ConfirmShipmentRequest payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    private com.squareup.okhttp.Call confirmShipmentValidateBeforeCall(String orderId, ConfirmShipmentRequest payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'orderId' is set
         if (orderId == null) {
@@ -149,9 +151,8 @@ public class OrdersV0Api {
      * @param orderId An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param payload Request body of confirmShipment. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public void confirmShipment(String orderId, ConfirmShipmentRequest payload) throws ApiException,LWAException {
+    public void confirmShipment(String orderId, ConfirmShipmentRequest payload) throws ApiException {
         confirmShipmentWithHttpInfo(orderId, payload);
     }
 
@@ -162,9 +163,8 @@ public class OrdersV0Api {
      * @param payload Request body of confirmShipment. (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<Void> confirmShipmentWithHttpInfo(String orderId, ConfirmShipmentRequest payload) throws ApiException,LWAException {
+    public ApiResponse<Void> confirmShipmentWithHttpInfo(String orderId, ConfirmShipmentRequest payload) throws ApiException {
         com.squareup.okhttp.Call call = confirmShipmentValidateBeforeCall(orderId, payload, null, null);
         return apiClient.execute(call);
     }
@@ -177,9 +177,8 @@ public class OrdersV0Api {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call confirmShipmentAsync(String orderId, ConfirmShipmentRequest payload, final ApiCallback<Void> callback) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call confirmShipmentAsync(String orderId, ConfirmShipmentRequest payload, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -211,9 +210,8 @@ public class OrdersV0Api {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getOrderCall(String orderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getOrderCall(String orderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -256,7 +254,7 @@ public class OrdersV0Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getOrderValidateBeforeCall(String orderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    private com.squareup.okhttp.Call getOrderValidateBeforeCall(String orderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'orderId' is set
         if (orderId == null) {
@@ -275,9 +273,8 @@ public class OrdersV0Api {
      * @param orderId An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @return GetOrderResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public GetOrderResponse getOrder(String orderId) throws ApiException,LWAException {
+    public GetOrderResponse getOrder(String orderId) throws ApiException {
         ApiResponse<GetOrderResponse> resp = getOrderWithHttpInfo(orderId);
         return resp.getData();
     }
@@ -288,9 +285,8 @@ public class OrdersV0Api {
      * @param orderId An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @return ApiResponse&lt;GetOrderResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<GetOrderResponse> getOrderWithHttpInfo(String orderId) throws ApiException,LWAException {
+    public ApiResponse<GetOrderResponse> getOrderWithHttpInfo(String orderId) throws ApiException {
         com.squareup.okhttp.Call call = getOrderValidateBeforeCall(orderId, null, null);
         Type localVarReturnType = new TypeToken<GetOrderResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -303,9 +299,8 @@ public class OrdersV0Api {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getOrderAsync(String orderId, final ApiCallback<GetOrderResponse> callback) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getOrderAsync(String orderId, final ApiCallback<GetOrderResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -338,9 +333,8 @@ public class OrdersV0Api {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getOrderAddressCall(String orderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getOrderAddressCall(String orderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -383,7 +377,7 @@ public class OrdersV0Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getOrderAddressValidateBeforeCall(String orderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    private com.squareup.okhttp.Call getOrderAddressValidateBeforeCall(String orderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'orderId' is set
         if (orderId == null) {
@@ -402,9 +396,8 @@ public class OrdersV0Api {
      * @param orderId An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      * @return GetOrderAddressResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public GetOrderAddressResponse getOrderAddress(String orderId) throws ApiException,LWAException {
+    public GetOrderAddressResponse getOrderAddress(String orderId) throws ApiException {
         ApiResponse<GetOrderAddressResponse> resp = getOrderAddressWithHttpInfo(orderId);
         return resp.getData();
     }
@@ -415,9 +408,8 @@ public class OrdersV0Api {
      * @param orderId An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      * @return ApiResponse&lt;GetOrderAddressResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<GetOrderAddressResponse> getOrderAddressWithHttpInfo(String orderId) throws ApiException,LWAException {
+    public ApiResponse<GetOrderAddressResponse> getOrderAddressWithHttpInfo(String orderId) throws ApiException {
         com.squareup.okhttp.Call call = getOrderAddressValidateBeforeCall(orderId, null, null);
         Type localVarReturnType = new TypeToken<GetOrderAddressResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -430,9 +422,8 @@ public class OrdersV0Api {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getOrderAddressAsync(String orderId, final ApiCallback<GetOrderAddressResponse> callback) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getOrderAddressAsync(String orderId, final ApiCallback<GetOrderAddressResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -465,9 +456,8 @@ public class OrdersV0Api {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getOrderBuyerInfoCall(String orderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getOrderBuyerInfoCall(String orderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -510,7 +500,7 @@ public class OrdersV0Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getOrderBuyerInfoValidateBeforeCall(String orderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    private com.squareup.okhttp.Call getOrderBuyerInfoValidateBeforeCall(String orderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'orderId' is set
         if (orderId == null) {
@@ -529,9 +519,8 @@ public class OrdersV0Api {
      * @param orderId An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      * @return GetOrderBuyerInfoResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public GetOrderBuyerInfoResponse getOrderBuyerInfo(String orderId) throws ApiException,LWAException {
+    public GetOrderBuyerInfoResponse getOrderBuyerInfo(String orderId) throws ApiException {
         ApiResponse<GetOrderBuyerInfoResponse> resp = getOrderBuyerInfoWithHttpInfo(orderId);
         return resp.getData();
     }
@@ -542,9 +531,8 @@ public class OrdersV0Api {
      * @param orderId An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      * @return ApiResponse&lt;GetOrderBuyerInfoResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<GetOrderBuyerInfoResponse> getOrderBuyerInfoWithHttpInfo(String orderId) throws ApiException,LWAException {
+    public ApiResponse<GetOrderBuyerInfoResponse> getOrderBuyerInfoWithHttpInfo(String orderId) throws ApiException {
         com.squareup.okhttp.Call call = getOrderBuyerInfoValidateBeforeCall(orderId, null, null);
         Type localVarReturnType = new TypeToken<GetOrderBuyerInfoResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -557,9 +545,8 @@ public class OrdersV0Api {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getOrderBuyerInfoAsync(String orderId, final ApiCallback<GetOrderBuyerInfoResponse> callback) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getOrderBuyerInfoAsync(String orderId, final ApiCallback<GetOrderBuyerInfoResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -593,9 +580,8 @@ public class OrdersV0Api {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getOrderItemsCall(String orderId, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getOrderItemsCall(String orderId, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -640,7 +626,7 @@ public class OrdersV0Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getOrderItemsValidateBeforeCall(String orderId, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    private com.squareup.okhttp.Call getOrderItemsValidateBeforeCall(String orderId, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'orderId' is set
         if (orderId == null) {
@@ -660,9 +646,8 @@ public class OrdersV0Api {
      * @param nextToken A string token returned in the response of your previous request. (optional)
      * @return GetOrderItemsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public GetOrderItemsResponse getOrderItems(String orderId, String nextToken) throws ApiException,LWAException {
+    public GetOrderItemsResponse getOrderItems(String orderId, String nextToken) throws ApiException {
         ApiResponse<GetOrderItemsResponse> resp = getOrderItemsWithHttpInfo(orderId, nextToken);
         return resp.getData();
     }
@@ -674,9 +659,8 @@ public class OrdersV0Api {
      * @param nextToken A string token returned in the response of your previous request. (optional)
      * @return ApiResponse&lt;GetOrderItemsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<GetOrderItemsResponse> getOrderItemsWithHttpInfo(String orderId, String nextToken) throws ApiException,LWAException {
+    public ApiResponse<GetOrderItemsResponse> getOrderItemsWithHttpInfo(String orderId, String nextToken) throws ApiException {
         com.squareup.okhttp.Call call = getOrderItemsValidateBeforeCall(orderId, nextToken, null, null);
         Type localVarReturnType = new TypeToken<GetOrderItemsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -690,9 +674,8 @@ public class OrdersV0Api {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getOrderItemsAsync(String orderId, String nextToken, final ApiCallback<GetOrderItemsResponse> callback) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getOrderItemsAsync(String orderId, String nextToken, final ApiCallback<GetOrderItemsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -726,9 +709,8 @@ public class OrdersV0Api {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getOrderItemsBuyerInfoCall(String orderId, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getOrderItemsBuyerInfoCall(String orderId, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -773,7 +755,7 @@ public class OrdersV0Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getOrderItemsBuyerInfoValidateBeforeCall(String orderId, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    private com.squareup.okhttp.Call getOrderItemsBuyerInfoValidateBeforeCall(String orderId, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'orderId' is set
         if (orderId == null) {
@@ -793,9 +775,8 @@ public class OrdersV0Api {
      * @param nextToken A string token returned in the response of your previous request. (optional)
      * @return GetOrderItemsBuyerInfoResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public GetOrderItemsBuyerInfoResponse getOrderItemsBuyerInfo(String orderId, String nextToken) throws ApiException,LWAException {
+    public GetOrderItemsBuyerInfoResponse getOrderItemsBuyerInfo(String orderId, String nextToken) throws ApiException {
         ApiResponse<GetOrderItemsBuyerInfoResponse> resp = getOrderItemsBuyerInfoWithHttpInfo(orderId, nextToken);
         return resp.getData();
     }
@@ -807,9 +788,8 @@ public class OrdersV0Api {
      * @param nextToken A string token returned in the response of your previous request. (optional)
      * @return ApiResponse&lt;GetOrderItemsBuyerInfoResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<GetOrderItemsBuyerInfoResponse> getOrderItemsBuyerInfoWithHttpInfo(String orderId, String nextToken) throws ApiException,LWAException {
+    public ApiResponse<GetOrderItemsBuyerInfoResponse> getOrderItemsBuyerInfoWithHttpInfo(String orderId, String nextToken) throws ApiException {
         com.squareup.okhttp.Call call = getOrderItemsBuyerInfoValidateBeforeCall(orderId, nextToken, null, null);
         Type localVarReturnType = new TypeToken<GetOrderItemsBuyerInfoResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -823,9 +803,8 @@ public class OrdersV0Api {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getOrderItemsBuyerInfoAsync(String orderId, String nextToken, final ApiCallback<GetOrderItemsBuyerInfoResponse> callback) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getOrderItemsBuyerInfoAsync(String orderId, String nextToken, final ApiCallback<GetOrderItemsBuyerInfoResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -858,9 +837,8 @@ public class OrdersV0Api {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getOrderRegulatedInfoCall(String orderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getOrderRegulatedInfoCall(String orderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -903,7 +881,7 @@ public class OrdersV0Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getOrderRegulatedInfoValidateBeforeCall(String orderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    private com.squareup.okhttp.Call getOrderRegulatedInfoValidateBeforeCall(String orderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'orderId' is set
         if (orderId == null) {
@@ -922,9 +900,8 @@ public class OrdersV0Api {
      * @param orderId An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      * @return GetOrderRegulatedInfoResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public GetOrderRegulatedInfoResponse getOrderRegulatedInfo(String orderId) throws ApiException,LWAException {
+    public GetOrderRegulatedInfoResponse getOrderRegulatedInfo(String orderId) throws ApiException {
         ApiResponse<GetOrderRegulatedInfoResponse> resp = getOrderRegulatedInfoWithHttpInfo(orderId);
         return resp.getData();
     }
@@ -935,9 +912,8 @@ public class OrdersV0Api {
      * @param orderId An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      * @return ApiResponse&lt;GetOrderRegulatedInfoResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<GetOrderRegulatedInfoResponse> getOrderRegulatedInfoWithHttpInfo(String orderId) throws ApiException,LWAException {
+    public ApiResponse<GetOrderRegulatedInfoResponse> getOrderRegulatedInfoWithHttpInfo(String orderId) throws ApiException {
         com.squareup.okhttp.Call call = getOrderRegulatedInfoValidateBeforeCall(orderId, null, null);
         Type localVarReturnType = new TypeToken<GetOrderRegulatedInfoResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -950,9 +926,8 @@ public class OrdersV0Api {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getOrderRegulatedInfoAsync(String orderId, final ApiCallback<GetOrderRegulatedInfoResponse> callback) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getOrderRegulatedInfoAsync(String orderId, final ApiCallback<GetOrderRegulatedInfoResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -980,7 +955,7 @@ public class OrdersV0Api {
     }
     /**
      * Build call for getOrders
-     * @param marketplaceIds A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of marketplaceId values. (required)
+     * @param marketplaceIds A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.  See the [Selling Partner API Developer Guide](doc:marketplace-ids) for a complete list of marketplaceId values. (required)
      * @param createdAfter A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format. (optional)
      * @param createdBefore A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format. (optional)
      * @param lastUpdatedAfter A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format. (optional)
@@ -1006,9 +981,8 @@ public class OrdersV0Api {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getOrdersCall(List<String> marketplaceIds, String createdAfter, String createdBefore, String lastUpdatedAfter, String lastUpdatedBefore, List<String> orderStatuses, List<String> fulfillmentChannels, List<String> paymentMethods, String buyerEmail, String sellerOrderId, Integer maxResultsPerPage, List<String> easyShipShipmentStatuses, List<String> electronicInvoiceStatuses, String nextToken, List<String> amazonOrderIds, String actualFulfillmentSupplySourceId, Boolean isISPU, String storeChainStoreId, String earliestDeliveryDateBefore, String earliestDeliveryDateAfter, String latestDeliveryDateBefore, String latestDeliveryDateAfter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getOrdersCall(List<String> marketplaceIds, String createdAfter, String createdBefore, String lastUpdatedAfter, String lastUpdatedBefore, List<String> orderStatuses, List<String> fulfillmentChannels, List<String> paymentMethods, String buyerEmail, String sellerOrderId, Integer maxResultsPerPage, List<String> easyShipShipmentStatuses, List<String> electronicInvoiceStatuses, String nextToken, List<String> amazonOrderIds, String actualFulfillmentSupplySourceId, Boolean isISPU, String storeChainStoreId, String earliestDeliveryDateBefore, String earliestDeliveryDateAfter, String latestDeliveryDateBefore, String latestDeliveryDateAfter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1094,7 +1068,7 @@ public class OrdersV0Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getOrdersValidateBeforeCall(List<String> marketplaceIds, String createdAfter, String createdBefore, String lastUpdatedAfter, String lastUpdatedBefore, List<String> orderStatuses, List<String> fulfillmentChannels, List<String> paymentMethods, String buyerEmail, String sellerOrderId, Integer maxResultsPerPage, List<String> easyShipShipmentStatuses, List<String> electronicInvoiceStatuses, String nextToken, List<String> amazonOrderIds, String actualFulfillmentSupplySourceId, Boolean isISPU, String storeChainStoreId, String earliestDeliveryDateBefore, String earliestDeliveryDateAfter, String latestDeliveryDateBefore, String latestDeliveryDateAfter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    private com.squareup.okhttp.Call getOrdersValidateBeforeCall(List<String> marketplaceIds, String createdAfter, String createdBefore, String lastUpdatedAfter, String lastUpdatedBefore, List<String> orderStatuses, List<String> fulfillmentChannels, List<String> paymentMethods, String buyerEmail, String sellerOrderId, Integer maxResultsPerPage, List<String> easyShipShipmentStatuses, List<String> electronicInvoiceStatuses, String nextToken, List<String> amazonOrderIds, String actualFulfillmentSupplySourceId, Boolean isISPU, String storeChainStoreId, String earliestDeliveryDateBefore, String earliestDeliveryDateAfter, String latestDeliveryDateBefore, String latestDeliveryDateAfter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'marketplaceIds' is set
         if (marketplaceIds == null) {
@@ -1110,7 +1084,7 @@ public class OrdersV0Api {
     /**
      * 
      * Returns orders created or updated during the time frame indicated by the specified parameters. You can also apply a range of filtering criteria to narrow the list of orders returned. If NextToken is present, that will be used to retrieve the orders instead of other criteria.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 20 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-     * @param marketplaceIds A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of marketplaceId values. (required)
+     * @param marketplaceIds A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.  See the [Selling Partner API Developer Guide](doc:marketplace-ids) for a complete list of marketplaceId values. (required)
      * @param createdAfter A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format. (optional)
      * @param createdBefore A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format. (optional)
      * @param lastUpdatedAfter A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format. (optional)
@@ -1134,9 +1108,8 @@ public class OrdersV0Api {
      * @param latestDeliveryDateAfter A date used for selecting orders with a latest delivery date after (or at) a specified time. The date must be in ISO 8601 format. (optional)
      * @return GetOrdersResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public GetOrdersResponse getOrders(List<String> marketplaceIds, String createdAfter, String createdBefore, String lastUpdatedAfter, String lastUpdatedBefore, List<String> orderStatuses, List<String> fulfillmentChannels, List<String> paymentMethods, String buyerEmail, String sellerOrderId, Integer maxResultsPerPage, List<String> easyShipShipmentStatuses, List<String> electronicInvoiceStatuses, String nextToken, List<String> amazonOrderIds, String actualFulfillmentSupplySourceId, Boolean isISPU, String storeChainStoreId, String earliestDeliveryDateBefore, String earliestDeliveryDateAfter, String latestDeliveryDateBefore, String latestDeliveryDateAfter) throws ApiException,LWAException {
+    public GetOrdersResponse getOrders(List<String> marketplaceIds, String createdAfter, String createdBefore, String lastUpdatedAfter, String lastUpdatedBefore, List<String> orderStatuses, List<String> fulfillmentChannels, List<String> paymentMethods, String buyerEmail, String sellerOrderId, Integer maxResultsPerPage, List<String> easyShipShipmentStatuses, List<String> electronicInvoiceStatuses, String nextToken, List<String> amazonOrderIds, String actualFulfillmentSupplySourceId, Boolean isISPU, String storeChainStoreId, String earliestDeliveryDateBefore, String earliestDeliveryDateAfter, String latestDeliveryDateBefore, String latestDeliveryDateAfter) throws ApiException {
         ApiResponse<GetOrdersResponse> resp = getOrdersWithHttpInfo(marketplaceIds, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, orderStatuses, fulfillmentChannels, paymentMethods, buyerEmail, sellerOrderId, maxResultsPerPage, easyShipShipmentStatuses, electronicInvoiceStatuses, nextToken, amazonOrderIds, actualFulfillmentSupplySourceId, isISPU, storeChainStoreId, earliestDeliveryDateBefore, earliestDeliveryDateAfter, latestDeliveryDateBefore, latestDeliveryDateAfter);
         return resp.getData();
     }
@@ -1144,7 +1117,7 @@ public class OrdersV0Api {
     /**
      * 
      * Returns orders created or updated during the time frame indicated by the specified parameters. You can also apply a range of filtering criteria to narrow the list of orders returned. If NextToken is present, that will be used to retrieve the orders instead of other criteria.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 20 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-     * @param marketplaceIds A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of marketplaceId values. (required)
+     * @param marketplaceIds A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.  See the [Selling Partner API Developer Guide](doc:marketplace-ids) for a complete list of marketplaceId values. (required)
      * @param createdAfter A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format. (optional)
      * @param createdBefore A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format. (optional)
      * @param lastUpdatedAfter A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format. (optional)
@@ -1168,9 +1141,8 @@ public class OrdersV0Api {
      * @param latestDeliveryDateAfter A date used for selecting orders with a latest delivery date after (or at) a specified time. The date must be in ISO 8601 format. (optional)
      * @return ApiResponse&lt;GetOrdersResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<GetOrdersResponse> getOrdersWithHttpInfo(List<String> marketplaceIds, String createdAfter, String createdBefore, String lastUpdatedAfter, String lastUpdatedBefore, List<String> orderStatuses, List<String> fulfillmentChannels, List<String> paymentMethods, String buyerEmail, String sellerOrderId, Integer maxResultsPerPage, List<String> easyShipShipmentStatuses, List<String> electronicInvoiceStatuses, String nextToken, List<String> amazonOrderIds, String actualFulfillmentSupplySourceId, Boolean isISPU, String storeChainStoreId, String earliestDeliveryDateBefore, String earliestDeliveryDateAfter, String latestDeliveryDateBefore, String latestDeliveryDateAfter) throws ApiException,LWAException {
+    public ApiResponse<GetOrdersResponse> getOrdersWithHttpInfo(List<String> marketplaceIds, String createdAfter, String createdBefore, String lastUpdatedAfter, String lastUpdatedBefore, List<String> orderStatuses, List<String> fulfillmentChannels, List<String> paymentMethods, String buyerEmail, String sellerOrderId, Integer maxResultsPerPage, List<String> easyShipShipmentStatuses, List<String> electronicInvoiceStatuses, String nextToken, List<String> amazonOrderIds, String actualFulfillmentSupplySourceId, Boolean isISPU, String storeChainStoreId, String earliestDeliveryDateBefore, String earliestDeliveryDateAfter, String latestDeliveryDateBefore, String latestDeliveryDateAfter) throws ApiException {
         com.squareup.okhttp.Call call = getOrdersValidateBeforeCall(marketplaceIds, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, orderStatuses, fulfillmentChannels, paymentMethods, buyerEmail, sellerOrderId, maxResultsPerPage, easyShipShipmentStatuses, electronicInvoiceStatuses, nextToken, amazonOrderIds, actualFulfillmentSupplySourceId, isISPU, storeChainStoreId, earliestDeliveryDateBefore, earliestDeliveryDateAfter, latestDeliveryDateBefore, latestDeliveryDateAfter, null, null);
         Type localVarReturnType = new TypeToken<GetOrdersResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1179,7 +1151,7 @@ public class OrdersV0Api {
     /**
      *  (asynchronously)
      * Returns orders created or updated during the time frame indicated by the specified parameters. You can also apply a range of filtering criteria to narrow the list of orders returned. If NextToken is present, that will be used to retrieve the orders instead of other criteria.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 20 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-     * @param marketplaceIds A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of marketplaceId values. (required)
+     * @param marketplaceIds A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.  See the [Selling Partner API Developer Guide](doc:marketplace-ids) for a complete list of marketplaceId values. (required)
      * @param createdAfter A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format. (optional)
      * @param createdBefore A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format. (optional)
      * @param lastUpdatedAfter A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format. (optional)
@@ -1204,9 +1176,8 @@ public class OrdersV0Api {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getOrdersAsync(List<String> marketplaceIds, String createdAfter, String createdBefore, String lastUpdatedAfter, String lastUpdatedBefore, List<String> orderStatuses, List<String> fulfillmentChannels, List<String> paymentMethods, String buyerEmail, String sellerOrderId, Integer maxResultsPerPage, List<String> easyShipShipmentStatuses, List<String> electronicInvoiceStatuses, String nextToken, List<String> amazonOrderIds, String actualFulfillmentSupplySourceId, Boolean isISPU, String storeChainStoreId, String earliestDeliveryDateBefore, String earliestDeliveryDateAfter, String latestDeliveryDateBefore, String latestDeliveryDateAfter, final ApiCallback<GetOrdersResponse> callback) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getOrdersAsync(List<String> marketplaceIds, String createdAfter, String createdBefore, String lastUpdatedAfter, String lastUpdatedBefore, List<String> orderStatuses, List<String> fulfillmentChannels, List<String> paymentMethods, String buyerEmail, String sellerOrderId, Integer maxResultsPerPage, List<String> easyShipShipmentStatuses, List<String> electronicInvoiceStatuses, String nextToken, List<String> amazonOrderIds, String actualFulfillmentSupplySourceId, Boolean isISPU, String storeChainStoreId, String earliestDeliveryDateBefore, String earliestDeliveryDateAfter, String latestDeliveryDateBefore, String latestDeliveryDateAfter, final ApiCallback<GetOrdersResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1240,9 +1211,8 @@ public class OrdersV0Api {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call updateVerificationStatusCall(String orderId, UpdateVerificationStatusRequest payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call updateVerificationStatusCall(String orderId, UpdateVerificationStatusRequest payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = payload;
 
         // create path and map variables
@@ -1285,7 +1255,7 @@ public class OrdersV0Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateVerificationStatusValidateBeforeCall(String orderId, UpdateVerificationStatusRequest payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    private com.squareup.okhttp.Call updateVerificationStatusValidateBeforeCall(String orderId, UpdateVerificationStatusRequest payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'orderId' is set
         if (orderId == null) {
@@ -1309,9 +1279,8 @@ public class OrdersV0Api {
      * @param orderId An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param payload The request body for the updateVerificationStatus operation. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public void updateVerificationStatus(String orderId, UpdateVerificationStatusRequest payload) throws ApiException,LWAException {
+    public void updateVerificationStatus(String orderId, UpdateVerificationStatusRequest payload) throws ApiException {
         updateVerificationStatusWithHttpInfo(orderId, payload);
     }
 
@@ -1322,9 +1291,8 @@ public class OrdersV0Api {
      * @param payload The request body for the updateVerificationStatus operation. (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<Void> updateVerificationStatusWithHttpInfo(String orderId, UpdateVerificationStatusRequest payload) throws ApiException,LWAException {
+    public ApiResponse<Void> updateVerificationStatusWithHttpInfo(String orderId, UpdateVerificationStatusRequest payload) throws ApiException {
         com.squareup.okhttp.Call call = updateVerificationStatusValidateBeforeCall(orderId, payload, null, null);
         return apiClient.execute(call);
     }
@@ -1337,9 +1305,8 @@ public class OrdersV0Api {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call updateVerificationStatusAsync(String orderId, UpdateVerificationStatusRequest payload, final ApiCallback<Void> callback) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call updateVerificationStatusAsync(String orderId, UpdateVerificationStatusRequest payload, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1366,12 +1333,19 @@ public class OrdersV0Api {
     }
 
     public static class Builder {
+        private AWSAuthenticationCredentials awsAuthenticationCredentials;
         private LWAAuthorizationCredentials lwaAuthorizationCredentials;
         private String endpoint;
         private LWAAccessTokenCache lwaAccessTokenCache;
         private Boolean disableAccessTokenCache = false;
+        private AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider;
         private RateLimitConfiguration rateLimitConfiguration;
+        private AWSAuthenticationCustomCredentialsProvider awsAuthenticationCustomCredentialsProvider;
 
+        public Builder awsAuthenticationCredentials(AWSAuthenticationCredentials awsAuthenticationCredentials) {
+            this.awsAuthenticationCredentials = awsAuthenticationCredentials;
+            return this;
+        }
 
         public Builder lwaAuthorizationCredentials(LWAAuthorizationCredentials lwaAuthorizationCredentials) {
             this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
@@ -1392,7 +1366,12 @@ public class OrdersV0Api {
             this.disableAccessTokenCache = true;
             return this;
         }
-
+        
+        public Builder awsAuthenticationCredentialsProvider(AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider) {
+            this.awsAuthenticationCredentialsProvider = awsAuthenticationCredentialsProvider;
+            return this;
+        }
+        
         public Builder rateLimitConfigurationOnRequests(RateLimitConfiguration rateLimitConfiguration){
             this.rateLimitConfiguration = rateLimitConfiguration;
             return this;
@@ -1403,6 +1382,12 @@ public class OrdersV0Api {
             return this;
         }
 
+        public Builder awsAuthenticationCustomCredentialsProvider(AWSAuthenticationCustomCredentialsProvider awsAuthenticationCustomCredentialsProvider) {
+            this.awsAuthenticationCustomCredentialsProvider = awsAuthenticationCustomCredentialsProvider;
+            return this;
+        }
+        
+
         public OrdersV0Api build() {
             if (lwaAuthorizationCredentials == null) {
                 throw new RuntimeException("LWAAuthorizationCredentials not set");
@@ -1410,6 +1395,18 @@ public class OrdersV0Api {
 
             if (StringUtil.isEmpty(endpoint)) {
                 throw new RuntimeException("Endpoint not set");
+            }
+
+            AWSSigV4Signer awsSigV4Signer = null;
+            if (awsAuthenticationCustomCredentialsProvider != null ) {
+                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCustomCredentialsProvider);
+            }
+            else if (awsAuthenticationCredentials != null) {
+                if (awsAuthenticationCredentialsProvider == null) {
+                    awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCredentials);
+                } else {
+                    awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCredentials, awsAuthenticationCredentialsProvider);
+                }
             }
             
             LWAAuthorizationSigner lwaAuthorizationSigner = null;            
@@ -1423,10 +1420,16 @@ public class OrdersV0Api {
                  lwaAuthorizationSigner = new LWAAuthorizationSigner(lwaAuthorizationCredentials,lwaAccessTokenCache);
             }
 
-            return new OrdersV0Api(new ApiClient()
+            ApiClient apiClient = new ApiClient()
                 .setLWAAuthorizationSigner(lwaAuthorizationSigner)
                 .setBasePath(endpoint)
-                .setRateLimiter(rateLimitConfiguration));
+                .setRateLimiter(rateLimitConfiguration);
+
+            if (awsSigV4Signer != null) {
+                apiClient.setAWSSigV4Signer(awsSigV4Signer);
+            }
+
+            return new OrdersV0Api(apiClient);
         }
     }
 }

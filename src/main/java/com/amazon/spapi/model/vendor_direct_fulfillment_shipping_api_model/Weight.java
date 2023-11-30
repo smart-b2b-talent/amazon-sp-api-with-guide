@@ -25,10 +25,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * The weight.
+ * The weight. This object is required when using the [&#x60;submitShipmentConfirmations&#x60;](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-2021-12-28-reference#submitshipmentconfirmations) operation.
  */
-@ApiModel(description = "The weight.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:12:07.873+08:00")
+@ApiModel(description = "The weight. This object is required when using the [`submitShipmentConfirmations`](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-2021-12-28-reference#submitshipmentconfirmations) operation.")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:53:06.148+08:00")
 public class Weight {
   /**
    * The unit of measurement.

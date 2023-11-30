@@ -32,7 +32,7 @@ import java.util.List;
  * The standard table of technical feature names and definitions.
  */
 @ApiModel(description = "The standard table of technical feature names and definitions.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:32.689+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:51:51.898+08:00")
 public class StandardTechSpecsModule {
   @SerializedName("headline")
   private TextComponent headline = null;

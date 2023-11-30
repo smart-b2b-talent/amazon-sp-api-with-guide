@@ -24,7 +24,7 @@ import java.util.List;
  * A list of order change types to subscribe to (e.g. BuyerRequestedChange). To receive notifications of all change types, do not provide this list.
  */
 @ApiModel(description = "A list of order change types to subscribe to (e.g. BuyerRequestedChange). To receive notifications of all change types, do not provide this list.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:23.893+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:37.235+08:00")
 public class OrderChangeTypes extends ArrayList<OrderChangeTypeEnum> {
 
   @Override

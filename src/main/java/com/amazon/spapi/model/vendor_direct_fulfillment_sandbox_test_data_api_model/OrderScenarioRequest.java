@@ -29,7 +29,7 @@ import java.io.IOException;
  * The party identifiers required to generate the test data.
  */
 @ApiModel(description = "The party identifiers required to generate the test data.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:12:06.074+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:53:04.935+08:00")
 public class OrderScenarioRequest {
   @SerializedName("sellingParty")
   private PartyIdentification sellingParty = null;

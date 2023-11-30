@@ -28,7 +28,7 @@ import java.io.IOException;
  * Plain positional text, used in collections of brief labels and descriptors.
  */
 @ApiModel(description = "Plain positional text, used in collections of brief labels and descriptors.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:32.689+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:51:51.898+08:00")
 public class PlainTextItem {
   @SerializedName("position")
   private Integer position = null;

@@ -24,7 +24,7 @@ import java.util.List;
  * List of documents captured during service appointment fulfillment.
  */
 @ApiModel(description = "List of documents captured during service appointment fulfillment.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:40.519+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:50.606+08:00")
 public class FulfillmentDocuments extends ArrayList<FulfillmentDocument> {
 
   @Override

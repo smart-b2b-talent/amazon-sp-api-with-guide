@@ -30,7 +30,7 @@ import java.io.IOException;
  * Information returned by Amazon about a Small Parcel shipment by an Amazon-partnered carrier.
  */
 @ApiModel(description = "Information returned by Amazon about a Small Parcel shipment by an Amazon-partnered carrier.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:12.118+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:24.487+08:00")
 public class PartneredSmallParcelDataOutput {
   @SerializedName("PackageList")
   private PartneredSmallParcelPackageOutputList packageList = null;

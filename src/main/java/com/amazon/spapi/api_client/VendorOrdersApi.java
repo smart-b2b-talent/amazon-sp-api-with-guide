@@ -41,12 +41,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCredentials;
+import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCredentialsProvider;
+import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCustomCredentialsProvider;
+import com.amazon.SellingPartnerAPIAA.AWSSigV4Signer;
 import com.amazon.SellingPartnerAPIAA.LWAAccessTokenCache;
 import com.amazon.SellingPartnerAPIAA.LWAAccessTokenCacheImpl;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationCredentials;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationSigner;
 import com.amazon.SellingPartnerAPIAA.RateLimitConfiguration;
-import com.amazon.SellingPartnerAPIAA.LWAException;
 
 public class VendorOrdersApi {
     private ApiClient apiClient;
@@ -74,9 +77,8 @@ public class VendorOrdersApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getPurchaseOrderCall(String purchaseOrderNumber, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getPurchaseOrderCall(String purchaseOrderNumber, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -119,7 +121,7 @@ public class VendorOrdersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getPurchaseOrderValidateBeforeCall(String purchaseOrderNumber, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    private com.squareup.okhttp.Call getPurchaseOrderValidateBeforeCall(String purchaseOrderNumber, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'purchaseOrderNumber' is set
         if (purchaseOrderNumber == null) {
@@ -138,9 +140,8 @@ public class VendorOrdersApi {
      * @param purchaseOrderNumber The purchase order identifier for the order that you want. Formatting Notes: 8-character alpha-numeric code. (required)
      * @return GetPurchaseOrderResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public GetPurchaseOrderResponse getPurchaseOrder(String purchaseOrderNumber) throws ApiException,LWAException {
+    public GetPurchaseOrderResponse getPurchaseOrder(String purchaseOrderNumber) throws ApiException {
         ApiResponse<GetPurchaseOrderResponse> resp = getPurchaseOrderWithHttpInfo(purchaseOrderNumber);
         return resp.getData();
     }
@@ -151,9 +152,8 @@ public class VendorOrdersApi {
      * @param purchaseOrderNumber The purchase order identifier for the order that you want. Formatting Notes: 8-character alpha-numeric code. (required)
      * @return ApiResponse&lt;GetPurchaseOrderResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<GetPurchaseOrderResponse> getPurchaseOrderWithHttpInfo(String purchaseOrderNumber) throws ApiException,LWAException {
+    public ApiResponse<GetPurchaseOrderResponse> getPurchaseOrderWithHttpInfo(String purchaseOrderNumber) throws ApiException {
         com.squareup.okhttp.Call call = getPurchaseOrderValidateBeforeCall(purchaseOrderNumber, null, null);
         Type localVarReturnType = new TypeToken<GetPurchaseOrderResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -166,9 +166,8 @@ public class VendorOrdersApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getPurchaseOrderAsync(String purchaseOrderNumber, final ApiCallback<GetPurchaseOrderResponse> callback) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getPurchaseOrderAsync(String purchaseOrderNumber, final ApiCallback<GetPurchaseOrderResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -212,9 +211,8 @@ public class VendorOrdersApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getPurchaseOrdersCall(Long limit, OffsetDateTime createdAfter, OffsetDateTime createdBefore, String sortOrder, String nextToken, String includeDetails, OffsetDateTime changedAfter, OffsetDateTime changedBefore, String poItemState, String isPOChanged, String purchaseOrderState, String orderingVendorCode, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getPurchaseOrdersCall(Long limit, OffsetDateTime createdAfter, OffsetDateTime createdBefore, String sortOrder, String nextToken, String includeDetails, OffsetDateTime changedAfter, OffsetDateTime changedBefore, String poItemState, String isPOChanged, String purchaseOrderState, String orderingVendorCode, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -280,7 +278,7 @@ public class VendorOrdersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getPurchaseOrdersValidateBeforeCall(Long limit, OffsetDateTime createdAfter, OffsetDateTime createdBefore, String sortOrder, String nextToken, String includeDetails, OffsetDateTime changedAfter, OffsetDateTime changedBefore, String poItemState, String isPOChanged, String purchaseOrderState, String orderingVendorCode, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    private com.squareup.okhttp.Call getPurchaseOrdersValidateBeforeCall(Long limit, OffsetDateTime createdAfter, OffsetDateTime createdBefore, String sortOrder, String nextToken, String includeDetails, OffsetDateTime changedAfter, OffsetDateTime changedBefore, String poItemState, String isPOChanged, String purchaseOrderState, String orderingVendorCode, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
         com.squareup.okhttp.Call call = getPurchaseOrdersCall(limit, createdAfter, createdBefore, sortOrder, nextToken, includeDetails, changedAfter, changedBefore, poItemState, isPOChanged, purchaseOrderState, orderingVendorCode, progressListener, progressRequestListener);
@@ -305,9 +303,8 @@ public class VendorOrdersApi {
      * @param orderingVendorCode Filters purchase orders based on the specified ordering vendor code. This value should be same as &#39;sellingParty.partyId&#39; in the purchase order. If not included in the filter, all purchase orders for all of the vendor codes that exist in the vendor group used to authorize the API client application are returned. (optional)
      * @return GetPurchaseOrdersResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public GetPurchaseOrdersResponse getPurchaseOrders(Long limit, OffsetDateTime createdAfter, OffsetDateTime createdBefore, String sortOrder, String nextToken, String includeDetails, OffsetDateTime changedAfter, OffsetDateTime changedBefore, String poItemState, String isPOChanged, String purchaseOrderState, String orderingVendorCode) throws ApiException,LWAException {
+    public GetPurchaseOrdersResponse getPurchaseOrders(Long limit, OffsetDateTime createdAfter, OffsetDateTime createdBefore, String sortOrder, String nextToken, String includeDetails, OffsetDateTime changedAfter, OffsetDateTime changedBefore, String poItemState, String isPOChanged, String purchaseOrderState, String orderingVendorCode) throws ApiException {
         ApiResponse<GetPurchaseOrdersResponse> resp = getPurchaseOrdersWithHttpInfo(limit, createdAfter, createdBefore, sortOrder, nextToken, includeDetails, changedAfter, changedBefore, poItemState, isPOChanged, purchaseOrderState, orderingVendorCode);
         return resp.getData();
     }
@@ -329,9 +326,8 @@ public class VendorOrdersApi {
      * @param orderingVendorCode Filters purchase orders based on the specified ordering vendor code. This value should be same as &#39;sellingParty.partyId&#39; in the purchase order. If not included in the filter, all purchase orders for all of the vendor codes that exist in the vendor group used to authorize the API client application are returned. (optional)
      * @return ApiResponse&lt;GetPurchaseOrdersResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<GetPurchaseOrdersResponse> getPurchaseOrdersWithHttpInfo(Long limit, OffsetDateTime createdAfter, OffsetDateTime createdBefore, String sortOrder, String nextToken, String includeDetails, OffsetDateTime changedAfter, OffsetDateTime changedBefore, String poItemState, String isPOChanged, String purchaseOrderState, String orderingVendorCode) throws ApiException,LWAException {
+    public ApiResponse<GetPurchaseOrdersResponse> getPurchaseOrdersWithHttpInfo(Long limit, OffsetDateTime createdAfter, OffsetDateTime createdBefore, String sortOrder, String nextToken, String includeDetails, OffsetDateTime changedAfter, OffsetDateTime changedBefore, String poItemState, String isPOChanged, String purchaseOrderState, String orderingVendorCode) throws ApiException {
         com.squareup.okhttp.Call call = getPurchaseOrdersValidateBeforeCall(limit, createdAfter, createdBefore, sortOrder, nextToken, includeDetails, changedAfter, changedBefore, poItemState, isPOChanged, purchaseOrderState, orderingVendorCode, null, null);
         Type localVarReturnType = new TypeToken<GetPurchaseOrdersResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -355,9 +351,8 @@ public class VendorOrdersApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getPurchaseOrdersAsync(Long limit, OffsetDateTime createdAfter, OffsetDateTime createdBefore, String sortOrder, String nextToken, String includeDetails, OffsetDateTime changedAfter, OffsetDateTime changedBefore, String poItemState, String isPOChanged, String purchaseOrderState, String orderingVendorCode, final ApiCallback<GetPurchaseOrdersResponse> callback) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getPurchaseOrdersAsync(Long limit, OffsetDateTime createdAfter, OffsetDateTime createdBefore, String sortOrder, String nextToken, String includeDetails, OffsetDateTime changedAfter, OffsetDateTime changedBefore, String poItemState, String isPOChanged, String purchaseOrderState, String orderingVendorCode, final ApiCallback<GetPurchaseOrdersResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -402,9 +397,8 @@ public class VendorOrdersApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getPurchaseOrdersStatusCall(Long limit, String sortOrder, String nextToken, OffsetDateTime createdAfter, OffsetDateTime createdBefore, OffsetDateTime updatedAfter, OffsetDateTime updatedBefore, String purchaseOrderNumber, String purchaseOrderStatus, String itemConfirmationStatus, String itemReceiveStatus, String orderingVendorCode, String shipToPartyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getPurchaseOrdersStatusCall(Long limit, String sortOrder, String nextToken, OffsetDateTime createdAfter, OffsetDateTime createdBefore, OffsetDateTime updatedAfter, OffsetDateTime updatedBefore, String purchaseOrderNumber, String purchaseOrderStatus, String itemConfirmationStatus, String itemReceiveStatus, String orderingVendorCode, String shipToPartyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -472,7 +466,7 @@ public class VendorOrdersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getPurchaseOrdersStatusValidateBeforeCall(Long limit, String sortOrder, String nextToken, OffsetDateTime createdAfter, OffsetDateTime createdBefore, OffsetDateTime updatedAfter, OffsetDateTime updatedBefore, String purchaseOrderNumber, String purchaseOrderStatus, String itemConfirmationStatus, String itemReceiveStatus, String orderingVendorCode, String shipToPartyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    private com.squareup.okhttp.Call getPurchaseOrdersStatusValidateBeforeCall(Long limit, String sortOrder, String nextToken, OffsetDateTime createdAfter, OffsetDateTime createdBefore, OffsetDateTime updatedAfter, OffsetDateTime updatedBefore, String purchaseOrderNumber, String purchaseOrderStatus, String itemConfirmationStatus, String itemReceiveStatus, String orderingVendorCode, String shipToPartyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
         com.squareup.okhttp.Call call = getPurchaseOrdersStatusCall(limit, sortOrder, nextToken, createdAfter, createdBefore, updatedAfter, updatedBefore, purchaseOrderNumber, purchaseOrderStatus, itemConfirmationStatus, itemReceiveStatus, orderingVendorCode, shipToPartyId, progressListener, progressRequestListener);
@@ -498,9 +492,8 @@ public class VendorOrdersApi {
      * @param shipToPartyId Filters purchase orders for a specific buyer&#39;s Fulfillment Center/warehouse by providing ship to location id here. This value should be same as &#39;shipToParty.partyId&#39; in the purchase order. If not included in filter, this will return purchase orders for all the buyer&#39;s warehouses used for vendor group purchase orders. (optional)
      * @return GetPurchaseOrdersStatusResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public GetPurchaseOrdersStatusResponse getPurchaseOrdersStatus(Long limit, String sortOrder, String nextToken, OffsetDateTime createdAfter, OffsetDateTime createdBefore, OffsetDateTime updatedAfter, OffsetDateTime updatedBefore, String purchaseOrderNumber, String purchaseOrderStatus, String itemConfirmationStatus, String itemReceiveStatus, String orderingVendorCode, String shipToPartyId) throws ApiException,LWAException {
+    public GetPurchaseOrdersStatusResponse getPurchaseOrdersStatus(Long limit, String sortOrder, String nextToken, OffsetDateTime createdAfter, OffsetDateTime createdBefore, OffsetDateTime updatedAfter, OffsetDateTime updatedBefore, String purchaseOrderNumber, String purchaseOrderStatus, String itemConfirmationStatus, String itemReceiveStatus, String orderingVendorCode, String shipToPartyId) throws ApiException {
         ApiResponse<GetPurchaseOrdersStatusResponse> resp = getPurchaseOrdersStatusWithHttpInfo(limit, sortOrder, nextToken, createdAfter, createdBefore, updatedAfter, updatedBefore, purchaseOrderNumber, purchaseOrderStatus, itemConfirmationStatus, itemReceiveStatus, orderingVendorCode, shipToPartyId);
         return resp.getData();
     }
@@ -523,9 +516,8 @@ public class VendorOrdersApi {
      * @param shipToPartyId Filters purchase orders for a specific buyer&#39;s Fulfillment Center/warehouse by providing ship to location id here. This value should be same as &#39;shipToParty.partyId&#39; in the purchase order. If not included in filter, this will return purchase orders for all the buyer&#39;s warehouses used for vendor group purchase orders. (optional)
      * @return ApiResponse&lt;GetPurchaseOrdersStatusResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<GetPurchaseOrdersStatusResponse> getPurchaseOrdersStatusWithHttpInfo(Long limit, String sortOrder, String nextToken, OffsetDateTime createdAfter, OffsetDateTime createdBefore, OffsetDateTime updatedAfter, OffsetDateTime updatedBefore, String purchaseOrderNumber, String purchaseOrderStatus, String itemConfirmationStatus, String itemReceiveStatus, String orderingVendorCode, String shipToPartyId) throws ApiException,LWAException {
+    public ApiResponse<GetPurchaseOrdersStatusResponse> getPurchaseOrdersStatusWithHttpInfo(Long limit, String sortOrder, String nextToken, OffsetDateTime createdAfter, OffsetDateTime createdBefore, OffsetDateTime updatedAfter, OffsetDateTime updatedBefore, String purchaseOrderNumber, String purchaseOrderStatus, String itemConfirmationStatus, String itemReceiveStatus, String orderingVendorCode, String shipToPartyId) throws ApiException {
         com.squareup.okhttp.Call call = getPurchaseOrdersStatusValidateBeforeCall(limit, sortOrder, nextToken, createdAfter, createdBefore, updatedAfter, updatedBefore, purchaseOrderNumber, purchaseOrderStatus, itemConfirmationStatus, itemReceiveStatus, orderingVendorCode, shipToPartyId, null, null);
         Type localVarReturnType = new TypeToken<GetPurchaseOrdersStatusResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -550,9 +542,8 @@ public class VendorOrdersApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getPurchaseOrdersStatusAsync(Long limit, String sortOrder, String nextToken, OffsetDateTime createdAfter, OffsetDateTime createdBefore, OffsetDateTime updatedAfter, OffsetDateTime updatedBefore, String purchaseOrderNumber, String purchaseOrderStatus, String itemConfirmationStatus, String itemReceiveStatus, String orderingVendorCode, String shipToPartyId, final ApiCallback<GetPurchaseOrdersStatusResponse> callback) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getPurchaseOrdersStatusAsync(Long limit, String sortOrder, String nextToken, OffsetDateTime createdAfter, OffsetDateTime createdBefore, OffsetDateTime updatedAfter, OffsetDateTime updatedBefore, String purchaseOrderNumber, String purchaseOrderStatus, String itemConfirmationStatus, String itemReceiveStatus, String orderingVendorCode, String shipToPartyId, final ApiCallback<GetPurchaseOrdersStatusResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -585,9 +576,8 @@ public class VendorOrdersApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call submitAcknowledgementCall(SubmitAcknowledgementRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call submitAcknowledgementCall(SubmitAcknowledgementRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -629,7 +619,7 @@ public class VendorOrdersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call submitAcknowledgementValidateBeforeCall(SubmitAcknowledgementRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    private com.squareup.okhttp.Call submitAcknowledgementValidateBeforeCall(SubmitAcknowledgementRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'body' is set
         if (body == null) {
@@ -648,9 +638,8 @@ public class VendorOrdersApi {
      * @param body  (required)
      * @return SubmitAcknowledgementResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public SubmitAcknowledgementResponse submitAcknowledgement(SubmitAcknowledgementRequest body) throws ApiException,LWAException {
+    public SubmitAcknowledgementResponse submitAcknowledgement(SubmitAcknowledgementRequest body) throws ApiException {
         ApiResponse<SubmitAcknowledgementResponse> resp = submitAcknowledgementWithHttpInfo(body);
         return resp.getData();
     }
@@ -661,9 +650,8 @@ public class VendorOrdersApi {
      * @param body  (required)
      * @return ApiResponse&lt;SubmitAcknowledgementResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<SubmitAcknowledgementResponse> submitAcknowledgementWithHttpInfo(SubmitAcknowledgementRequest body) throws ApiException,LWAException {
+    public ApiResponse<SubmitAcknowledgementResponse> submitAcknowledgementWithHttpInfo(SubmitAcknowledgementRequest body) throws ApiException {
         com.squareup.okhttp.Call call = submitAcknowledgementValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<SubmitAcknowledgementResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -676,9 +664,8 @@ public class VendorOrdersApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call submitAcknowledgementAsync(SubmitAcknowledgementRequest body, final ApiCallback<SubmitAcknowledgementResponse> callback) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call submitAcknowledgementAsync(SubmitAcknowledgementRequest body, final ApiCallback<SubmitAcknowledgementResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -706,12 +693,19 @@ public class VendorOrdersApi {
     }
 
     public static class Builder {
+        private AWSAuthenticationCredentials awsAuthenticationCredentials;
         private LWAAuthorizationCredentials lwaAuthorizationCredentials;
         private String endpoint;
         private LWAAccessTokenCache lwaAccessTokenCache;
         private Boolean disableAccessTokenCache = false;
+        private AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider;
         private RateLimitConfiguration rateLimitConfiguration;
+        private AWSAuthenticationCustomCredentialsProvider awsAuthenticationCustomCredentialsProvider;
 
+        public Builder awsAuthenticationCredentials(AWSAuthenticationCredentials awsAuthenticationCredentials) {
+            this.awsAuthenticationCredentials = awsAuthenticationCredentials;
+            return this;
+        }
 
         public Builder lwaAuthorizationCredentials(LWAAuthorizationCredentials lwaAuthorizationCredentials) {
             this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
@@ -732,7 +726,12 @@ public class VendorOrdersApi {
             this.disableAccessTokenCache = true;
             return this;
         }
-
+        
+        public Builder awsAuthenticationCredentialsProvider(AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider) {
+            this.awsAuthenticationCredentialsProvider = awsAuthenticationCredentialsProvider;
+            return this;
+        }
+        
         public Builder rateLimitConfigurationOnRequests(RateLimitConfiguration rateLimitConfiguration){
             this.rateLimitConfiguration = rateLimitConfiguration;
             return this;
@@ -743,6 +742,12 @@ public class VendorOrdersApi {
             return this;
         }
 
+        public Builder awsAuthenticationCustomCredentialsProvider(AWSAuthenticationCustomCredentialsProvider awsAuthenticationCustomCredentialsProvider) {
+            this.awsAuthenticationCustomCredentialsProvider = awsAuthenticationCustomCredentialsProvider;
+            return this;
+        }
+        
+
         public VendorOrdersApi build() {
             if (lwaAuthorizationCredentials == null) {
                 throw new RuntimeException("LWAAuthorizationCredentials not set");
@@ -750,6 +755,18 @@ public class VendorOrdersApi {
 
             if (StringUtil.isEmpty(endpoint)) {
                 throw new RuntimeException("Endpoint not set");
+            }
+
+            AWSSigV4Signer awsSigV4Signer = null;
+            if (awsAuthenticationCustomCredentialsProvider != null ) {
+                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCustomCredentialsProvider);
+            }
+            else if (awsAuthenticationCredentials != null) {
+                if (awsAuthenticationCredentialsProvider == null) {
+                    awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCredentials);
+                } else {
+                    awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCredentials, awsAuthenticationCredentialsProvider);
+                }
             }
             
             LWAAuthorizationSigner lwaAuthorizationSigner = null;            
@@ -763,10 +780,16 @@ public class VendorOrdersApi {
                  lwaAuthorizationSigner = new LWAAuthorizationSigner(lwaAuthorizationCredentials,lwaAccessTokenCache);
             }
 
-            return new VendorOrdersApi(new ApiClient()
+            ApiClient apiClient = new ApiClient()
                 .setLWAAuthorizationSigner(lwaAuthorizationSigner)
                 .setBasePath(endpoint)
-                .setRateLimiter(rateLimitConfiguration));
+                .setRateLimiter(rateLimitConfiguration);
+
+            if (awsSigV4Signer != null) {
+                apiClient.setAWSSigV4Signer(awsSigV4Signer);
+            }
+
+            return new VendorOrdersApi(apiClient);
         }
     }
 }

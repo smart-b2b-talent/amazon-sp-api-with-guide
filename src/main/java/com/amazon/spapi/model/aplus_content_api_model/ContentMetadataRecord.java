@@ -29,7 +29,7 @@ import java.io.IOException;
  * The metadata for an A+ Content document, with additional information for content management.
  */
 @ApiModel(description = "The metadata for an A+ Content document, with additional information for content management.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:32.689+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:51:51.898+08:00")
 public class ContentMetadataRecord {
   @SerializedName("contentReferenceKey")
   private String contentReferenceKey = null;

@@ -29,7 +29,7 @@ import java.io.IOException;
  * An item in an adjustment to the seller&#39;s account.
  */
 @ApiModel(description = "An item in an adjustment to the seller's account.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:09.317+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:21.148+08:00")
 public class AdjustmentItem {
   @SerializedName("Quantity")
   private String quantity = null;

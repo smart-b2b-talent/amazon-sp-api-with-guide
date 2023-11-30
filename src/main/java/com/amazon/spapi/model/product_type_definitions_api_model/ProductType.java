@@ -30,13 +30,10 @@ import java.util.List;
  * An Amazon product type with a definition available.
  */
 @ApiModel(description = "An Amazon product type with a definition available.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:30.729+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:43.775+08:00")
 public class ProductType {
   @SerializedName("name")
   private String name = null;
-
-  @SerializedName("displayName")
-  private String displayName = null;
 
   @SerializedName("marketplaceIds")
   private List<String> marketplaceIds = new ArrayList<String>();
@@ -57,24 +54,6 @@ public class ProductType {
 
   public void setName(String name) {
     this.name = name;
-  }
-
-  public ProductType displayName(String displayName) {
-    this.displayName = displayName;
-    return this;
-  }
-
-   /**
-   * The human-readable and localized description of the Amazon product type.
-   * @return displayName
-  **/
-  @ApiModelProperty(required = true, value = "The human-readable and localized description of the Amazon product type.")
-  public String getDisplayName() {
-    return displayName;
-  }
-
-  public void setDisplayName(String displayName) {
-    this.displayName = displayName;
   }
 
   public ProductType marketplaceIds(List<String> marketplaceIds) {
@@ -111,13 +90,12 @@ public class ProductType {
     }
     ProductType productType = (ProductType) o;
     return Objects.equals(this.name, productType.name) &&
-        Objects.equals(this.displayName, productType.displayName) &&
         Objects.equals(this.marketplaceIds, productType.marketplaceIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, displayName, marketplaceIds);
+    return Objects.hash(name, marketplaceIds);
   }
 
 
@@ -127,7 +105,6 @@ public class ProductType {
     sb.append("class ProductType {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("    marketplaceIds: ").append(toIndentedString(marketplaceIds)).append("\n");
     sb.append("}");
     return sb.toString();

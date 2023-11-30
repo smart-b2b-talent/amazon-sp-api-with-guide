@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * InventoryUpdate
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:57.890+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:53:00.509+08:00")
 public class InventoryUpdate {
   @SerializedName("sellingParty")
   private PartyIdentification sellingParty = null;

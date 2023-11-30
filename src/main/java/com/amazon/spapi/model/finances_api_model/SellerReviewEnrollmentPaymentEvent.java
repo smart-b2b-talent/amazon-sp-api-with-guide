@@ -31,7 +31,7 @@ import java.io.IOException;
  * A fee payment event for the Early Reviewer Program.
  */
 @ApiModel(description = "A fee payment event for the Early Reviewer Program.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:09.317+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:21.148+08:00")
 public class SellerReviewEnrollmentPaymentEvent {
   @SerializedName("PostedDate")
   private String postedDate = null;

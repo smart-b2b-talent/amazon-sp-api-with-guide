@@ -36,12 +36,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCredentials;
+import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCredentialsProvider;
+import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCustomCredentialsProvider;
+import com.amazon.SellingPartnerAPIAA.AWSSigV4Signer;
 import com.amazon.SellingPartnerAPIAA.LWAAccessTokenCache;
 import com.amazon.SellingPartnerAPIAA.LWAAccessTokenCacheImpl;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationCredentials;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationSigner;
 import com.amazon.SellingPartnerAPIAA.RateLimitConfiguration;
-import com.amazon.SellingPartnerAPIAA.LWAException;
 
 public class SellersApi {
     private ApiClient apiClient;
@@ -68,9 +71,8 @@ public class SellersApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getMarketplaceParticipationsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getMarketplaceParticipationsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -112,7 +114,7 @@ public class SellersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getMarketplaceParticipationsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    private com.squareup.okhttp.Call getMarketplaceParticipationsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
         com.squareup.okhttp.Call call = getMarketplaceParticipationsCall(progressListener, progressRequestListener);
@@ -125,9 +127,8 @@ public class SellersApi {
      * Returns a list of marketplaces that the seller submitting the request can sell in and information about the seller&#39;s participation in those marketplaces.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.016 | 15 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @return GetMarketplaceParticipationsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public GetMarketplaceParticipationsResponse getMarketplaceParticipations() throws ApiException,LWAException {
+    public GetMarketplaceParticipationsResponse getMarketplaceParticipations() throws ApiException {
         ApiResponse<GetMarketplaceParticipationsResponse> resp = getMarketplaceParticipationsWithHttpInfo();
         return resp.getData();
     }
@@ -137,9 +138,8 @@ public class SellersApi {
      * Returns a list of marketplaces that the seller submitting the request can sell in and information about the seller&#39;s participation in those marketplaces.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.016 | 15 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @return ApiResponse&lt;GetMarketplaceParticipationsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<GetMarketplaceParticipationsResponse> getMarketplaceParticipationsWithHttpInfo() throws ApiException,LWAException {
+    public ApiResponse<GetMarketplaceParticipationsResponse> getMarketplaceParticipationsWithHttpInfo() throws ApiException {
         com.squareup.okhttp.Call call = getMarketplaceParticipationsValidateBeforeCall(null, null);
         Type localVarReturnType = new TypeToken<GetMarketplaceParticipationsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -151,9 +151,8 @@ public class SellersApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getMarketplaceParticipationsAsync(final ApiCallback<GetMarketplaceParticipationsResponse> callback) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getMarketplaceParticipationsAsync(final ApiCallback<GetMarketplaceParticipationsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -181,12 +180,19 @@ public class SellersApi {
     }
 
     public static class Builder {
+        private AWSAuthenticationCredentials awsAuthenticationCredentials;
         private LWAAuthorizationCredentials lwaAuthorizationCredentials;
         private String endpoint;
         private LWAAccessTokenCache lwaAccessTokenCache;
         private Boolean disableAccessTokenCache = false;
+        private AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider;
         private RateLimitConfiguration rateLimitConfiguration;
+        private AWSAuthenticationCustomCredentialsProvider awsAuthenticationCustomCredentialsProvider;
 
+        public Builder awsAuthenticationCredentials(AWSAuthenticationCredentials awsAuthenticationCredentials) {
+            this.awsAuthenticationCredentials = awsAuthenticationCredentials;
+            return this;
+        }
 
         public Builder lwaAuthorizationCredentials(LWAAuthorizationCredentials lwaAuthorizationCredentials) {
             this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
@@ -207,7 +213,12 @@ public class SellersApi {
             this.disableAccessTokenCache = true;
             return this;
         }
-
+        
+        public Builder awsAuthenticationCredentialsProvider(AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider) {
+            this.awsAuthenticationCredentialsProvider = awsAuthenticationCredentialsProvider;
+            return this;
+        }
+        
         public Builder rateLimitConfigurationOnRequests(RateLimitConfiguration rateLimitConfiguration){
             this.rateLimitConfiguration = rateLimitConfiguration;
             return this;
@@ -218,6 +229,12 @@ public class SellersApi {
             return this;
         }
 
+        public Builder awsAuthenticationCustomCredentialsProvider(AWSAuthenticationCustomCredentialsProvider awsAuthenticationCustomCredentialsProvider) {
+            this.awsAuthenticationCustomCredentialsProvider = awsAuthenticationCustomCredentialsProvider;
+            return this;
+        }
+        
+
         public SellersApi build() {
             if (lwaAuthorizationCredentials == null) {
                 throw new RuntimeException("LWAAuthorizationCredentials not set");
@@ -225,6 +242,18 @@ public class SellersApi {
 
             if (StringUtil.isEmpty(endpoint)) {
                 throw new RuntimeException("Endpoint not set");
+            }
+
+            AWSSigV4Signer awsSigV4Signer = null;
+            if (awsAuthenticationCustomCredentialsProvider != null ) {
+                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCustomCredentialsProvider);
+            }
+            else if (awsAuthenticationCredentials != null) {
+                if (awsAuthenticationCredentialsProvider == null) {
+                    awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCredentials);
+                } else {
+                    awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCredentials, awsAuthenticationCredentialsProvider);
+                }
             }
             
             LWAAuthorizationSigner lwaAuthorizationSigner = null;            
@@ -238,10 +267,16 @@ public class SellersApi {
                  lwaAuthorizationSigner = new LWAAuthorizationSigner(lwaAuthorizationCredentials,lwaAccessTokenCache);
             }
 
-            return new SellersApi(new ApiClient()
+            ApiClient apiClient = new ApiClient()
                 .setLWAAuthorizationSigner(lwaAuthorizationSigner)
                 .setBasePath(endpoint)
-                .setRateLimiter(rateLimitConfiguration));
+                .setRateLimiter(rateLimitConfiguration);
+
+            if (awsSigV4Signer != null) {
+                apiClient.setAWSSigV4Signer(awsSigV4Signer);
+            }
+
+            return new SellersApi(apiClient);
         }
     }
 }

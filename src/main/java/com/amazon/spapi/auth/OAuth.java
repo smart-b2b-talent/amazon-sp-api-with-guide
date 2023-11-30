@@ -18,7 +18,7 @@ import com.amazon.spapi.Pair;
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:12:20.221+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:53:15.241+08:00")
 public class OAuth implements Authentication {
   private String accessToken;
 

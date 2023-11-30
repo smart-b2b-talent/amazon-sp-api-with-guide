@@ -32,7 +32,7 @@ import java.util.List;
  * Contains all of the delivery instructions provided by the customer for the shipping address.
  */
 @ApiModel(description = "Contains all of the delivery instructions provided by the customer for the shipping address.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:25.479+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:38.698+08:00")
 public class DeliveryPreferences {
   @SerializedName("DropOffLocation")
   private String dropOffLocation = null;

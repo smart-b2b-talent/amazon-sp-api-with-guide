@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **ASIN** | **String** | The Amazon Standard Identification Number (ASIN) of the item. | 
 **sellerSKU** | **String** | The seller stock keeping unit (SKU) of the item. |  [optional]
 **orderItemId** | **String** | An Amazon-defined order item identifier. | 
-**associatedItems** | [**List&lt;AssociatedItem&gt;**](AssociatedItem.md) | A list of associated items that a customer has purchased with a product. For example, a tire installation service purchased with tires. |  [optional]
 **title** | **String** | The name of the item. |  [optional]
 **quantityOrdered** | **Integer** | The number of items in the order.  | 
 **quantityShipped** | **Integer** | The number of items shipped. |  [optional]

@@ -29,7 +29,7 @@ import java.io.IOException;
  * Contains order metrics.
  */
 @ApiModel(description = "Contains order metrics.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:36.328+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:47.975+08:00")
 public class OrderMetricsInterval {
   @SerializedName("interval")
   private String interval = null;

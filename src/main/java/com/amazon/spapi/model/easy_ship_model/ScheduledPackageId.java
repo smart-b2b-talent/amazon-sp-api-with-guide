@@ -28,7 +28,7 @@ import java.io.IOException;
  * Identifies the scheduled package to be updated.
  */
 @ApiModel(description = "Identifies the scheduled package to be updated.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:49.741+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:11.007+08:00")
 public class ScheduledPackageId {
   @SerializedName("amazonOrderId")
   private String amazonOrderId = null;

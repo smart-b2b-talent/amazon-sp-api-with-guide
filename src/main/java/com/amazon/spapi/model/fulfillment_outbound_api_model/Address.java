@@ -28,7 +28,7 @@ import java.io.IOException;
  * A physical address.
  */
 @ApiModel(description = "A physical address.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:14.601+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:26.811+08:00")
 public class Address {
   @SerializedName("name")
   private String name = null;

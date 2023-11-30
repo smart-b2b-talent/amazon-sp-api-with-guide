@@ -30,7 +30,7 @@ import java.io.IOException;
  * The request body for the updateShipmentStatus operation.
  */
 @ApiModel(description = "The request body for the updateShipmentStatus operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:25.479+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:38.698+08:00")
 public class UpdateShipmentStatusRequest {
   @SerializedName("marketplaceId")
   private String marketplaceId = null;

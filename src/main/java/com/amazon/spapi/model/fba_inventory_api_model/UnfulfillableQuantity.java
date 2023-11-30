@@ -28,7 +28,7 @@ import java.io.IOException;
  * The quantity of unfulfillable inventory.
  */
 @ApiModel(description = "The quantity of unfulfillable inventory.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:56.728+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:16.678+08:00")
 public class UnfulfillableQuantity {
   @SerializedName("totalUnfulfillableQuantity")
   private Integer totalUnfulfillableQuantity = null;

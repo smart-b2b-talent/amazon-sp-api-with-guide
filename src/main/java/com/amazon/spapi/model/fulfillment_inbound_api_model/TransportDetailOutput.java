@@ -32,7 +32,7 @@ import java.io.IOException;
  * Inbound shipment information, including carrier details and shipment status.
  */
 @ApiModel(description = "Inbound shipment information, including carrier details and shipment status.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:12.118+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:24.487+08:00")
 public class TransportDetailOutput {
   @SerializedName("PartneredSmallParcelData")
   private PartneredSmallParcelDataOutput partneredSmallParcelData = null;

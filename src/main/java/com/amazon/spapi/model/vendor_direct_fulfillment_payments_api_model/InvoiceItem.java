@@ -33,7 +33,7 @@ import java.util.List;
 /**
  * InvoiceItem
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:12:03.950+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:53:03.729+08:00")
 public class InvoiceItem {
   @SerializedName("itemSequenceNumber")
   private String itemSequenceNumber = null;

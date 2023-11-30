@@ -24,7 +24,7 @@ import java.util.List;
  * A list of package tracking information.
  */
 @ApiModel(description = "A list of package tracking information.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:12.118+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:24.487+08:00")
 public class NonPartneredSmallParcelPackageInputList extends ArrayList<NonPartneredSmallParcelPackageInput> {
 
   @Override

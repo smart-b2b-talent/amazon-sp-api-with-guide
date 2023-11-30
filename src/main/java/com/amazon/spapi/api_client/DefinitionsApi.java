@@ -38,12 +38,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCredentials;
+import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCredentialsProvider;
+import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCustomCredentialsProvider;
+import com.amazon.SellingPartnerAPIAA.AWSSigV4Signer;
 import com.amazon.SellingPartnerAPIAA.LWAAccessTokenCache;
 import com.amazon.SellingPartnerAPIAA.LWAAccessTokenCacheImpl;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationCredentials;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationSigner;
 import com.amazon.SellingPartnerAPIAA.RateLimitConfiguration;
-import com.amazon.SellingPartnerAPIAA.LWAException;
 
 public class DefinitionsApi {
     private ApiClient apiClient;
@@ -77,9 +80,8 @@ public class DefinitionsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getDefinitionsProductTypeCall(String productType, List<String> marketplaceIds, String sellerId, String productTypeVersion, String requirements, String requirementsEnforced, String locale, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getDefinitionsProductTypeCall(String productType, List<String> marketplaceIds, String sellerId, String productTypeVersion, String requirements, String requirementsEnforced, String locale, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -134,7 +136,7 @@ public class DefinitionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getDefinitionsProductTypeValidateBeforeCall(String productType, List<String> marketplaceIds, String sellerId, String productTypeVersion, String requirements, String requirementsEnforced, String locale, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    private com.squareup.okhttp.Call getDefinitionsProductTypeValidateBeforeCall(String productType, List<String> marketplaceIds, String sellerId, String productTypeVersion, String requirements, String requirementsEnforced, String locale, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'productType' is set
         if (productType == null) {
@@ -164,9 +166,8 @@ public class DefinitionsApi {
      * @param locale Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request. (optional, default to DEFAULT)
      * @return ProductTypeDefinition
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ProductTypeDefinition getDefinitionsProductType(String productType, List<String> marketplaceIds, String sellerId, String productTypeVersion, String requirements, String requirementsEnforced, String locale) throws ApiException,LWAException {
+    public ProductTypeDefinition getDefinitionsProductType(String productType, List<String> marketplaceIds, String sellerId, String productTypeVersion, String requirements, String requirementsEnforced, String locale) throws ApiException {
         ApiResponse<ProductTypeDefinition> resp = getDefinitionsProductTypeWithHttpInfo(productType, marketplaceIds, sellerId, productTypeVersion, requirements, requirementsEnforced, locale);
         return resp.getData();
     }
@@ -183,9 +184,8 @@ public class DefinitionsApi {
      * @param locale Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request. (optional, default to DEFAULT)
      * @return ApiResponse&lt;ProductTypeDefinition&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<ProductTypeDefinition> getDefinitionsProductTypeWithHttpInfo(String productType, List<String> marketplaceIds, String sellerId, String productTypeVersion, String requirements, String requirementsEnforced, String locale) throws ApiException,LWAException {
+    public ApiResponse<ProductTypeDefinition> getDefinitionsProductTypeWithHttpInfo(String productType, List<String> marketplaceIds, String sellerId, String productTypeVersion, String requirements, String requirementsEnforced, String locale) throws ApiException {
         com.squareup.okhttp.Call call = getDefinitionsProductTypeValidateBeforeCall(productType, marketplaceIds, sellerId, productTypeVersion, requirements, requirementsEnforced, locale, null, null);
         Type localVarReturnType = new TypeToken<ProductTypeDefinition>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -204,9 +204,8 @@ public class DefinitionsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call getDefinitionsProductTypeAsync(String productType, List<String> marketplaceIds, String sellerId, String productTypeVersion, String requirements, String requirementsEnforced, String locale, final ApiCallback<ProductTypeDefinition> callback) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getDefinitionsProductTypeAsync(String productType, List<String> marketplaceIds, String sellerId, String productTypeVersion, String requirements, String requirementsEnforced, String locale, final ApiCallback<ProductTypeDefinition> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -235,17 +234,13 @@ public class DefinitionsApi {
     /**
      * Build call for searchDefinitionsProductTypes
      * @param marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param keywords A comma-delimited list of keywords to search product types. **Note:** Cannot be used with &#x60;itemName&#x60;. (optional)
-     * @param itemName The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)
-     * @param locale The locale for the display names in the response. Defaults to the primary locale of the marketplace. (optional)
-     * @param searchLocale The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. (optional)
+     * @param keywords A comma-delimited list of keywords to search product types by. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call searchDefinitionsProductTypesCall(List<String> marketplaceIds, List<String> keywords, String itemName, String locale, String searchLocale, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call searchDefinitionsProductTypesCall(List<String> marketplaceIds, List<String> keywords, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -257,12 +252,6 @@ public class DefinitionsApi {
         localVarCollectionQueryParams.addAll(apiClient.parameterToPairs("csv", "keywords", keywords));
         if (marketplaceIds != null)
         localVarCollectionQueryParams.addAll(apiClient.parameterToPairs("csv", "marketplaceIds", marketplaceIds));
-        if (itemName != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("itemName", itemName));
-        if (locale != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("locale", locale));
-        if (searchLocale != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("searchLocale", searchLocale));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -297,7 +286,7 @@ public class DefinitionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call searchDefinitionsProductTypesValidateBeforeCall(List<String> marketplaceIds, List<String> keywords, String itemName, String locale, String searchLocale, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    private com.squareup.okhttp.Call searchDefinitionsProductTypesValidateBeforeCall(List<String> marketplaceIds, List<String> keywords, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'marketplaceIds' is set
         if (marketplaceIds == null) {
@@ -305,7 +294,7 @@ public class DefinitionsApi {
         }
         
 
-        com.squareup.okhttp.Call call = searchDefinitionsProductTypesCall(marketplaceIds, keywords, itemName, locale, searchLocale, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = searchDefinitionsProductTypesCall(marketplaceIds, keywords, progressListener, progressRequestListener);
         return call;
 
     }
@@ -314,16 +303,12 @@ public class DefinitionsApi {
      * 
      * Search for and return a list of Amazon product types that have definitions available.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
      * @param marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param keywords A comma-delimited list of keywords to search product types. **Note:** Cannot be used with &#x60;itemName&#x60;. (optional)
-     * @param itemName The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)
-     * @param locale The locale for the display names in the response. Defaults to the primary locale of the marketplace. (optional)
-     * @param searchLocale The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. (optional)
+     * @param keywords A comma-delimited list of keywords to search product types by. (optional)
      * @return ProductTypeList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ProductTypeList searchDefinitionsProductTypes(List<String> marketplaceIds, List<String> keywords, String itemName, String locale, String searchLocale) throws ApiException,LWAException {
-        ApiResponse<ProductTypeList> resp = searchDefinitionsProductTypesWithHttpInfo(marketplaceIds, keywords, itemName, locale, searchLocale);
+    public ProductTypeList searchDefinitionsProductTypes(List<String> marketplaceIds, List<String> keywords) throws ApiException {
+        ApiResponse<ProductTypeList> resp = searchDefinitionsProductTypesWithHttpInfo(marketplaceIds, keywords);
         return resp.getData();
     }
 
@@ -331,16 +316,12 @@ public class DefinitionsApi {
      * 
      * Search for and return a list of Amazon product types that have definitions available.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
      * @param marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param keywords A comma-delimited list of keywords to search product types. **Note:** Cannot be used with &#x60;itemName&#x60;. (optional)
-     * @param itemName The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)
-     * @param locale The locale for the display names in the response. Defaults to the primary locale of the marketplace. (optional)
-     * @param searchLocale The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. (optional)
+     * @param keywords A comma-delimited list of keywords to search product types by. (optional)
      * @return ApiResponse&lt;ProductTypeList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<ProductTypeList> searchDefinitionsProductTypesWithHttpInfo(List<String> marketplaceIds, List<String> keywords, String itemName, String locale, String searchLocale) throws ApiException,LWAException {
-        com.squareup.okhttp.Call call = searchDefinitionsProductTypesValidateBeforeCall(marketplaceIds, keywords, itemName, locale, searchLocale, null, null);
+    public ApiResponse<ProductTypeList> searchDefinitionsProductTypesWithHttpInfo(List<String> marketplaceIds, List<String> keywords) throws ApiException {
+        com.squareup.okhttp.Call call = searchDefinitionsProductTypesValidateBeforeCall(marketplaceIds, keywords, null, null);
         Type localVarReturnType = new TypeToken<ProductTypeList>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -349,16 +330,12 @@ public class DefinitionsApi {
      *  (asynchronously)
      * Search for and return a list of Amazon product types that have definitions available.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
      * @param marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param keywords A comma-delimited list of keywords to search product types. **Note:** Cannot be used with &#x60;itemName&#x60;. (optional)
-     * @param itemName The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)
-     * @param locale The locale for the display names in the response. Defaults to the primary locale of the marketplace. (optional)
-     * @param searchLocale The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. (optional)
+     * @param keywords A comma-delimited list of keywords to search product types by. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call searchDefinitionsProductTypesAsync(List<String> marketplaceIds, List<String> keywords, String itemName, String locale, String searchLocale, final ApiCallback<ProductTypeList> callback) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call searchDefinitionsProductTypesAsync(List<String> marketplaceIds, List<String> keywords, final ApiCallback<ProductTypeList> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -379,19 +356,26 @@ public class DefinitionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = searchDefinitionsProductTypesValidateBeforeCall(marketplaceIds, keywords, itemName, locale, searchLocale, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = searchDefinitionsProductTypesValidateBeforeCall(marketplaceIds, keywords, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ProductTypeList>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
 
     public static class Builder {
+        private AWSAuthenticationCredentials awsAuthenticationCredentials;
         private LWAAuthorizationCredentials lwaAuthorizationCredentials;
         private String endpoint;
         private LWAAccessTokenCache lwaAccessTokenCache;
         private Boolean disableAccessTokenCache = false;
+        private AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider;
         private RateLimitConfiguration rateLimitConfiguration;
+        private AWSAuthenticationCustomCredentialsProvider awsAuthenticationCustomCredentialsProvider;
 
+        public Builder awsAuthenticationCredentials(AWSAuthenticationCredentials awsAuthenticationCredentials) {
+            this.awsAuthenticationCredentials = awsAuthenticationCredentials;
+            return this;
+        }
 
         public Builder lwaAuthorizationCredentials(LWAAuthorizationCredentials lwaAuthorizationCredentials) {
             this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
@@ -412,7 +396,12 @@ public class DefinitionsApi {
             this.disableAccessTokenCache = true;
             return this;
         }
-
+        
+        public Builder awsAuthenticationCredentialsProvider(AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider) {
+            this.awsAuthenticationCredentialsProvider = awsAuthenticationCredentialsProvider;
+            return this;
+        }
+        
         public Builder rateLimitConfigurationOnRequests(RateLimitConfiguration rateLimitConfiguration){
             this.rateLimitConfiguration = rateLimitConfiguration;
             return this;
@@ -423,6 +412,12 @@ public class DefinitionsApi {
             return this;
         }
 
+        public Builder awsAuthenticationCustomCredentialsProvider(AWSAuthenticationCustomCredentialsProvider awsAuthenticationCustomCredentialsProvider) {
+            this.awsAuthenticationCustomCredentialsProvider = awsAuthenticationCustomCredentialsProvider;
+            return this;
+        }
+        
+
         public DefinitionsApi build() {
             if (lwaAuthorizationCredentials == null) {
                 throw new RuntimeException("LWAAuthorizationCredentials not set");
@@ -430,6 +425,18 @@ public class DefinitionsApi {
 
             if (StringUtil.isEmpty(endpoint)) {
                 throw new RuntimeException("Endpoint not set");
+            }
+
+            AWSSigV4Signer awsSigV4Signer = null;
+            if (awsAuthenticationCustomCredentialsProvider != null ) {
+                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCustomCredentialsProvider);
+            }
+            else if (awsAuthenticationCredentials != null) {
+                if (awsAuthenticationCredentialsProvider == null) {
+                    awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCredentials);
+                } else {
+                    awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCredentials, awsAuthenticationCredentialsProvider);
+                }
             }
             
             LWAAuthorizationSigner lwaAuthorizationSigner = null;            
@@ -443,10 +450,16 @@ public class DefinitionsApi {
                  lwaAuthorizationSigner = new LWAAuthorizationSigner(lwaAuthorizationCredentials,lwaAccessTokenCache);
             }
 
-            return new DefinitionsApi(new ApiClient()
+            ApiClient apiClient = new ApiClient()
                 .setLWAAuthorizationSigner(lwaAuthorizationSigner)
                 .setBasePath(endpoint)
-                .setRateLimiter(rateLimitConfiguration));
+                .setRateLimiter(rateLimitConfiguration);
+
+            if (awsSigV4Signer != null) {
+                apiClient.setAWSSigV4Signer(awsSigV4Signer);
+            }
+
+            return new DefinitionsApi(apiClient);
         }
     }
 }

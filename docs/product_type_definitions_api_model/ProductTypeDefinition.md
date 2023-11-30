@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **locale** | **String** | Locale of the display elements contained in the product type definition. | 
 **marketplaceIds** | **List&lt;String&gt;** | Amazon marketplace identifiers for which the product type definition is applicable. | 
 **productType** | **String** | The name of the Amazon product type that this product type definition applies to. | 
-**displayName** | **String** | Human-readable and localized description of the Amazon product type. | 
 **productTypeVersion** | [**ProductTypeVersion**](ProductTypeVersion.md) | The version details for the Amazon product type. | 
 
 

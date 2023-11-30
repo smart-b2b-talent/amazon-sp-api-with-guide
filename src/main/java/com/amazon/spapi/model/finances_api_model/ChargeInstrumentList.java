@@ -24,7 +24,7 @@ import java.util.List;
  * A list of payment instruments.
  */
 @ApiModel(description = "A list of payment instruments.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:09.317+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:21.148+08:00")
 public class ChargeInstrumentList extends ArrayList<ChargeInstrument> {
 
   @Override

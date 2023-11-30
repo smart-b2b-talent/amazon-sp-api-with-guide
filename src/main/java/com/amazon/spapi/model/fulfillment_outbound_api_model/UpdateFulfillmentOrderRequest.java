@@ -37,7 +37,7 @@ import java.util.List;
  * The request body schema for the updateFulfillmentOrder operation.
  */
 @ApiModel(description = "The request body schema for the updateFulfillmentOrder operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:14.601+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:26.811+08:00")
 public class UpdateFulfillmentOrderRequest {
   @SerializedName("marketplaceId")
   private String marketplaceId = null;

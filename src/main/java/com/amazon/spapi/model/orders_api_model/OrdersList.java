@@ -29,7 +29,7 @@ import java.io.IOException;
  * A list of orders along with additional information to make subsequent API calls.
  */
 @ApiModel(description = "A list of orders along with additional information to make subsequent API calls.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:25.479+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:38.698+08:00")
 public class OrdersList {
   @SerializedName("Orders")
   private OrderList orders = null;

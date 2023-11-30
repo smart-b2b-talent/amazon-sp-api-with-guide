@@ -29,7 +29,7 @@ import java.io.IOException;
  * The request schema for an shipment confirmation.
  */
 @ApiModel(description = "The request schema for an shipment confirmation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:25.479+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:38.698+08:00")
 public class ConfirmShipmentRequest {
   @SerializedName("packageDetail")
   private PackageDetail packageDetail = null;

@@ -38,12 +38,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCredentials;
+import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCredentialsProvider;
+import com.amazon.SellingPartnerAPIAA.AWSAuthenticationCustomCredentialsProvider;
+import com.amazon.SellingPartnerAPIAA.AWSSigV4Signer;
 import com.amazon.SellingPartnerAPIAA.LWAAccessTokenCache;
 import com.amazon.SellingPartnerAPIAA.LWAAccessTokenCacheImpl;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationCredentials;
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationSigner;
 import com.amazon.SellingPartnerAPIAA.RateLimitConfiguration;
-import com.amazon.SellingPartnerAPIAA.LWAException;
 
 public class DefaultApi {
     private ApiClient apiClient;
@@ -74,9 +77,8 @@ public class DefaultApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call listFinancialEventGroupsCall(Integer maxResultsPerPage, OffsetDateTime financialEventGroupStartedBefore, OffsetDateTime financialEventGroupStartedAfter, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call listFinancialEventGroupsCall(Integer maxResultsPerPage, OffsetDateTime financialEventGroupStartedBefore, OffsetDateTime financialEventGroupStartedAfter, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -126,7 +128,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listFinancialEventGroupsValidateBeforeCall(Integer maxResultsPerPage, OffsetDateTime financialEventGroupStartedBefore, OffsetDateTime financialEventGroupStartedAfter, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    private com.squareup.okhttp.Call listFinancialEventGroupsValidateBeforeCall(Integer maxResultsPerPage, OffsetDateTime financialEventGroupStartedBefore, OffsetDateTime financialEventGroupStartedAfter, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
         com.squareup.okhttp.Call call = listFinancialEventGroupsCall(maxResultsPerPage, financialEventGroupStartedBefore, financialEventGroupStartedAfter, nextToken, progressListener, progressRequestListener);
@@ -143,9 +145,8 @@ public class DefaultApi {
      * @param nextToken A string token returned in the response of your previous request. (optional)
      * @return ListFinancialEventGroupsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ListFinancialEventGroupsResponse listFinancialEventGroups(Integer maxResultsPerPage, OffsetDateTime financialEventGroupStartedBefore, OffsetDateTime financialEventGroupStartedAfter, String nextToken) throws ApiException,LWAException {
+    public ListFinancialEventGroupsResponse listFinancialEventGroups(Integer maxResultsPerPage, OffsetDateTime financialEventGroupStartedBefore, OffsetDateTime financialEventGroupStartedAfter, String nextToken) throws ApiException {
         ApiResponse<ListFinancialEventGroupsResponse> resp = listFinancialEventGroupsWithHttpInfo(maxResultsPerPage, financialEventGroupStartedBefore, financialEventGroupStartedAfter, nextToken);
         return resp.getData();
     }
@@ -159,9 +160,8 @@ public class DefaultApi {
      * @param nextToken A string token returned in the response of your previous request. (optional)
      * @return ApiResponse&lt;ListFinancialEventGroupsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<ListFinancialEventGroupsResponse> listFinancialEventGroupsWithHttpInfo(Integer maxResultsPerPage, OffsetDateTime financialEventGroupStartedBefore, OffsetDateTime financialEventGroupStartedAfter, String nextToken) throws ApiException,LWAException {
+    public ApiResponse<ListFinancialEventGroupsResponse> listFinancialEventGroupsWithHttpInfo(Integer maxResultsPerPage, OffsetDateTime financialEventGroupStartedBefore, OffsetDateTime financialEventGroupStartedAfter, String nextToken) throws ApiException {
         com.squareup.okhttp.Call call = listFinancialEventGroupsValidateBeforeCall(maxResultsPerPage, financialEventGroupStartedBefore, financialEventGroupStartedAfter, nextToken, null, null);
         Type localVarReturnType = new TypeToken<ListFinancialEventGroupsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -177,9 +177,8 @@ public class DefaultApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call listFinancialEventGroupsAsync(Integer maxResultsPerPage, OffsetDateTime financialEventGroupStartedBefore, OffsetDateTime financialEventGroupStartedAfter, String nextToken, final ApiCallback<ListFinancialEventGroupsResponse> callback) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call listFinancialEventGroupsAsync(Integer maxResultsPerPage, OffsetDateTime financialEventGroupStartedBefore, OffsetDateTime financialEventGroupStartedAfter, String nextToken, final ApiCallback<ListFinancialEventGroupsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -215,9 +214,8 @@ public class DefaultApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call listFinancialEventsCall(Integer maxResultsPerPage, OffsetDateTime postedAfter, OffsetDateTime postedBefore, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call listFinancialEventsCall(Integer maxResultsPerPage, OffsetDateTime postedAfter, OffsetDateTime postedBefore, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -267,7 +265,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listFinancialEventsValidateBeforeCall(Integer maxResultsPerPage, OffsetDateTime postedAfter, OffsetDateTime postedBefore, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    private com.squareup.okhttp.Call listFinancialEventsValidateBeforeCall(Integer maxResultsPerPage, OffsetDateTime postedAfter, OffsetDateTime postedBefore, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
         com.squareup.okhttp.Call call = listFinancialEventsCall(maxResultsPerPage, postedAfter, postedBefore, nextToken, progressListener, progressRequestListener);
@@ -277,32 +275,30 @@ public class DefaultApi {
 
     /**
      * 
-     * Returns financial events for the specified data range. It may take up to 48 hours for orders to appear in your financial events. **Note:** in &#x60;ListFinancialEvents&#x60;, deferred events don&#39;t show up in responses until in they are released.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * Returns financial events for the specified data range. It may take up to 48 hours for orders to appear in your financial events.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param maxResultsPerPage The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with &#39;InvalidInput&#39;. (optional, default to 100)
      * @param postedAfter A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format. (optional)
      * @param postedBefore A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes. (optional)
      * @param nextToken A string token returned in the response of your previous request. (optional)
      * @return ListFinancialEventsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ListFinancialEventsResponse listFinancialEvents(Integer maxResultsPerPage, OffsetDateTime postedAfter, OffsetDateTime postedBefore, String nextToken) throws ApiException,LWAException {
+    public ListFinancialEventsResponse listFinancialEvents(Integer maxResultsPerPage, OffsetDateTime postedAfter, OffsetDateTime postedBefore, String nextToken) throws ApiException {
         ApiResponse<ListFinancialEventsResponse> resp = listFinancialEventsWithHttpInfo(maxResultsPerPage, postedAfter, postedBefore, nextToken);
         return resp.getData();
     }
 
     /**
      * 
-     * Returns financial events for the specified data range. It may take up to 48 hours for orders to appear in your financial events. **Note:** in &#x60;ListFinancialEvents&#x60;, deferred events don&#39;t show up in responses until in they are released.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * Returns financial events for the specified data range. It may take up to 48 hours for orders to appear in your financial events.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param maxResultsPerPage The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with &#39;InvalidInput&#39;. (optional, default to 100)
      * @param postedAfter A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format. (optional)
      * @param postedBefore A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes. (optional)
      * @param nextToken A string token returned in the response of your previous request. (optional)
      * @return ApiResponse&lt;ListFinancialEventsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<ListFinancialEventsResponse> listFinancialEventsWithHttpInfo(Integer maxResultsPerPage, OffsetDateTime postedAfter, OffsetDateTime postedBefore, String nextToken) throws ApiException,LWAException {
+    public ApiResponse<ListFinancialEventsResponse> listFinancialEventsWithHttpInfo(Integer maxResultsPerPage, OffsetDateTime postedAfter, OffsetDateTime postedBefore, String nextToken) throws ApiException {
         com.squareup.okhttp.Call call = listFinancialEventsValidateBeforeCall(maxResultsPerPage, postedAfter, postedBefore, nextToken, null, null);
         Type localVarReturnType = new TypeToken<ListFinancialEventsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -310,7 +306,7 @@ public class DefaultApi {
 
     /**
      *  (asynchronously)
-     * Returns financial events for the specified data range. It may take up to 48 hours for orders to appear in your financial events. **Note:** in &#x60;ListFinancialEvents&#x60;, deferred events don&#39;t show up in responses until in they are released.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * Returns financial events for the specified data range. It may take up to 48 hours for orders to appear in your financial events.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param maxResultsPerPage The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with &#39;InvalidInput&#39;. (optional, default to 100)
      * @param postedAfter A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format. (optional)
      * @param postedBefore A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes. (optional)
@@ -318,9 +314,8 @@ public class DefaultApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call listFinancialEventsAsync(Integer maxResultsPerPage, OffsetDateTime postedAfter, OffsetDateTime postedBefore, String nextToken, final ApiCallback<ListFinancialEventsResponse> callback) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call listFinancialEventsAsync(Integer maxResultsPerPage, OffsetDateTime postedAfter, OffsetDateTime postedBefore, String nextToken, final ApiCallback<ListFinancialEventsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -357,9 +352,8 @@ public class DefaultApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call listFinancialEventsByGroupIdCall(String eventGroupId, Integer maxResultsPerPage, OffsetDateTime postedAfter, OffsetDateTime postedBefore, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call listFinancialEventsByGroupIdCall(String eventGroupId, Integer maxResultsPerPage, OffsetDateTime postedAfter, OffsetDateTime postedBefore, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -410,7 +404,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listFinancialEventsByGroupIdValidateBeforeCall(String eventGroupId, Integer maxResultsPerPage, OffsetDateTime postedAfter, OffsetDateTime postedBefore, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    private com.squareup.okhttp.Call listFinancialEventsByGroupIdValidateBeforeCall(String eventGroupId, Integer maxResultsPerPage, OffsetDateTime postedAfter, OffsetDateTime postedBefore, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'eventGroupId' is set
         if (eventGroupId == null) {
@@ -433,9 +427,8 @@ public class DefaultApi {
      * @param nextToken A string token returned in the response of your previous request. (optional)
      * @return ListFinancialEventsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ListFinancialEventsResponse listFinancialEventsByGroupId(String eventGroupId, Integer maxResultsPerPage, OffsetDateTime postedAfter, OffsetDateTime postedBefore, String nextToken) throws ApiException,LWAException {
+    public ListFinancialEventsResponse listFinancialEventsByGroupId(String eventGroupId, Integer maxResultsPerPage, OffsetDateTime postedAfter, OffsetDateTime postedBefore, String nextToken) throws ApiException {
         ApiResponse<ListFinancialEventsResponse> resp = listFinancialEventsByGroupIdWithHttpInfo(eventGroupId, maxResultsPerPage, postedAfter, postedBefore, nextToken);
         return resp.getData();
     }
@@ -450,9 +443,8 @@ public class DefaultApi {
      * @param nextToken A string token returned in the response of your previous request. (optional)
      * @return ApiResponse&lt;ListFinancialEventsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<ListFinancialEventsResponse> listFinancialEventsByGroupIdWithHttpInfo(String eventGroupId, Integer maxResultsPerPage, OffsetDateTime postedAfter, OffsetDateTime postedBefore, String nextToken) throws ApiException,LWAException {
+    public ApiResponse<ListFinancialEventsResponse> listFinancialEventsByGroupIdWithHttpInfo(String eventGroupId, Integer maxResultsPerPage, OffsetDateTime postedAfter, OffsetDateTime postedBefore, String nextToken) throws ApiException {
         com.squareup.okhttp.Call call = listFinancialEventsByGroupIdValidateBeforeCall(eventGroupId, maxResultsPerPage, postedAfter, postedBefore, nextToken, null, null);
         Type localVarReturnType = new TypeToken<ListFinancialEventsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -469,9 +461,8 @@ public class DefaultApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call listFinancialEventsByGroupIdAsync(String eventGroupId, Integer maxResultsPerPage, OffsetDateTime postedAfter, OffsetDateTime postedBefore, String nextToken, final ApiCallback<ListFinancialEventsResponse> callback) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call listFinancialEventsByGroupIdAsync(String eventGroupId, Integer maxResultsPerPage, OffsetDateTime postedAfter, OffsetDateTime postedBefore, String nextToken, final ApiCallback<ListFinancialEventsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -506,9 +497,8 @@ public class DefaultApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call listFinancialEventsByOrderIdCall(String orderId, Integer maxResultsPerPage, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call listFinancialEventsByOrderIdCall(String orderId, Integer maxResultsPerPage, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -555,7 +545,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listFinancialEventsByOrderIdValidateBeforeCall(String orderId, Integer maxResultsPerPage, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    private com.squareup.okhttp.Call listFinancialEventsByOrderIdValidateBeforeCall(String orderId, Integer maxResultsPerPage, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'orderId' is set
         if (orderId == null) {
@@ -576,9 +566,8 @@ public class DefaultApi {
      * @param nextToken A string token returned in the response of your previous request. (optional)
      * @return ListFinancialEventsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ListFinancialEventsResponse listFinancialEventsByOrderId(String orderId, Integer maxResultsPerPage, String nextToken) throws ApiException,LWAException {
+    public ListFinancialEventsResponse listFinancialEventsByOrderId(String orderId, Integer maxResultsPerPage, String nextToken) throws ApiException {
         ApiResponse<ListFinancialEventsResponse> resp = listFinancialEventsByOrderIdWithHttpInfo(orderId, maxResultsPerPage, nextToken);
         return resp.getData();
     }
@@ -591,9 +580,8 @@ public class DefaultApi {
      * @param nextToken A string token returned in the response of your previous request. (optional)
      * @return ApiResponse&lt;ListFinancialEventsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public ApiResponse<ListFinancialEventsResponse> listFinancialEventsByOrderIdWithHttpInfo(String orderId, Integer maxResultsPerPage, String nextToken) throws ApiException,LWAException {
+    public ApiResponse<ListFinancialEventsResponse> listFinancialEventsByOrderIdWithHttpInfo(String orderId, Integer maxResultsPerPage, String nextToken) throws ApiException {
         com.squareup.okhttp.Call call = listFinancialEventsByOrderIdValidateBeforeCall(orderId, maxResultsPerPage, nextToken, null, null);
         Type localVarReturnType = new TypeToken<ListFinancialEventsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -608,9 +596,8 @@ public class DefaultApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @throws LWAException If calls to fetch LWA access token fails
      */
-    public com.squareup.okhttp.Call listFinancialEventsByOrderIdAsync(String orderId, Integer maxResultsPerPage, String nextToken, final ApiCallback<ListFinancialEventsResponse> callback) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call listFinancialEventsByOrderIdAsync(String orderId, Integer maxResultsPerPage, String nextToken, final ApiCallback<ListFinancialEventsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -638,12 +625,19 @@ public class DefaultApi {
     }
 
     public static class Builder {
+        private AWSAuthenticationCredentials awsAuthenticationCredentials;
         private LWAAuthorizationCredentials lwaAuthorizationCredentials;
         private String endpoint;
         private LWAAccessTokenCache lwaAccessTokenCache;
         private Boolean disableAccessTokenCache = false;
+        private AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider;
         private RateLimitConfiguration rateLimitConfiguration;
+        private AWSAuthenticationCustomCredentialsProvider awsAuthenticationCustomCredentialsProvider;
 
+        public Builder awsAuthenticationCredentials(AWSAuthenticationCredentials awsAuthenticationCredentials) {
+            this.awsAuthenticationCredentials = awsAuthenticationCredentials;
+            return this;
+        }
 
         public Builder lwaAuthorizationCredentials(LWAAuthorizationCredentials lwaAuthorizationCredentials) {
             this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
@@ -664,7 +658,12 @@ public class DefaultApi {
             this.disableAccessTokenCache = true;
             return this;
         }
-
+        
+        public Builder awsAuthenticationCredentialsProvider(AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider) {
+            this.awsAuthenticationCredentialsProvider = awsAuthenticationCredentialsProvider;
+            return this;
+        }
+        
         public Builder rateLimitConfigurationOnRequests(RateLimitConfiguration rateLimitConfiguration){
             this.rateLimitConfiguration = rateLimitConfiguration;
             return this;
@@ -675,6 +674,12 @@ public class DefaultApi {
             return this;
         }
 
+        public Builder awsAuthenticationCustomCredentialsProvider(AWSAuthenticationCustomCredentialsProvider awsAuthenticationCustomCredentialsProvider) {
+            this.awsAuthenticationCustomCredentialsProvider = awsAuthenticationCustomCredentialsProvider;
+            return this;
+        }
+        
+
         public DefaultApi build() {
             if (lwaAuthorizationCredentials == null) {
                 throw new RuntimeException("LWAAuthorizationCredentials not set");
@@ -682,6 +687,18 @@ public class DefaultApi {
 
             if (StringUtil.isEmpty(endpoint)) {
                 throw new RuntimeException("Endpoint not set");
+            }
+
+            AWSSigV4Signer awsSigV4Signer = null;
+            if (awsAuthenticationCustomCredentialsProvider != null ) {
+                awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCustomCredentialsProvider);
+            }
+            else if (awsAuthenticationCredentials != null) {
+                if (awsAuthenticationCredentialsProvider == null) {
+                    awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCredentials);
+                } else {
+                    awsSigV4Signer = new AWSSigV4Signer(awsAuthenticationCredentials, awsAuthenticationCredentialsProvider);
+                }
             }
             
             LWAAuthorizationSigner lwaAuthorizationSigner = null;            
@@ -695,10 +712,16 @@ public class DefaultApi {
                  lwaAuthorizationSigner = new LWAAuthorizationSigner(lwaAuthorizationCredentials,lwaAccessTokenCache);
             }
 
-            return new DefaultApi(new ApiClient()
+            ApiClient apiClient = new ApiClient()
                 .setLWAAuthorizationSigner(lwaAuthorizationSigner)
                 .setBasePath(endpoint)
-                .setRateLimiter(rateLimitConfiguration));
+                .setRateLimiter(rateLimitConfiguration);
+
+            if (awsSigV4Signer != null) {
+                apiClient.setAWSSigV4Signer(awsSigV4Signer);
+            }
+
+            return new DefaultApi(apiClient);
         }
     }
 }

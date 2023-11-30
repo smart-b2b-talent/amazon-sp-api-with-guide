@@ -29,7 +29,7 @@ import java.io.IOException;
  * The payload schema for the getRates operation.
  */
 @ApiModel(description = "The payload schema for the getRates operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:45.887+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:54.767+08:00")
 public class GetRatesResult {
   @SerializedName("serviceRates")
   private ServiceRateList serviceRates = null;

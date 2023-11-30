@@ -24,7 +24,7 @@ import java.util.List;
  * A list of dimensions and weight information for packages.
  */
 @ApiModel(description = "A list of dimensions and weight information for packages.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:12.118+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:24.487+08:00")
 public class PartneredSmallParcelPackageInputList extends ArrayList<PartneredSmallParcelPackageInput> {
 
   @Override

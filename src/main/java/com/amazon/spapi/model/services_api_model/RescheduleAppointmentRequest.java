@@ -29,7 +29,7 @@ import java.io.IOException;
  * Input for rescheduled appointment operation.
  */
 @ApiModel(description = "Input for rescheduled appointment operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:40.519+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:50.606+08:00")
 public class RescheduleAppointmentRequest {
   @SerializedName("appointmentTime")
   private AppointmentTimeInput appointmentTime = null;

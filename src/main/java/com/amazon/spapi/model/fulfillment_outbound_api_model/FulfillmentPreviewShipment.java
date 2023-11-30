@@ -31,7 +31,7 @@ import java.util.List;
  * Delivery and item information for a shipment in a fulfillment order preview.
  */
 @ApiModel(description = "Delivery and item information for a shipment in a fulfillment order preview.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:14.601+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:26.811+08:00")
 public class FulfillmentPreviewShipment {
   @SerializedName("earliestShipDate")
   private String earliestShipDate = null;

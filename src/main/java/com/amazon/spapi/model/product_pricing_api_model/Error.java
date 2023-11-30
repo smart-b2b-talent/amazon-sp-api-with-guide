@@ -1,6 +1,6 @@
 /*
  * Selling Partner API for Pricing
- * The Selling Partner API for Pricing helps you programmatically retrieve product pricing and offer pricing information for Amazon Marketplace products.  For more information, refer to the [Product Pricing v2022-05-01 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/product-pricing-api-v2022-05-01-use-case-guide).
+ * The Selling Partner API for Pricing helps you programmatically retrieve product pricing and offer pricing information for Amazon Marketplace products.  For more information, see the [Product Pricing v2022-05-01 Use Case Guide](doc:product-pricing-api-v2022-05-01-use-case-guide).
  *
  * OpenAPI spec version: 2022-05-01
  * 
@@ -28,7 +28,7 @@ import java.io.IOException;
  * Error response returned when the request is unsuccessful.
  */
 @ApiModel(description = "Error response returned when the request is unsuccessful.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:28.929+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:42.481+08:00")
 public class Error {
   @SerializedName("code")
   private String code = null;
@@ -81,10 +81,10 @@ public class Error {
   }
 
    /**
-   * Additional details that can help the caller understand or fix the issue.
+   * Additional information that can help the caller understand or fix the issue.
    * @return details
   **/
-  @ApiModelProperty(value = "Additional details that can help the caller understand or fix the issue.")
+  @ApiModelProperty(value = "Additional information that can help the caller understand or fix the issue.")
   public String getDetails() {
     return details;
   }

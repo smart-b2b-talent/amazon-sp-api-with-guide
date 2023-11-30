@@ -29,7 +29,7 @@ import java.io.IOException;
  * A credit given to a solution provider.
  */
 @ApiModel(description = "A credit given to a solution provider.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:09.317+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:21.148+08:00")
 public class SolutionProviderCreditEvent {
   @SerializedName("ProviderTransactionType")
   private String providerTransactionType = null;

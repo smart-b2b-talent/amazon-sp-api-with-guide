@@ -24,7 +24,7 @@ import java.util.List;
  * A list of &#x60;CapacityReservationBillingEvent&#x60; events.
  */
 @ApiModel(description = "A list of `CapacityReservationBillingEvent` events.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:09.317+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:21.148+08:00")
 public class CapacityReservationBillingEventList extends ArrayList<CapacityReservationBillingEvent> {
 
   @Override

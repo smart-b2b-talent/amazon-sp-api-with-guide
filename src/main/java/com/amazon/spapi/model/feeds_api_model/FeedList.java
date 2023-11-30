@@ -24,7 +24,7 @@ import java.util.List;
  * A list of feeds.
  */
 @ApiModel(description = "A list of feeds.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:05.132+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:19.780+08:00")
 public class FeedList extends ArrayList<Feed> {
 
   @Override

@@ -31,7 +31,7 @@ import java.util.List;
  * Standard images with text, presented one at a time. The user clicks on thumbnails to view each block.
  */
 @ApiModel(description = "Standard images with text, presented one at a time. The user clicks on thumbnails to view each block.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:32.689+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:51:51.898+08:00")
 public class StandardMultipleImageTextModule {
   @SerializedName("blocks")
   private List<StandardImageTextCaptionBlock> blocks = null;

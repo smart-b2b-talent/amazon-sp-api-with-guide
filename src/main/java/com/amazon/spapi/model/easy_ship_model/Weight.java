@@ -30,7 +30,7 @@ import java.math.BigDecimal;
  * The weight of the scheduled package
  */
 @ApiModel(description = "The weight of the scheduled package")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:49.741+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:11.007+08:00")
 public class Weight {
   @SerializedName("value")
   private BigDecimal value = null;

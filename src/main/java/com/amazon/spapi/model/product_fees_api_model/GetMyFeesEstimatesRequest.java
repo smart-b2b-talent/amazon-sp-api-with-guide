@@ -24,7 +24,7 @@ import java.util.List;
  * Request for estimated fees for a list of products.
  */
 @ApiModel(description = "Request for estimated fees for a list of products.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:27.695+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:41.220+08:00")
 public class GetMyFeesEstimatesRequest extends ArrayList<FeesEstimateByIdRequest> {
 
   @Override

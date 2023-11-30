@@ -29,7 +29,7 @@ import java.io.IOException;
  * The payload for the getTransactionStatus operation.
  */
 @ApiModel(description = "The payload for the getTransactionStatus operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:12:10.456+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:53:07.893+08:00")
 public class TransactionStatus {
   @SerializedName("transactionStatus")
   private Transaction transactionStatus = null;

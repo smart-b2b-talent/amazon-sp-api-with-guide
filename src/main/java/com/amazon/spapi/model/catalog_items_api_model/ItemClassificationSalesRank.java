@@ -28,7 +28,7 @@ import java.io.IOException;
  * Sales rank of an Amazon catalog item by classification.
  */
 @ApiModel(description = "Sales rank of an Amazon catalog item by classification.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:41.117+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:03.526+08:00")
 public class ItemClassificationSalesRank {
   @SerializedName("classificationId")
   private String classificationId = null;

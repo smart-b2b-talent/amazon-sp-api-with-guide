@@ -24,7 +24,7 @@ import java.util.List;
  * Vendor details associated with an Amazon catalog item. Vendor details are available to vendors only.
  */
 @ApiModel(description = "Vendor details associated with an Amazon catalog item. Vendor details are available to vendors only.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:41.117+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:03.526+08:00")
 public class ItemVendorDetails extends ArrayList<ItemVendorDetailsByMarketplace> {
 
   @Override

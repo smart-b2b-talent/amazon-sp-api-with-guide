@@ -29,7 +29,7 @@ import java.io.IOException;
  * The top left corner of the cropped image, specified in the original image&#39;s coordinate space.
  */
 @ApiModel(description = "The top left corner of the cropped image, specified in the original image's coordinate space.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:32.689+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:51:51.898+08:00")
 public class ImageOffsets {
   @SerializedName("x")
   private IntegerWithUnits x = null;

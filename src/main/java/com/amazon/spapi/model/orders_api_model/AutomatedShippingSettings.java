@@ -28,7 +28,7 @@ import java.io.IOException;
  * Contains information regarding the Shipping Settings Automation program, such as whether the order&#39;s shipping settings were generated automatically, and what those settings are.
  */
 @ApiModel(description = "Contains information regarding the Shipping Settings Automation program, such as whether the order's shipping settings were generated automatically, and what those settings are.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:25.479+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:38.698+08:00")
 public class AutomatedShippingSettings {
   @SerializedName("HasAutomatedShippingSettings")
   private Boolean hasAutomatedShippingSettings = null;

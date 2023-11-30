@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * GetSchemaResponseLinks
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:22.311+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:35.581+08:00")
 public class GetSchemaResponseLinks {
   @SerializedName("self")
   private LinkObject self = null;

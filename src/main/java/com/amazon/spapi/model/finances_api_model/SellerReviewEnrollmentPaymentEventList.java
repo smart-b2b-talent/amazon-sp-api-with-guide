@@ -24,7 +24,7 @@ import java.util.List;
  * A list of information about fee events for the Early Reviewer Program.
  */
 @ApiModel(description = "A list of information about fee events for the Early Reviewer Program.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:09.317+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:21.148+08:00")
 public class SellerReviewEnrollmentPaymentEventList extends ArrayList<SellerReviewEnrollmentPaymentEvent> {
 
   @Override

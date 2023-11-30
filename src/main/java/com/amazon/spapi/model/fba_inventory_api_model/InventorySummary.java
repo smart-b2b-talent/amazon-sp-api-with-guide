@@ -30,7 +30,7 @@ import org.threeten.bp.OffsetDateTime;
  * Inventory summary for a specific item.
  */
 @ApiModel(description = "Inventory summary for a specific item.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:56.728+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:16.678+08:00")
 public class InventorySummary {
   @SerializedName("asin")
   private String asin = null;

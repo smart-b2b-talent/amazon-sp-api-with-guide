@@ -32,7 +32,7 @@ import java.util.Map;
  * The request body schema for the putListingsItem operation.
  */
 @ApiModel(description = "The request body schema for the putListingsItem operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:17.470+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:30.718+08:00")
 public class ListingsItemPutRequest {
   @SerializedName("productType")
   private String productType = null;

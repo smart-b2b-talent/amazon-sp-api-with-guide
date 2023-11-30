@@ -32,7 +32,7 @@ import java.util.List;
  * The request body for the POST /easyShip/2022-03-23/packages/bulk API.
  */
 @ApiModel(description = "The request body for the POST /easyShip/2022-03-23/packages/bulk API.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:49.741+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:11.007+08:00")
 public class CreateScheduledPackagesRequest {
   @SerializedName("marketplaceId")
   private String marketplaceId = null;

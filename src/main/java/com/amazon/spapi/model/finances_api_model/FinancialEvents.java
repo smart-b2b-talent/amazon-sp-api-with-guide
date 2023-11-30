@@ -57,7 +57,7 @@ import java.io.IOException;
  * Contains all information related to a financial event.
  */
 @ApiModel(description = "Contains all information related to a financial event.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:09.317+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:21.148+08:00")
 public class FinancialEvents {
   @SerializedName("ShipmentEventList")
   private ShipmentEventList shipmentEventList = null;

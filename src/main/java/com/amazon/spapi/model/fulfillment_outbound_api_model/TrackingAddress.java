@@ -28,7 +28,7 @@ import java.io.IOException;
  * Address information for tracking the package.
  */
 @ApiModel(description = "Address information for tracking the package.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:14.601+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:26.811+08:00")
 public class TrackingAddress {
   @SerializedName("city")
   private String city = null;

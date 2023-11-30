@@ -30,7 +30,7 @@ import java.io.IOException;
  * The payload schema for the getInventorySummaries operation.
  */
 @ApiModel(description = "The payload schema for the getInventorySummaries operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:56.728+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:16.678+08:00")
 public class GetInventorySummariesResult {
   @SerializedName("granularity")
   private Granularity granularity = null;

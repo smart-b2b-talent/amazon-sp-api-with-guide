@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * GetSolicitationActionResponseEmbedded
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:49.072+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:56.904+08:00")
 public class GetSolicitationActionResponseEmbedded {
   @SerializedName("schema")
   private GetSchemaResponse schema = null;

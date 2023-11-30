@@ -32,7 +32,7 @@ import java.io.IOException;
  * Describes a solicitation action that can be taken for an order. Provides a JSON Hypertext Application Language (HAL) link to the JSON schema document that describes the expected input.
  */
 @ApiModel(description = "Describes a solicitation action that can be taken for an order. Provides a JSON Hypertext Application Language (HAL) link to the JSON schema document that describes the expected input.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:49.072+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:56.904+08:00")
 public class GetSolicitationActionResponse {
   @SerializedName("_links")
   private GetSolicitationActionResponseLinks links = null;

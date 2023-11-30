@@ -30,7 +30,7 @@ import java.util.List;
  * The address.
  */
 @ApiModel(description = "The address.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:45.887+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:54.767+08:00")
 public class Address {
   @SerializedName("name")
   private String name = null;

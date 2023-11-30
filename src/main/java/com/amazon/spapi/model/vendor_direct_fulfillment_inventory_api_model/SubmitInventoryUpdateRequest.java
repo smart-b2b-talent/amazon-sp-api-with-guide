@@ -29,7 +29,7 @@ import java.io.IOException;
  * The request body for the submitInventoryUpdate operation.
  */
 @ApiModel(description = "The request body for the submitInventoryUpdate operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:57.890+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:53:00.509+08:00")
 public class SubmitInventoryUpdateRequest {
   @SerializedName("inventory")
   private InventoryUpdate inventory = null;

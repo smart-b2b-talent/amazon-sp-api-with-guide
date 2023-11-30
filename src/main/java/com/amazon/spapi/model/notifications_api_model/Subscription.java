@@ -29,7 +29,7 @@ import java.io.IOException;
  * Represents a subscription to receive notifications.
  */
 @ApiModel(description = "Represents a subscription to receive notifications.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:23.893+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:37.235+08:00")
 public class Subscription {
   @SerializedName("subscriptionId")
   private String subscriptionId = null;

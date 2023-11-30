@@ -34,7 +34,7 @@ import java.util.List;
  * Container in the shipment.
  */
 @ApiModel(description = "Container in the shipment.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:45.887+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:54.767+08:00")
 public class Container {
   /**
    * The type of physical container being used. (always &#39;PACKAGE&#39;)

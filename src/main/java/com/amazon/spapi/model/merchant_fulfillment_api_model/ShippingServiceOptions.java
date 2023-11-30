@@ -32,7 +32,7 @@ import java.io.IOException;
  * Extra services provided by a carrier.
  */
 @ApiModel(description = "Extra services provided by a carrier.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:20.124+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:33.036+08:00")
 public class ShippingServiceOptions {
   @SerializedName("DeliveryExperience")
   private DeliveryExperienceType deliveryExperience = null;

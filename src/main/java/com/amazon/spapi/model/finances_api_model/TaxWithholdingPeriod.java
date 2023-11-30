@@ -28,7 +28,7 @@ import java.io.IOException;
  * Period which taxwithholding on seller&#39;s account is calculated.
  */
 @ApiModel(description = "Period which taxwithholding on seller's account is calculated.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:09.317+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:21.148+08:00")
 public class TaxWithholdingPeriod {
   @SerializedName("StartDate")
   private String startDate = null;

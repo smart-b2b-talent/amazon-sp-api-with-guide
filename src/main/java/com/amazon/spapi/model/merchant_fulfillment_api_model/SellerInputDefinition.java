@@ -32,7 +32,7 @@ import java.io.IOException;
  * Specifies characteristics that apply to a seller input.
  */
 @ApiModel(description = "Specifies characteristics that apply to a seller input.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:20.124+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:33.036+08:00")
 public class SellerInputDefinition {
   @SerializedName("IsRequired")
   private Boolean isRequired = null;

@@ -31,7 +31,7 @@ import java.util.List;
  * Relationship details for an Amazon catalog item.
  */
 @ApiModel(description = "Relationship details for an Amazon catalog item.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:41.117+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:03.526+08:00")
 public class ItemRelationship {
   @SerializedName("childAsins")
   private List<String> childAsins = null;

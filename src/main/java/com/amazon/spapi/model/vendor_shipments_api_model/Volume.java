@@ -28,7 +28,7 @@ import java.io.IOException;
  * The volume of the shipment.
  */
 @ApiModel(description = "The volume of the shipment.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:12:16.566+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:53:12.211+08:00")
 public class Volume {
   /**
    * The unit of measurement.

@@ -29,7 +29,7 @@ import java.io.IOException;
  * Custom text for shipping labels.
  */
 @ApiModel(description = "Custom text for shipping labels.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:20.124+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:33.036+08:00")
 public class LabelCustomization {
   @SerializedName("CustomTextForLabel")
   private String customTextForLabel = null;

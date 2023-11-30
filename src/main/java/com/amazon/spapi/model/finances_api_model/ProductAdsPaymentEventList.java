@@ -24,7 +24,7 @@ import java.util.List;
  * A list of sponsored products payment events.
  */
 @ApiModel(description = "A list of sponsored products payment events.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:09.317+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:21.148+08:00")
 public class ProductAdsPaymentEventList extends ArrayList<ProductAdsPaymentEvent> {
 
   @Override

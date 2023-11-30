@@ -30,7 +30,7 @@ import org.threeten.bp.OffsetDateTime;
  * Vendor Details as part of Label response.
  */
 @ApiModel(description = "Vendor Details as part of Label response.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:12:16.566+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:53:12.211+08:00")
 public class VendorDetails {
   @SerializedName("sellingParty")
   private PartyIdentification sellingParty = null;

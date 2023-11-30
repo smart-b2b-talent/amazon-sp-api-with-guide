@@ -33,7 +33,7 @@ import org.threeten.bp.OffsetDateTime;
  * Proof of Appointment (POA) details.
  */
 @ApiModel(description = "Proof of Appointment (POA) details.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:40.519+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:50.606+08:00")
 public class Poa {
   @SerializedName("appointmentTime")
   private AppointmentTime appointmentTime = null;

@@ -30,7 +30,7 @@ import java.io.IOException;
  * The A+ Content document. This is the enhanced content that is published to product detail pages.
  */
 @ApiModel(description = "The A+ Content document. This is the enhanced content that is published to product detail pages.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:10:32.689+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:51:51.898+08:00")
 public class ContentDocument {
   @SerializedName("name")
   private String name = null;

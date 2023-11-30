@@ -29,7 +29,7 @@ import java.io.IOException;
  * Item details for be provided for every item in shipment at either the item or carton or pallet level, whichever is appropriate.
  */
 @ApiModel(description = "Item details for be provided for every item in shipment at either the item or carton or pallet level, whichever is appropriate.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:12:16.566+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:53:12.211+08:00")
 public class PurchaseOrderItemDetails {
   @SerializedName("maximumRetailPrice")
   private Money maximumRetailPrice = null;

@@ -32,7 +32,7 @@ import java.io.IOException;
  * Data for creating a shipping label and dimensions for printing the label.
  */
 @ApiModel(description = "Data for creating a shipping label and dimensions for printing the label.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:20.124+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:33.036+08:00")
 public class Label {
   @SerializedName("CustomTextForLabel")
   private String customTextForLabel = null;

@@ -28,7 +28,7 @@ import java.io.IOException;
  * An amount of money, including units in the form of currency.
  */
 @ApiModel(description = "An amount of money, including units in the form of currency.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:12:01.408+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:53:01.693+08:00")
 public class Money {
   @SerializedName("currencyCode")
   private String currencyCode = null;

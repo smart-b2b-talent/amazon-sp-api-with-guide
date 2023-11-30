@@ -28,7 +28,7 @@ import java.io.IOException;
  * Image for the listings item.
  */
 @ApiModel(description = "Image for the listings item.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:17.470+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:30.718+08:00")
 public class ItemImage {
   @SerializedName("link")
   private String link = null;

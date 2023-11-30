@@ -28,7 +28,7 @@ import java.io.IOException;
  * Packing slip information.
  */
 @ApiModel(description = "Packing slip information.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:12:07.873+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:53:06.148+08:00")
 public class PackingSlip {
   @SerializedName("purchaseOrderNumber")
   private String purchaseOrderNumber = null;

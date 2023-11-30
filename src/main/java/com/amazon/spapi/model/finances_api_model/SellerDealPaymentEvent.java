@@ -29,7 +29,7 @@ import java.io.IOException;
  * An event linked to the payment of a fee related to the specified deal.
  */
 @ApiModel(description = "An event linked to the payment of a fee related to the specified deal.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:09.317+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:21.148+08:00")
 public class SellerDealPaymentEvent {
   @SerializedName("postedDate")
   private String postedDate = null;

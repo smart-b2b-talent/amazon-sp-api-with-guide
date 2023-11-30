@@ -31,7 +31,7 @@ import java.util.List;
  * The request schema for the submitInvoice operation.
  */
 @ApiModel(description = "The request schema for the submitInvoice operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:12:03.950+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:53:03.729+08:00")
 public class SubmitInvoiceRequest {
   @SerializedName("invoices")
   private List<InvoiceDetail> invoices = null;

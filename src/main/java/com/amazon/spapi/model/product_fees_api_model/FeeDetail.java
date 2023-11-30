@@ -30,7 +30,7 @@ import java.io.IOException;
  * The type of fee, fee amount, and other details.
  */
 @ApiModel(description = "The type of fee, fee amount, and other details.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:27.695+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:41.220+08:00")
 public class FeeDetail {
   @SerializedName("FeeType")
   private String feeType = null;

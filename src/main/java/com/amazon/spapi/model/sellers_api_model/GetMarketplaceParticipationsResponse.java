@@ -30,7 +30,7 @@ import java.io.IOException;
  * The response schema for the getMarketplaceParticipations operation.
  */
 @ApiModel(description = "The response schema for the getMarketplaceParticipations operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:38.452+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:49.052+08:00")
 public class GetMarketplaceParticipationsResponse {
   @SerializedName("payload")
   private MarketplaceParticipationList payload = null;

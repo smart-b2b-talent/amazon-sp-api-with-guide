@@ -1,6 +1,6 @@
 /*
  * Selling Partner API for Replenishment
- * The Selling Partner API for Replenishment (Replenishment API) provides programmatic access to replenishment program metrics and offers. These programs provide recurring delivery of any replenishable item at a frequency chosen by the customer.  The Replenishment API is available worldwide wherever Amazon Subscribe & Save is available or is supported. The API is available to vendors and FBA selling partners.
+ * The Selling Partner API for Replenishment (Replenishment API) provides programmatic access to replenishment program metrics and offers. These programs provide recurring delivery (automatic or manual) of any replenishable item at a frequency chosen by the customer.
  *
  * OpenAPI spec version: 2022-11-07
  * 
@@ -28,7 +28,7 @@ import java.io.IOException;
  * Use these parameters to paginate through the response.
  */
 @ApiModel(description = "Use these parameters to paginate through the response.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:32.279+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:44.904+08:00")
 public class PaginationResponse {
   @SerializedName("totalResults")
   private Long totalResults = null;

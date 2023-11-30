@@ -24,7 +24,7 @@ import java.util.List;
  * A list of events related to the seller&#39;s Pay with Amazon account.
  */
 @ApiModel(description = "A list of events related to the seller's Pay with Amazon account.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:09.317+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:21.148+08:00")
 public class PayWithAmazonEventList extends ArrayList<PayWithAmazonEvent> {
 
   @Override

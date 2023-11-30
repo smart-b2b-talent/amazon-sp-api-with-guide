@@ -33,7 +33,7 @@ import java.io.IOException;
  * A shipping service offer made by a carrier.
  */
 @ApiModel(description = "A shipping service offer made by a carrier.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-29T16:11:20.124+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-11-30T16:52:33.036+08:00")
 public class ShippingService {
   @SerializedName("ShippingServiceName")
   private String shippingServiceName = null;
